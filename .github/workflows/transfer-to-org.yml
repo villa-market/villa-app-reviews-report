@@ -9,10 +9,10 @@ on:
 jobs:
   transfer:
     runs-on: ubuntu-latest
-    permissions:
-      administration: write
-      contents: read
     steps:
+      - name: Check token scopes
+        run: |
+          curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/thanakijwanavit/villa-app-reviews-report | jq '{full_name, permissions}'
       - name: Transfer repository to villa-market (temp name)
         env:
           GH_TOKEN: ${{ github.token }}
