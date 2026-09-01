@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>Villa Market — Engineering Pulse · 1 Sep 2026</title>
+<style>
+  :root {
+    --brand:      #2c2a74;
+    --ink:        #14151a;
+    --ink-2:      #2c2e35;
+    --mute:       #6f727a;
+    --mute-2:     #91949b;
+    --line:       #e3e1dc;
+    --line-soft:  #eeece7;
+    --paper:      #ffffff;
+    --canvas:     #f1f0ec;
+    --warn:       #a4501f;
+    --warn-deep:  #7c3a14;
+    --warn-bg:    #fdf6f0;
+    --warn-line:  #ecd8c4;
+    --r:          22px;
+    --r-sm:       14px;
+    --shadow:     0 1px 1px rgba(20,21,26,.04), 0 4px 14px rgba(20,21,26,.055);
+    --shadow-up:  0 2px 2px rgba(20,21,26,.05), 0 14px 34px rgba(20,21,26,.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .page {
+    width: 1080px;
+    margin: 0 auto;
+    background: var(--canvas);
+    overflow: hidden;
+  }
+
+  /* ---------------- APP BAR ---------------- */
+  .appbar {
+    background: var(--paper);
+    border-top: 6px solid var(--brand);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 26px 21px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .mark {
+    width: 62px; height: 62px;
+    border-radius: 18px;
+    background: var(--brand);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 23px; font-weight: 800; letter-spacing: .5px;
+    flex-shrink: 0;
+  }
+  .apptitle { flex: 1; min-width: 0; }
+  .apptitle .t1 {
+    font-size: 32px; font-weight: 780; letter-spacing: -.9px;
+    line-height: 1.1;
+  }
+  .apptitle .t2 {
+    font-size: 18px; font-weight: 600; color: var(--mute);
+    letter-spacing: -.1px; margin-top: 4px;
+  }
+  .datechip {
+    flex-shrink: 0;
+    font-size: 17px; font-weight: 800; letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    background: #f3f2ef;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 11px 20px;
+  }
+
+  /* ---------------- SHELL ---------------- */
+  .scroll { padding: 22px 24px 0; }
+
+  .shead {
+    display: flex; align-items: baseline; gap: 14px;
+    margin: 0 4px 12px;
+  }
+  .shead h2 {
+    margin: 0;
+    font-size: 17px; font-weight: 800;
+    letter-spacing: 2.6px; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .shead .n {
+    font-size: 15.5px; font-weight: 800; letter-spacing: .3px;
+    color: var(--ink-2);
+    background: #e7e5e0;
+    border-radius: 999px;
+    padding: 5px 13px;
+  }
+  .shead .n.hot { color: #fff; background: var(--warn); }
+
+  /* ---------------- KPI STRIP ---------------- */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .kpi {
+    display: block;
+    position: relative;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    padding: 18px 20px 20px;
+  }
+  .bignum {
+    font-size: 92px; font-weight: 800;
+    letter-spacing: -5.5px; line-height: .86;
+    font-variant-numeric: tabular-nums;
+  }
+  .klabel {
+    margin-top: 16px;
+    font-size: 17px; font-weight: 800;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .ksub {
+    font-size: 17px; font-weight: 550; color: var(--mute);
+    margin-top: 6px; letter-spacing: -.2px;
+  }
+  .kpi.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .kpi.warn .bignum, .kpi.warn .klabel { color: var(--warn-deep); }
+  .kpi.warn .ksub { color: var(--warn); }
+
+  .flag {
+    position: absolute; top: 20px; right: 20px;
+    font-size: 14px; font-weight: 800; letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #fff; background: var(--warn);
+    border-radius: 999px; padding: 5px 12px;
+  }
+  .flag.flat { color: var(--mute); background: #edebe6; }
+
+  /* ---------------- BODY COLUMNS ---------------- */
+  .cols {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .row {
+    display: flex; align-items: center; gap: 16px;
+    padding: 0 20px;
+    min-height: 116px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .row:first-child { border-top: 0; }
+
+  .idx {
+    flex-shrink: 0;
+    width: 46px; height: 46px; border-radius: 14px;
+    background: #f1efeb;
+    color: var(--ink-2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 21px; font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .row .main { flex: 1; min-width: 0; }
+  .rtitle {
+    font-size: 26px; font-weight: 700; letter-spacing: -.7px;
+    line-height: 1.15;
+  }
+  .rmeta {
+    font-size: 18px; font-weight: 550; color: var(--mute);
+    margin-top: 5px; letter-spacing: -.2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .rmeta .dot { color: #c8c6c0; font-weight: 700; }
+  .star { color: var(--warn); font-weight: 800; }
+
+  .chev {
+    flex-shrink: 0;
+    width: 13px; height: 13px;
+    border-right: 3.4px solid #c3c1bb;
+    border-top: 3.4px solid #c3c1bb;
+    transform: rotate(45deg);
+  }
+
+  .chip {
+    display: inline-block;
+    font-size: 15px; font-weight: 800; letter-spacing: 1.1px;
+    text-transform: uppercase;
+    border-radius: 10px; padding: 7px 12px;
+    white-space: nowrap;
+  }
+  .chip-both { background: #21232a; color: #fff; }
+  .chip-plat { background: #edebe6; color: var(--ink-2); border: 1px solid #dedbd4; }
+  .chip-tag  { background: var(--paper); color: var(--mute); border: 1px solid var(--line); }
+  .chip-tag.t-bug { color: var(--warn); border-color: var(--warn-line); background: var(--warn-bg); }
+
+  /* reply rows sit tighter */
+  .tight .row { min-height: 68px; padding: 0 18px; gap: 12px; }
+  .tight .rtitle { font-size: 21px; letter-spacing: -.5px; }
+  .tight .rmeta { font-size: 16px; margin-top: 3px; gap: 6px; }
+  .tight .chip { font-size: 13.5px; padding: 5px 9px; letter-spacing: .9px; }
+  .tight .star { font-size: 17px; }
+
+  .listfoot {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 18px;
+    border-top: 1px solid var(--line);
+    background: #faf9f7;
+    font-size: 18px; font-weight: 650; color: var(--ink-2);
+    letter-spacing: -.2px;
+  }
+  .listfoot .grow { flex: 1; }
+  .listfoot .mutespan { color: var(--mute); font-weight: 550; }
+
+  /* ---------------- SIGNAL STRIP ---------------- */
+  .signals {
+    margin-top: 20px;
+    display: flex;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .signals div {
+    flex: 1; padding: 18px 8px 20px; text-align: center;
+    border-left: 1px solid var(--line-soft);
+  }
+  .signals div:first-child { border-left: 0; }
+  .signals .mk {
+    display: block;
+    font-size: 13.5px; font-weight: 800; letter-spacing: 1.1px;
+    text-transform: uppercase; color: var(--mute-2);
+  }
+  .signals .mv {
+    display: block; margin-top: 5px;
+    font-size: 25px; font-weight: 780; color: var(--ink-2);
+    letter-spacing: -.6px; font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------------- TODAY ---------------- */
+  .today {
+    margin-top: 22px;
+    display: flex; align-items: center; gap: 20px;
+    background: #1b1c20;
+    border-radius: var(--r);
+    padding: 22px 26px;
+    box-shadow: var(--shadow-up);
+  }
+  .today .tk {
+    flex-shrink: 0;
+    font-size: 15px; font-weight: 800; letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #fff; background: var(--brand);
+    border-radius: 999px; padding: 9px 18px;
+  }
+  .today p {
+    margin: 0; flex: 1;
+    font-size: 25px; font-weight: 650; line-height: 1.25;
+    color: #f2f1ee; letter-spacing: -.5px;
+  }
+  .today .go {
+    flex-shrink: 0;
+    font-size: 15px; font-weight: 800; letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: #1b1c20; background: #f2f1ee;
+    border-radius: 12px; padding: 12px 18px;
+  }
+
+  /* ---------------- FOOTER ---------------- */
+  .foot {
+    margin-top: 22px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+    padding: 20px 26px 22px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .foot .fl {
+    flex: 1;
+    font-size: 16.5px; font-weight: 600; color: var(--mute);
+    line-height: 1.45; letter-spacing: -.1px;
+  }
+  .foot .fl b { color: var(--ink-2); font-weight: 750; }
+  .btn {
+    flex-shrink: 0;
+    font-size: 16px; font-weight: 800; letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--brand);
+    border: 2px solid #d6d4e3;
+    background: #f6f5fa;
+    border-radius: 12px;
+    padding: 13px 20px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+  <div class="appbar">
+    <div class="mark">VM</div>
+    <div class="apptitle">
+      <div class="t1">Villa shopper app</div>
+      <div class="t2">Engineering pulse · Dev team only</div>
+    </div>
+    <div class="datechip">1 Sep 2026</div>
+  </div>
+
+  <div style="background:#fff;border-bottom:1px solid #e3e1dc;padding:12px 26px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <a href="bugs.html" style="font-size:14px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#fff;background:#2c2a74;border-radius:12px;padding:10px 16px;text-decoration:none">Open bug follow-up →</a>
+    <a href="bugs.html#reply-queue" style="font-size:14px;font-weight:700;color:#2c2a74;background:#f6f5fa;border:2px solid #d6d4e3;border-radius:12px;padding:9px 14px;text-decoration:none">Reply queue (31)</a>
+    <a href="need-reply-2026-09-01.csv" style="font-size:14px;font-weight:700;color:#2c2a74;background:#f6f5fa;border:2px solid #d6d4e3;border-radius:12px;padding:9px 14px;text-decoration:none">CSV</a>
+  </div>
+
+  <div class="scroll">
+
+    <!-- ================= KPI STRIP ================= -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="bignum">243</div>
+        <div class="klabel">Written reviews</div>
+        <div class="ksub">iOS 85 · Android 158</div>
+      </div>
+      <div class="kpi">
+        <span class="flag flat">Flat</span>
+        <div class="bignum">+0</div>
+        <div class="klabel">New today</div>
+        <div class="ksub">vs 31 Aug</div>
+      </div>
+      <a class="kpi warn" href="need-reply-2026-09-01.csv">
+        <div class="bignum">31</div>
+        <div class="klabel">Reply backlog</div>
+        <div class="ksub">0 answered</div>
+      </a>
+      <div class="kpi warn">
+        <span class="flag">Hold</span>
+        <div class="bignum">0</div>
+        <div class="klabel">Store replies</div>
+        <div class="ksub">Do not post yet</div>
+      </div>
+    </div>
+
+    <!-- ================= TWO COLUMNS ================= -->
+    <div class="cols">
+
+      <!-- ---- FIX QUEUE ---- -->
+      <div>
+        <div class="shead"><h2>Fix queue</h2><span class="n">5 open</span></div>
+        <div class="card">
+          <a class="row" href="bugs.html#fix-1">
+            <div class="idx">1</div>
+            <div class="main"><div class="rtitle">Splash / first-screen hang</div></div>
+            <span class="chip chip-both">Both</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="bugs.html#fix-2">
+            <div class="idx">2</div>
+            <div class="main"><div class="rtitle">Developer Options / allow-list</div></div>
+            <span class="chip chip-plat">Android</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="bugs.html#fix-3">
+            <div class="idx">3</div>
+            <div class="main"><div class="rtitle">OTP / login / password reset</div></div>
+            <span class="chip chip-both">Both</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="bugs.html#fix-4">
+            <div class="idx">4</div>
+            <div class="main"><div class="rtitle">Forced store / cart wipe / false OOS</div></div>
+            <span class="chip chip-both">Both</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="bugs.html#fix-5">
+            <div class="idx">5</div>
+            <div class="main"><div class="rtitle">Checkout stuck after pay / card save</div></div>
+            <span class="chip chip-both">Both</span>
+            <i class="chev"></i>
+          </a>
+        </div>
+
+        <div class="signals">
+          <div><span class="mk">1★ iOS</span><span class="mv">57</span></div>
+          <div><span class="mk">1★ And</span><span class="mv">80</span></div>
+          <div><span class="mk">iOS TH</span><span class="mv">3.3/147</span></div>
+          <div><span class="mk">Play</span><span class="mv">391</span></div>
+        </div>
+      </div>
+
+      <!-- ---- REPLY QUEUE ---- -->
+      <div>
+        <div class="shead"><h2>Reply queue</h2><span class="n hot">31 open · 0 answered</span></div>
+        <div class="card tight">
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Small Traveller</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>27 Aug</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Hans Rume</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>24 Aug</div>
+            </div>
+            <span class="chip chip-tag">other</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Rickard Modig</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>11 Aug</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Alexey Efimov</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>9 Aug</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">RifRifRif8</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>iOS<span class="dot">·</span>8 Aug</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Thanva Tivawong</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>3 Aug</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Hugh Musbekidding</div>
+              <div class="rmeta"><span class="star">2★</span><span class="dot">·</span>Android<span class="dot">·</span>31 Jul</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">S De Silva</div>
+              <div class="rmeta"><span class="star">1★</span><span class="dot">·</span>Android<span class="dot">·</span>19 Jul</div>
+            </div>
+            <span class="chip chip-tag t-bug">bug</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Sorsola</div>
+              <div class="rmeta"><span class="star">3★</span><span class="dot">·</span>iOS<span class="dot">·</span>7 Jul</div>
+            </div>
+            <span class="chip chip-tag">checkout</span>
+            <i class="chev"></i>
+          </a>
+          <a class="row" href="need-reply-2026-09-01.csv">
+            <div class="main">
+              <div class="rtitle">Stoh Nick</div>
+              <div class="rmeta"><span class="star">2★</span><span class="dot">·</span>Android<span class="dot">·</span>30 Jun</div>
+            </div>
+            <span class="chip chip-tag">stock</span>
+            <i class="chev"></i>
+          </a>
+          <a class="listfoot" href="bugs.html#reply-queue">
+            <span class="grow"><b>31 open</b> <span class="mutespan">· full detail on bugs.html</span></span>
+            <i class="chev"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= TODAY ================= -->
+    <a class="today" href="bugs.html" style="text-decoration:none;color:inherit">
+      <span class="tk">Today</span>
+      <p>Open detailed bug follow-up — Fix ×5 + Reply ×31 for related parties.</p>
+      <span class="go">Bugs.html</span>
+    </a>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="fl"><b>Taskworld</b> · app-store-reviews &nbsp;·&nbsp; need-reply-2026-09-01.csv · 1 Sep 2026</div>
+    <a class="btn" href="bugs.html">Bug follow-up</a>
+    <a class="btn" href="need-reply-2026-09-01.csv">CSV</a>
+  </div>
+
+</div>
+</body>
+</html>
