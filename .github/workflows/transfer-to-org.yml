@@ -2,20 +2,18 @@ name: Transfer to villa-market org
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - .transfer-to-org-trigger
-
-permissions:
-  administration: write
 
 jobs:
   transfer:
     runs-on: ubuntu-latest
+    permissions:
+      administration: write
+      contents: read
     steps:
-      - name: Transfer repository to villa-market
+      - name: Transfer repository to villa-market (temp name)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api "repos/thanakijwanavit/villa-app-reviews-report/transfer" \
-            -f new_owner=villa-market
+            -f new_owner=villa-market \
+            -f new_name=villa-app-reviews-report-transferred
