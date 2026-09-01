@@ -2,6 +2,9 @@ name: Transfer to villa-market org
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .transfer-to-org-trigger
 
 jobs:
   transfer:
