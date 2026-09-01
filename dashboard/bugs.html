@@ -5,44 +5,1320 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Villa Market — Bug follow-up · 1 Sep 2026</title>
 <style>
-  :root { --brand:#2c2a74; --ink:#14151a; --mute:#6f727a; --line:#e3e1dc; --paper:#fff; --canvas:#f1f0ec; --warn:#a4501f; }
-  body{margin:0;font-family:system-ui,sans-serif;background:var(--canvas);color:var(--ink);line-height:1.45}
-  a{color:var(--brand)}
-  .bar{background:var(--paper);border-top:6px solid var(--brand);border-bottom:1px solid var(--line);padding:16px}
-  .wrap{max-width:900px;margin:0 auto;padding:16px}
-  .gh{display:inline-block;background:#2c2a74;color:#fff;text-decoration:none;border-radius:8px;padding:6px 10px;font:750 12px ui-monospace,monospace;margin:4px}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
-  .nav a{display:inline-block;margin:4px 6px 4px 0;padding:8px 12px;border-radius:10px;background:#f6f5fa;border:1px solid #d6d4e3;text-decoration:none;font-weight:700;font-size:13px;color:var(--ink)}
-  .nav a.p{background:var(--brand);color:#fff;border-color:var(--brand)}
+  :root {
+    --brand:      #2c2a74;
+    --ink:        #14151a;
+    --ink-2:      #2c2e35;
+    --mute:       #6f727a;
+    --mute-2:     #91949b;
+    --line:       #e3e1dc;
+    --line-soft:  #eeece7;
+    --paper:      #ffffff;
+    --canvas:     #f1f0ec;
+    --warn:       #a4501f;
+    --warn-deep:  #7c3a14;
+    --warn-bg:    #fdf6f0;
+    --warn-line:  #ecd8c4;
+    --r:          18px;
+    --r-sm:       12px;
+    --shadow:     0 1px 1px rgba(20,21,26,.04), 0 4px 14px rgba(20,21,26,.055);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+  }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 48px; }
+
+  .appbar {
+    background: var(--paper);
+    border-top: 6px solid var(--brand);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .appbar-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 16px;
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .mark {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: var(--brand); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; flex-shrink: 0;
+  }
+  .apptitle { flex: 1; min-width: 180px; }
+  .apptitle .t1 { font-size: 22px; font-weight: 780; letter-spacing: -.5px; line-height: 1.15; }
+  .apptitle .t2 { font-size: 14px; font-weight: 600; color: var(--mute); margin-top: 3px; }
+  .datechip {
+    font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ink-2); background: #f3f2ef; border: 1px solid var(--line);
+    border-radius: 999px; padding: 8px 14px;
+  }
+  .nav {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
+  }
+  .nav a {
+    font-size: 13px; font-weight: 700;
+    color: var(--ink-2); background: #f6f5fa;
+    border: 1px solid #d6d4e3; border-radius: 10px;
+    padding: 8px 12px; text-decoration: none;
+  }
+  .nav a.primary {
+    background: var(--brand); color: #fff; border-color: var(--brand);
+  }
+  .nav a:hover { text-decoration: none; opacity: .92; }
+
+  .kpis {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px; margin: 20px 0 8px;
+  }
+  .kpi {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r);
+    box-shadow: var(--shadow); padding: 14px 16px;
+  }
+  .kpi.warn { background: var(--warn-bg); border-color: var(--warn-line); }
+  .kpi .bn { font-size: 36px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .kpi.warn .bn { color: var(--warn-deep); }
+  .kpi .kl { margin-top: 8px; font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-2); }
+  .kpi .ks { font-size: 13px; color: var(--mute); margin-top: 4px; }
+
+  .shead {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    margin: 28px 0 12px;
+  }
+  .shead h2 {
+    margin: 0; font-size: 14px; font-weight: 800;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--mute);
+  }
+  .shead .n {
+    font-size: 13px; font-weight: 800; color: var(--ink-2);
+    background: #e7e5e0; border-radius: 999px; padding: 4px 10px;
+  }
+  .shead .n.hot { color: #fff; background: var(--warn); }
+
+  .bug {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r);
+    box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden;
+  }
+  .bug-head {
+    display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+    padding: 16px 18px; border-bottom: 1px solid var(--line-soft);
+    background: #faf9f7;
+  }
+  .idx {
+    width: 36px; height: 36px; border-radius: 11px; background: #f1efeb;
+    color: var(--ink-2); display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; flex-shrink: 0;
+  }
+  .bug-title-wrap { flex: 1; min-width: 200px; }
+  .bug-title-wrap h3 { margin: 0; font-size: 18px; font-weight: 750; letter-spacing: -.3px; }
+  .bug-sub { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .status-pill {
+    font-size: 11px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase;
+    color: var(--warn-deep); background: var(--warn-bg); border: 1px solid var(--warn-line);
+    border-radius: 999px; padding: 6px 10px; white-space: nowrap;
+  }
+  .bug-body { padding: 16px 18px 18px; }
+  .field { margin-bottom: 14px; }
+  .field:last-child { margin-bottom: 0; }
+  .flab {
+    font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--mute-2); margin-bottom: 6px;
+  }
+  .flab .hint { font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--mute); }
+  .field p { margin: 0; font-size: 15px; color: var(--ink-2); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .row2 { grid-template-columns: 1fr; } }
+
+  .chip {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .9px;
+    text-transform: uppercase; border-radius: 8px; padding: 5px 9px; white-space: nowrap;
+  }
+  .chip-both { background: #21232a; color: #fff; }
+  .chip-plat { background: #edebe6; color: var(--ink-2); border: 1px solid #dedbd4; }
+  .chip-tag { background: var(--paper); color: var(--mute); border: 1px solid var(--line); }
+  .chip-tag.t-bug { color: var(--warn); border-color: var(--warn-line); background: var(--warn-bg); }
+  .ghlink {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px; font-weight: 750; color: #fff;
+    background: #2c2a74; border: 1px solid #2c2a74; border-radius: 8px;
+    padding: 5px 8px; text-decoration: none;
+  }
+  .ghlink:hover { text-decoration: none; opacity: .92; }
+  .ghlink.track { background: #5b587a; border-color: #5b587a; }
+  .tasklink {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px; font-weight: 650; color: var(--brand);
+    background: #f6f5fa; border: 1px solid #d6d4e3; border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .owner {
+    display: inline-block; font-size: 13px; font-weight: 750;
+    background: #f3f2ef; border: 1px solid var(--line); border-radius: 8px;
+    padding: 4px 10px;
+  }
+
+  .ex {
+    border: 1px solid var(--line-soft); border-radius: 12px;
+    padding: 10px 12px; margin-bottom: 8px; background: #fcfbfa;
+  }
+  .ex:last-child { margin-bottom: 0; }
+  .ex-meta { font-size: 13px; color: var(--mute); }
+  .ex-meta strong { color: var(--ink-2); }
+  .dot { color: #c8c6c0; margin: 0 2px; }
+  .star { color: var(--warn); font-weight: 800; }
+  blockquote {
+    margin: 6px 0 0; padding: 0; font-size: 14px; color: var(--ink-2);
+    font-style: italic; border: 0;
+  }
+
+  .checklist {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r);
+    box-shadow: var(--shadow); padding: 6px 0;
+  }
+  .checklist label {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 18px; border-top: 1px solid var(--line-soft);
+    font-size: 15px; color: var(--ink-2); cursor: default;
+  }
+  .checklist label:first-child { border-top: 0; }
+  .checklist input { margin-top: 3px; accent-color: var(--brand); }
+
+  .table-wrap {
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r);
+    box-shadow: var(--shadow); overflow: auto;
+  }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 900px;
+  }
+  th {
+    text-align: left; padding: 12px 10px; background: #faf9f7;
+    border-bottom: 1px solid var(--line); font-size: 11px; font-weight: 800;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--mute); white-space: nowrap;
+  }
+  td {
+    padding: 10px; border-bottom: 1px solid var(--line-soft); vertical-align: top;
+    color: var(--ink-2);
+  }
+  tr:last-child td { border-bottom: 0; }
+  td.num { color: var(--mute); font-variant-numeric: tabular-nums; width: 28px; }
+  td.nowrap { white-space: nowrap; }
+  td.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; }
+  .mute { color: var(--mute-2); }
+
+  details summary {
+    cursor: pointer; font-weight: 700; color: var(--brand); font-size: 13px;
+    list-style: none;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "▸ "; color: var(--mute); }
+  details[open] summary::before { content: "▾ "; }
+  .draft {
+    margin-top: 8px; padding: 10px 12px; background: #faf9f7;
+    border: 1px solid var(--line-soft); border-radius: 10px;
+  }
+  .draft p { margin: 0 0 8px; font-size: 13.5px; }
+  .draft p:last-child { margin-bottom: 0; }
+  .warn-note {
+    font-size: 12px !important; font-weight: 750; color: var(--warn-deep);
+    text-transform: uppercase; letter-spacing: .4px;
+  }
+  .quote-src { color: var(--mute) !important; font-style: italic; }
+
+  .links-bar {
+    margin: 16px 0 0; padding: 14px 16px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-sm);
+    font-size: 13.5px; color: var(--mute); display: flex; flex-wrap: wrap; gap: 8px 18px;
+  }
+  .links-bar a { font-weight: 700; }
+
+  .foot {
+    margin-top: 28px; padding: 16px 0 8px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--mute);
+  }
+  .foot b { color: var(--ink-2); }
+
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
+  }
+  .toc a {
+    font-size: 12px; font-weight: 700; color: var(--ink-2);
+    background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 11px; text-decoration: none;
+  }
 </style>
 </head>
 <body>
-<div class="bar">
-  <div class="wrap">
-    <strong>Villa Market shopper app</strong> · Bug follow-up · 1 Sep 2026
-    <div class="nav" style="margin-top:10px">
+
+<header class="appbar">
+  <div class="appbar-inner">
+    <div class="mark">VM</div>
+    <div class="apptitle">
+      <div class="t1">Villa Market shopper app</div>
+      <div class="t2">Bug follow-up · Dev team · facts only · 1 Sep 2026</div>
+    </div>
+    <div class="datechip">1 Sep 2026</div>
+    <div class="nav" style="width:100%;margin-top:4px">
       <a href="index.html">← Pulse home</a>
-      <a class="p" href="#fix-queue">Fix queue (5)</a>
-      <a href="need-reply-2026-09-01.csv">CSV (31 need-reply)</a>
+      <a class="primary" href="#fix-queue">Fix queue (5)</a>
+      <a href="#reply-queue">Reply queue (31)</a>
+      <a href="#checklist">Checklist</a>
       <a href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">GitHub #1–#6</a>
+      <a href="need-reply-2026-09-01.csv">CSV</a>
+      <a href="villa-reviews-2026-09-01.png" target="_blank" rel="noopener">Pulse PNG</a>
     </div>
   </div>
-</div>
-<div class="wrap" id="fix-queue">
-  <p><b>GitHub Fix issues</b>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">#1 Splash hang</a>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">#2 Dev Options</a>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">#3 OTP / login</a>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">#4 Forced store / OOS</a>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">#5 Checkout / cards</a>
-    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">#6 tracking</a>
+</header>
+
+<div class="wrap">
+
+  <div class="links-bar">
+    <span><b>Taskworld</b> · <a href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">app-store-reviews project</a></span>
+    <span><b>Sheet</b> · <a href="https://docs.google.com/spreadsheets/d/1kJU2Yx8Usd4RlQbPcQHIhjN28pXeNTVVbmDfQWqiluM/edit" target="_blank" rel="noopener">reviews spreadsheet</a></span>
+    <span><b>Pulse</b> · <a href="villa-reviews-2026-09-01.png">villa-reviews-2026-09-01.png</a></span>
+    <span><b>GitHub</b> · <a href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">#6 tracking</a> · <a href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">#1</a>–<a href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">#5</a> Fix issues</span><span style="color:var(--mute)"> · issues currently on <code>villa-app-reviews-report</code> (will move to <code>villa-market</code> soon)</span>
+    <span>Assignees empty · nobody Done · Mickey has store accounts · <b>0</b> public store replies logged</span>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="bn">243</div>
+      <div class="kl">Written reviews</div>
+      <div class="ks">iOS 85 · Android 158</div>
+    </div>
+    <div class="kpi">
+      <div class="bn">+0</div>
+      <div class="kl">Vs 31 Aug</div>
+      <div class="ks">No new written today</div>
+    </div>
+    <div class="kpi warn">
+      <div class="bn">31</div>
+      <div class="kl">Need-reply</div>
+      <div class="ks">0 public store replies</div>
+    </div>
+    <div class="kpi warn">
+      <div class="bn">5</div>
+      <div class="kl">Open Fix cards</div>
+      <div class="ks">11 open Reply cards</div>
+    </div>
+  </div>
+
+  <!-- ================= FIX QUEUE ================= -->
+  <div class="shead" id="fix-queue">
+    <h2>Fix queue</h2>
+    <span class="n">5 open · detailed</span>
+  </div>
+  <div class="toc">
+    <a href="#fix-1">1 Splash hang</a>
+    <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">#1</a>
+    <a href="#fix-2">2 Dev Options</a>
+    <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">#2</a>
+    <a href="#fix-3">3 OTP / login</a>
+    <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">#3</a>
+    <a href="#fix-4">4 Forced store / OOS</a>
+    <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">#4</a>
+    <a href="#fix-5">5 Checkout / cards</a>
+    <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">#5</a>
+    <a class="ghlink track" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">#6 tracking</a>
+  </div>
+  
+      <section class="bug" id="fix-1">
+        <div class="bug-head">
+          <div class="idx">1</div>
+          <div class="bug-title-wrap">
+            <h3>Splash / first-screen hang</h3>
+            <div class="bug-sub">
+              <span class="chip chip-both">BOTH</span>
+              <a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">TW 6a8cfe1ac8d3b610a1699db5</a>
+              <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">GitHub #1</a>
+            </div>
+          </div>
+          <span class="status-pill">Open · 0 comments · assignee empty</span>
+        </div>
+        <div class="bug-body">
+          <div class="field">
+            <div class="flab">Symptom</div>
+            <p>App stalls on splash / first screen after install or update; user never reaches home. Reported on Android; card scoped BOTH pending iOS confirmation.</p>
+          </div>
+          <div class="field">
+            <div class="flab">Public examples</div>
+            <div class="exs">
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Thanva Tivawong</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-08-03
+              </div>
+              <blockquote>“โหลดค้างอยู่หน้าแรก ยังเข้าแอพไม่ได้เลยครับ”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Hugh Musbekidding</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">2★</span>
+                <span class="dot">·</span>2026-07-31
+              </div>
+              <blockquote>“Latest release takes forever to open. Stopped using at shopping till - faster to just give my phone number.”</blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <div class="flab">Status</div>
+              <p>Open · 0 comments · assignee empty (Nic named in description only)</p>
+            </div>
+            <div>
+              <div class="flab">Suggested owner <span class="hint">(not assigned)</span></div>
+              <p><span class="owner">Android / iOS</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bug" id="fix-2">
+        <div class="bug-head">
+          <div class="idx">2</div>
+          <div class="bug-title-wrap">
+            <h3>Android Developer Options / allow-list</h3>
+            <div class="bug-sub">
+              <span class="chip chip-plat">ANDROID</span>
+              <a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">TW 6a8cfe1bc8d3b610a1699fc3</a>
+              <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">GitHub #2</a>
+            </div>
+          </div>
+          <span class="status-pill">Open · 0 comments · assignee empty</span>
+        </div>
+        <div class="bug-body">
+          <div class="field">
+            <div class="flab">Symptom</div>
+            <p>App refuses to open when Developer Options (developer mode) is enabled. Blocks legitimate shoppers and developers; Thai bank apps allow the same setting.</p>
+          </div>
+          <div class="field">
+            <div class="flab">Public examples</div>
+            <div class="exs">
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Rickard Modig</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-08-11
+              </div>
+              <blockquote>“app won&#x27;t start unless you disable developer mode. also ridiculous to charge 140 for delivery when most other shops deliver practically for…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Alexey Efimov</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-08-09
+              </div>
+              <blockquote>“The app refuses to open when Developer Mode is enabled. This is an absurd restriction that provides no meaningful security benefit. As a de…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>S De Silva</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-07-19
+              </div>
+              <blockquote>“Not compatible with Android Developer Mode? There are no security issues tied to this mode, all Thai banks support it. If you&#x27;re developer…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Small Traveller</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-08-27
+              </div>
+              <blockquote>“Cannot use, this app is very particular what kind of people and phone can use it. Very special app for special people only.”</blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <div class="flab">Status</div>
+              <p>Open · 0 comments · assignee empty (Nic named in description only)</p>
+            </div>
+            <div>
+              <div class="flab">Suggested owner <span class="hint">(not assigned)</span></div>
+              <p><span class="owner">Android</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bug" id="fix-3">
+        <div class="bug-head">
+          <div class="idx">3</div>
+          <div class="bug-title-wrap">
+            <h3>OTP / login / password reset</h3>
+            <div class="bug-sub">
+              <span class="chip chip-both">BOTH</span>
+              <a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">TW 6a8cfe1cc8d3b610a169a1d1</a>
+              <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">GitHub #3</a>
+            </div>
+          </div>
+          <span class="status-pill">Open · 0 comments · assignee empty</span>
+        </div>
+        <div class="bug-body">
+          <div class="field">
+            <div class="flab">Symptom</div>
+            <p>Verification / OTP codes never arrive (email or phone). Password reset and signup stall; users hit attempt limits with no code delivered.</p>
+          </div>
+          <div class="field">
+            <div class="flab">Public examples</div>
+            <div class="exs">
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Tom Roberts</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-05-17
+              </div>
+              <blockquote>“spent 30 mins shopping and signing up but the app couldn&#x27;t send verification OTOP code to email.lr.phone number. Waste of time😔”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>greendaisy1</strong>
+                <span class="dot">·</span>iOS
+                <span class="dot">·</span>th
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-03-11
+              </div>
+              <blockquote>“It keeps saying that my password is incorrect, so I clicked on Forget Password and entered my phone number and Continue. But nothing showed…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Orientix</strong>
+                <span class="dot">·</span>iOS
+                <span class="dot">·</span>hk
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-01-16
+              </div>
+              <blockquote>“Cannot log in. Apparently new app. They indicate to create new account using old tel number. Does not work. Cannot create. Also tried on we…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Jim Don</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-01-04
+              </div>
+              <blockquote>“Doesn&#x27;t send OTP - wasted my time”</blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <div class="flab">Status</div>
+              <p>Open · 0 comments · assignee empty (Nic named in description only)</p>
+            </div>
+            <div>
+              <div class="flab">Suggested owner <span class="hint">(not assigned)</span></div>
+              <p><span class="owner">Backend / iOS / Android</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bug" id="fix-4">
+        <div class="bug-head">
+          <div class="idx">4</div>
+          <div class="bug-title-wrap">
+            <h3>Forced nearest store + cart wipe + false OOS</h3>
+            <div class="bug-sub">
+              <span class="chip chip-both">BOTH</span>
+              <a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">TW 6a8cfe1ec8d3b610a169a3df</a>
+              <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">GitHub #4</a>
+            </div>
+          </div>
+          <span class="status-pill">Open · 0 comments · assignee empty</span>
+        </div>
+        <div class="bug-body">
+          <div class="field">
+            <div class="flab">Symptom</div>
+            <p>App forces nearest branch at checkout; cart items disappear when stock differs; false out-of-stock across categories (e.g. all juice, fresh goods).</p>
+          </div>
+          <div class="field">
+            <div class="flab">Public examples</div>
+            <div class="exs">
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Henry Cordy</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-02-13
+              </div>
+              <blockquote>“You can&#x27;t order from a store that is further away from you. If you select a store that has the items in stock, then it forces you to pick a…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Stoh Nick</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">2★</span>
+                <span class="dot">·</span>2026-06-30
+              </div>
+              <blockquote>“A waste of my time. It tells me the entire store is out of stock on juice. Any and all kinds of juice are out of stock. that&#x27;s not true.”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Pimnara Y.</strong>
+                <span class="dot">·</span>Android
+                <span class="dot">·</span>th,us
+                <span class="dot">·</span><span class="star">1★</span>
+                <span class="dot">·</span>2026-06-19
+              </div>
+              <blockquote>“สั่งได้แต่ของแห้ง ของสดสั่งไม่ได้ ควรปรับปรุง แอพอื่น เช่น 7-11, Lotus, Tops, Makro สั่งได้ทุกอย่าง ส่งทุกอย่าง แล้วใครจะใช้แอพ Villa”</blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <div class="flab">Status</div>
+              <p>Open · 0 comments · assignee empty (Nic named in description only)</p>
+            </div>
+            <div>
+              <div class="flab">Suggested owner <span class="hint">(not assigned)</span></div>
+              <p><span class="owner">Backend / Android / iOS</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bug" id="fix-5">
+        <div class="bug-head">
+          <div class="idx">5</div>
+          <div class="bug-title-wrap">
+            <h3>Checkout stuck after pay / cards never save</h3>
+            <div class="bug-sub">
+              <span class="chip chip-both">BOTH</span>
+              <a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">TW 6a8cfe1fc8d3b610a169a5ed</a>
+              <a class="ghlink" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">GitHub #5</a>
+            </div>
+          </div>
+          <span class="status-pill">Open · 0 comments · assignee empty</span>
+        </div>
+        <div class="bug-body">
+          <div class="field">
+            <div class="flab">Symptom</div>
+            <p>After payment succeeds, cart still shows items and UI stays on ‘processing payment’. Saved cards never persist. Related: search misses products unless brand is typed (Sorsola).</p>
+          </div>
+          <div class="field">
+            <div class="flab">Public examples</div>
+            <div class="exs">
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Nice Paul</strong>
+                <span class="dot">·</span>iOS
+                <span class="dot">·</span>th
+                <span class="dot">·</span><span class="star">2★</span>
+                <span class="dot">·</span>2026-03-27
+              </div>
+              <blockquote>“After paying for the order, the goods still appear in the cart and the app shows ‘processing payment’ even after payment has gone through.…”</blockquote>
+            </div>
+            <div class="ex">
+              <div class="ex-meta">
+                <strong>Sorsola</strong>
+                <span class="dot">·</span>iOS
+                <span class="dot">·</span>nl
+                <span class="dot">·</span><span class="star">3★</span>
+                <span class="dot">·</span>2026-07-07
+              </div>
+              <blockquote>“Changed my card details months ago. I ask it to save my new card details every single time and it never does. The search isn’t great. Quick…”</blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <div class="flab">Status</div>
+              <p>Open · 0 comments · assignee empty (Nic named in description only)</p>
+            </div>
+            <div>
+              <div class="flab">Suggested owner <span class="hint">(not assigned)</span></div>
+              <p><span class="owner">Payments / Backend / iOS / Android</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <!-- ================= CHECKLIST ================= -->
+  <div class="shead" id="checklist">
+    <h2>Follow-up checklist</h2>
+  </div>
+  <div class="checklist">
+    <label><input type="checkbox" disabled> Assign Android owner for Dev Options + splash</label>
+    <label><input type="checkbox" disabled> Assign payments owner for checkout / card save</label>
+    <label><input type="checkbox" disabled> Assign Mickey (or named CS) for posting confirmed store replies</label>
+    <label><input type="checkbox" disabled> Do not post store replies until Nic confirms drafts</label>
+  </div>
+
+  <!-- ================= REPLY QUEUE ================= -->
+  <div class="shead" id="reply-queue">
+    <h2>Reply queue</h2>
+    <span class="n hot">31 open · who to chase</span>
+  </div>
+  <p style="margin:0 0 10px;font-size:14px;color:var(--mute)">
+    All 31 from need-reply JSON. Taskworld Reply card shown when known (11 mapped). Suggested replies in collapsible details — drafts only.
   </p>
-  <div class="card" id="fix-1"><b>1. Splash / first-screen hang</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">GitHub #1</a><br>App stalls on splash after install/update.</div>
-  <div class="card" id="fix-2"><b>2. Android Developer Options / allow-list</b> · ANDROID · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">GitHub #2</a><br>App refuses to open when Developer Options is enabled.</div>
-  <div class="card" id="fix-3"><b>3. OTP / login / password reset</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">GitHub #3</a><br>OTP codes never arrive; signup/reset stall.</div>
-  <div class="card" id="fix-4"><b>4. Forced nearest store + cart wipe + false OOS</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">GitHub #4</a><br>Forces nearest branch; cart wipe; false out-of-stock.</div>
-  <div class="card" id="fix-5"><b>5. Checkout stuck after pay / cards never save</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">GitHub #5</a><br>Processing payment never clears; cards do not persist.</div>
-  <p style="color:var(--mute);font-size:14px">31 need-reply · 0 public store replies · do not post until Nic confirms · <a href="need-reply-2026-09-01.csv">CSV</a> · <a href="index.html">Pulse</a></p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Author</th>
+          <th>Platform</th>
+          <th>Country</th>
+          <th>Stars</th>
+          <th>Date</th>
+          <th>Issue</th>
+          <th>TW Reply card</th>
+          <th>Suggested reply</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="num">1</td>
+          <td><strong>Small Traveller</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-27</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a91933ad8ee7df95c8a654e</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app wouldn&#x27;t open on your phone. We currently block some Android setups. That&#x27;s on us, not your device. Flagged for the app team.</p>
+                <p class="quote-src">Review: “Cannot use, this app is very particular what kind of people and phone can use it. Very special app for special people only.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">2</td>
+          <td><strong>Hans Rume</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-24</td>
+          <td><span class="chip chip-tag ">other</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the prices felt wrong. App prices should match the store. If an item was higher, send us the name and we&#x27;ll check — we don&#x27;t add a hidden markup.</p>
+                <p class="quote-src">Review: “Prices for the largest donkeys. All products are several times more expensive than in other stores. Avoid this scaaaaaam.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">3</td>
+          <td><strong>Rickard Modig</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-11</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe20c8d3b610a169a7fb</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app blocks phones with Developer Options on. That&#x27;s a real limit on our side, not a security win — Thai bank apps allow it. We&#x27;ve sent it to the Android team.</p>
+                <p class="quote-src">Review: “app won&#x27;t start unless you disable developer mode. also ridiculous to charge 140 for delivery when most other shops deliver practically for free. i could even schedule grab pickup myself for half that price.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td><strong>Alexey Efimov</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-09</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe21c8d3b610a169aa09</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app blocks phones with Developer Options on. That&#x27;s a real limit on our side, not a security win — Thai bank apps allow it. We&#x27;ve sent it to the Android team.</p>
+                <p class="quote-src">Review: “The app refuses to open when Developer Mode is enabled. This is an absurd restriction that provides no meaningful security benefit. As a developer, I need Developer Mode enabled, and I should not have to disable it just…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">5</td>
+          <td><strong>RifRifRif8</strong></td>
+          <td>iOS</td>
+          <td>ae</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-08</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a91933bd8ee7df95c8a675c</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app is this broken — search, buttons, and updates failing is on us. We&#x27;ve passed your note to the app team.</p>
+                <p class="quote-src">Review: “Despite the Villa market store and products are at top level, but their app is just pure disaster, i have never experienced anything worse as this app. It’s getting worse with every update, you can’t select properly, ca…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">6</td>
+          <td><strong>Thanva Tivawong</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-08-03</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe23c8d3b610a169ac17</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>ขออภัยที่แอปค้างหน้าแรก เข้าใช้งานไม่ได้ เราได้รับเรื่องแล้วและส่งต่อให้ทีมแอป</p>
+                <p class="quote-src">Review: “โหลดค้างอยู่หน้าแรก ยังเข้าแอพไม่ได้เลยครับ”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">7</td>
+          <td><strong>Hugh Musbekidding</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">2★</td>
+          <td class="nowrap">2026-07-31</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “Latest release takes forever to open. Stopped using at shopping till - faster to just give my phone number.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">8</td>
+          <td><strong>S De Silva</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-07-19</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe24c8d3b610a169ae25</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app blocks phones with Developer Options on. That&#x27;s a real limit on our side, not a security win — Thai bank apps allow it. We&#x27;ve sent it to the Android team.</p>
+                <p class="quote-src">Review: “Not compatible with Android Developer Mode? There are no security issues tied to this mode, all Thai banks support it. If you&#x27;re developer says otherwise, get another developer.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">9</td>
+          <td><strong>Sorsola</strong></td>
+          <td>iOS</td>
+          <td>nl</td>
+          <td class="star">3★</td>
+          <td class="nowrap">2026-07-07</td>
+          <td><span class="chip chip-tag ">checkout</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a91933cd8ee7df95c8a696a</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry your card never saves and search misses products unless you type the brand. Both are known issues. We&#x27;ve sent them to the app team — no fake timeline.</p>
+                <p class="quote-src">Review: “Changed my card details months ago. I ask it to save my new card details every single time and it never does. The search isn’t great. Quick example: I want to buy Mainland Tasty Cheese. I type in “cheese” and it doesn’t…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">10</td>
+          <td><strong>Stoh Nick</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">2★</td>
+          <td class="nowrap">2026-06-30</td>
+          <td><span class="chip chip-tag ">stock</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app showed items as out of stock or forced a store change. We&#x27;ve passed this to the app and inventory teams.</p>
+                <p class="quote-src">Review: “A waste of my time. It tells me the entire store is out of stock on juice. Any and all kinds of juice are out of stock. that&#x27;s not true.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">11</td>
+          <td><strong>dhdkdkskkskskslala</strong></td>
+          <td>iOS</td>
+          <td>th</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-06-29</td>
+          <td><span class="chip chip-tag ">delivery</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe25c8d3b610a169b033</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>ขออภัยที่จัดส่งด่วนมาช้ากว่าที่สัญญา เราจะส่งต่อให้ทีมจัดส่ง</p>
+                <p class="quote-src">Review: “สั่งไปหลายครั้งทำแบบเดิมทุกครั้งไม่คิดจะปรับปรับหน่อยหรอคะหน้าร้านบริการก้แย่เดลิเวอรี่ก้แย่ปรับปรุงแล้วคัดพนักงานหน่อยค่ะแล้วจัดส่งด่วนนี้มีไว้ทำไมคะด่วนกี่โมงบอกภายใน1ชมแต่คือกว่าจะได้2ชมกว่าถ้าแค่คิดว่าตัวเองมีของหลา…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">12</td>
+          <td><strong>Pimnara Y.</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-06-19</td>
+          <td><span class="chip chip-tag ">stock</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe27c8d3b610a169b241</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>ขออภัยที่สั่งของสดไม่ได้ เราทราบว่าแอปจำกัดบางหมวด กำลังส่งต่อให้ทีมแอปกับทีมสต็อก</p>
+                <p class="quote-src">Review: “สั่งได้แต่ของแห้ง ของสดสั่งไม่ได้ ควรปรับปรุง แอพอื่น เช่น 7-11, Lotus, Tops, Makro สั่งได้ทุกอย่าง ส่งทุกอย่าง แล้วใครจะใช้แอพ Villa”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">13</td>
+          <td><strong>Will Rodgers</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-05-22</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “apps broken”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">14</td>
+          <td><strong>Tom Roberts</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-05-17</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the OTP or login flow failed. We know codes sometimes never arrive. Passed to the app team — no fake promise on timing.</p>
+                <p class="quote-src">Review: “spent 30 mins shopping and signing up but the app couldn&#x27;t send verification OTOP code to email.lr.phone number. Waste of time😔”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">15</td>
+          <td><strong>cacknise</strong></td>
+          <td>iOS</td>
+          <td>sg</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-05-15</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “Latest update does not work at all!”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">16</td>
+          <td><strong>Expat20266</strong></td>
+          <td>iOS</td>
+          <td>us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-04-19</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “The app constantly stops working. Don&#x27;t have this problem with Gourmet Market!”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">17</td>
+          <td><strong>Dakota</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-04-09</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “very low quality and performance app. everything else on my phone works perfectly fine but this app. don&#x27;t download it!”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">18</td>
+          <td><strong>Nice Paul</strong></td>
+          <td>iOS</td>
+          <td>th</td>
+          <td class="star">2★</td>
+          <td class="nowrap">2026-03-27</td>
+          <td><span class="chip chip-tag ">checkout</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe28c8d3b610a169b44f</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the cart still shows paid items and stays on processing payment. That&#x27;s a real checkout bug. We&#x27;ve sent it to the app/payments team.</p>
+                <p class="quote-src">Review: “After paying for the order, the goods still appear in the cart and the app shows ‘processing payment’ even after payment has gone through. I’ve brought this to the attention of their customer service maybe a dozen times…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">19</td>
+          <td><strong>Farang working in Thailand</strong></td>
+          <td>iOS</td>
+          <td>th</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-03-20</td>
+          <td><span class="chip chip-tag ">checkout</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry delivery was late, expensive, or untracked. We&#x27;ve sent your note to the delivery team.</p>
+                <p class="quote-src">Review: “Living in Bangkok and everyone told me to shop at Villa for western groceries. I thought, ok cool. Let’s try ordering delivery. Download the app. Doesn’t load. Open close open close. Finally opens. Select the location c…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">20</td>
+          <td><strong>John Foderaro</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">3★</td>
+          <td class="nowrap">2026-03-18</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the OTP or login flow failed. We know codes sometimes never arrive. Passed to the app team — no fake promise on timing.</p>
+                <p class="quote-src">Review: “otp working again. I still would like fingerprint authorization rather than pin authorization”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">21</td>
+          <td><strong>Stephan Menzel</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-03-17</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app blocks phones with Developer Options on. That&#x27;s a real limit on our side, not a security win — Thai bank apps allow it. We&#x27;ve sent it to the Android team.</p>
+                <p class="quote-src">Review: “Firstly, the app forced me to update to the latest version, only to show a message &quot;this application is incompatible with developer mode...&quot;. My phone is my property and I decide whether or not I need the developer mode…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">22</td>
+          <td><strong>Kittipoj T.</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-03-15</td>
+          <td><span class="chip chip-tag ">stock</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app forces the nearest store and can wipe the cart or show false out-of-stock. That&#x27;s a real bug. We&#x27;ve sent it to the app team.</p>
+                <p class="quote-src">Review: “can&#x27;t select the brach that want order and when select the brach that the app force, the item is out of stock. So the villa supermarket can&#x27;t get the order”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">23</td>
+          <td><strong>Adrian Lines</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-03-15</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app blocks phones with Developer Options on. That&#x27;s a real limit on our side, not a security win — Thai bank apps allow it. We&#x27;ve sent it to the Android team.</p>
+                <p class="quote-src">Review: “Being told that I can&#x27;t have Developer Mode activated, what has this got to do with Villa Market? Uninstalled”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">24</td>
+          <td><strong>greendaisy1</strong></td>
+          <td>iOS</td>
+          <td>th</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-03-11</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the OTP or login flow failed. We know codes sometimes never arrive. Passed to the app team — no fake promise on timing.</p>
+                <p class="quote-src">Review: “It keeps saying that my password is incorrect, so I clicked on Forget Password and entered my phone number and Continue. But nothing showed up, except when I clicked Continue three times, it said that I have exceeded th…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">25</td>
+          <td><strong>Henry Cordy</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-02-13</td>
+          <td><span class="chip chip-tag ">stock</span></td>
+          <td class="mono"><a class="tasklink" href="https://us.taskworld.com/villamarket/#/projects/6a8cfe16c8d3b610a1699893" target="_blank" rel="noopener">6a8cfe29c8d3b610a169b65d</a></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the app forces the nearest store and can wipe the cart or show false out-of-stock. That&#x27;s a real bug. We&#x27;ve sent it to the app team.</p>
+                <p class="quote-src">Review: “You can&#x27;t order from a store that is further away from you. If you select a store that has the items in stock, then it forces you to pick a different store at checkout, and you lose the items you wanted if they are out…”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">26</td>
+          <td><strong>Christina Jigström</strong></td>
+          <td>Android</td>
+          <td>se</td>
+          <td class="star">2★</td>
+          <td class="nowrap">2026-02-11</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “går inte öppna”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">27</td>
+          <td><strong>Илья Автокожа</strong></td>
+          <td>Android</td>
+          <td>ru</td>
+          <td class="star">2★</td>
+          <td class="nowrap">2026-01-21</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “no open ,don&#x27;t work! only white scrine!!!! Huawei mate x6”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">28</td>
+          <td><strong>AzmieLife</strong></td>
+          <td>Android</td>
+          <td>th</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-01-17</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>ขออภัยสำหรับประสบการณ์ครั้งนี้ เราได้รับข้อความแล้วและจะส่งต่อให้ทีมที่เกี่ยวข้อง</p>
+                <p class="quote-src">Review: “ติดต่อเจ้าหน้าที่ไม่ได้ ลงทะเบียนไม่ได้ สรุป ถอนการติดตั้ง”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">29</td>
+          <td><strong>Orientix</strong></td>
+          <td>iOS</td>
+          <td>hk</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-01-16</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the OTP or login flow failed. We know codes sometimes never arrive. Passed to the app team — no fake promise on timing.</p>
+                <p class="quote-src">Review: “Cannot log in. Apparently new app. They indicate to create new account using old tel number. Does not work. Cannot create. Also tried on website. Only many error messages. Sent email, they don’t reply.”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">30</td>
+          <td><strong>Paid member</strong></td>
+          <td>iOS</td>
+          <td>us</td>
+          <td class="star">3★</td>
+          <td class="nowrap">2026-01-10</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry this went badly. We&#x27;ve read the review and sent it to the team that owns the issue. No public reply until we can be specific.</p>
+                <p class="quote-src">Review: “Cannot complete wallet setup because app freezes and crashes”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <td class="num">31</td>
+          <td><strong>Jim Don</strong></td>
+          <td>Android</td>
+          <td>th,us</td>
+          <td class="star">1★</td>
+          <td class="nowrap">2026-01-04</td>
+          <td><span class="chip chip-tag t-bug">bug</span></td>
+          <td class="mono"><span class="mute">—</span></td>
+          <td>
+            <details>
+              <summary>Suggested reply</summary>
+              <div class="draft">
+                <p class="warn-note">Draft only — do not post until Nic confirms.</p>
+                <p>Sorry the OTP or login flow failed. We know codes sometimes never arrive. Passed to the app team — no fake promise on timing.</p>
+                <p class="quote-src">Review: “Doesn&#x27;t send OTP - wasted my time”</p>
+              </div>
+            </details>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="foot">
+    <b>Villa Market shopper app</b> · Bug follow-up for related parties · 1 Sep 2026 (Asia/Bangkok) ·
+    Pulse home <a href="index.html">dashboard/index.html</a> ·
+    CSV <a href="need-reply-2026-09-01.csv">need-reply-2026-09-01.csv</a>
+  </div>
 </div>
 </body>
 </html>
