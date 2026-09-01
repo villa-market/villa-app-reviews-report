@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Villa Market — Bug follow-up · 1 Sep 2026</title>
+<style>
+  :root { --brand:#2c2a74; --ink:#14151a; --mute:#6f727a; --line:#e3e1dc; --paper:#fff; --canvas:#f1f0ec; --warn:#a4501f; }
+  body{margin:0;font-family:system-ui,sans-serif;background:var(--canvas);color:var(--ink);line-height:1.45}
+  a{color:var(--brand)}
+  .bar{background:var(--paper);border-top:6px solid var(--brand);border-bottom:1px solid var(--line);padding:16px}
+  .wrap{max-width:900px;margin:0 auto;padding:16px}
+  .gh{display:inline-block;background:#2c2a74;color:#fff;text-decoration:none;border-radius:8px;padding:6px 10px;font:750 12px ui-monospace,monospace;margin:4px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+  .nav a{display:inline-block;margin:4px 6px 4px 0;padding:8px 12px;border-radius:10px;background:#f6f5fa;border:1px solid #d6d4e3;text-decoration:none;font-weight:700;font-size:13px;color:var(--ink)}
+  .nav a.p{background:var(--brand);color:#fff;border-color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="wrap">
+    <strong>Villa Market shopper app</strong> · Bug follow-up · 1 Sep 2026
+    <div class="nav" style="margin-top:10px">
+      <a href="index.html">← Pulse home</a>
+      <a class="p" href="#fix-queue">Fix queue (5)</a>
+      <a href="need-reply-2026-09-01.csv">CSV (31 need-reply)</a>
+      <a href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">GitHub #1–#6</a>
+    </div>
+  </div>
+</div>
+<div class="wrap" id="fix-queue">
+  <p><b>GitHub Fix issues</b>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">#1 Splash hang</a>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">#2 Dev Options</a>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">#3 OTP / login</a>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">#4 Forced store / OOS</a>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">#5 Checkout / cards</a>
+    <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">#6 tracking</a>
+  </p>
+  <div class="card" id="fix-1"><b>1. Splash / first-screen hang</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">GitHub #1</a><br>App stalls on splash after install/update.</div>
+  <div class="card" id="fix-2"><b>2. Android Developer Options / allow-list</b> · ANDROID · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">GitHub #2</a><br>App refuses to open when Developer Options is enabled.</div>
+  <div class="card" id="fix-3"><b>3. OTP / login / password reset</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">GitHub #3</a><br>OTP codes never arrive; signup/reset stall.</div>
+  <div class="card" id="fix-4"><b>4. Forced nearest store + cart wipe + false OOS</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">GitHub #4</a><br>Forces nearest branch; cart wipe; false out-of-stock.</div>
+  <div class="card" id="fix-5"><b>5. Checkout stuck after pay / cards never save</b> · BOTH · <a class="gh" href="https://github.com/thanakijwanavit/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">GitHub #5</a><br>Processing payment never clears; cards do not persist.</div>
+  <p style="color:var(--mute);font-size:14px">31 need-reply · 0 public store replies · do not post until Nic confirms · <a href="need-reply-2026-09-01.csv">CSV</a> · <a href="index.html">Pulse</a></p>
+</div>
+</body>
+</html>
