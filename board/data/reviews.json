@@ -5,7 +5,7 @@
     "written_ios": 85,
     "written_android": 158,
     "delta_vs_prev": 0,
-    "prev_label": "2026-09-01",
+    "prev_label": "vs 1 Sep",
     "need_reply": 31,
     "answered_public": 0,
     "store_replies": 0,
@@ -105,7 +105,8 @@
         "platform": "android",
         "count": 158
       }
-    ]
+    ],
+    "fix_tagged": 30
   },
   "fix": [
     {
