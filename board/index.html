@@ -3,135 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Villa Market — Review board</title>
+<title>Villa Market — Shopper-app review board</title>
+<meta name="description" content="Villa Market shopper-app store reviews for the dev team: KPIs, fix queue and need-reply triage.">
 <link rel="stylesheet" href="board.css">
 </head>
 <body>
-<a class="skip" href="#reviews">Skip to reviews</a>
+<a class="skip" href="#panel-all">Skip to reviews</a>
 
 <header class="appbar">
   <div class="appbar-inner">
     <div class="brand">
       <div class="mark" aria-hidden="true">VM</div>
       <div class="titles">
-        <h1>Villa Market review board</h1>
-        <p class="sub">Shopper-app store reviews · Dev team</p>
+        <h1>Shopper-app review board</h1>
+        <p class="sub">Villa Market · DEV triage</p>
       </div>
     </div>
     <div class="appbar-meta">
-      <span class="datechip" id="generatedChip">—</span>
+      <span class="datechip" id="generatedChip">Loading</span>
       <a class="btn ghost" href="../dashboard/">Pulse</a>
       <a class="btn ghost" href="../dashboard/bugs.html">Bug follow-up</a>
-      <a class="btn" href="data/need-reply.csv">Need-reply CSV</a>
+      <a class="btn" href="../data/reviews.json">reviews.json</a>
     </div>
   </div>
 </header>
 
-<div class="sticky-filters" id="filters">
-  <div class="filters-inner">
-    <div class="filter-group" role="group" aria-label="Platform">
-      <button type="button" class="seg active" data-platform="all">All</button>
-      <button type="button" class="seg" data-platform="ios">iOS</button>
-      <button type="button" class="seg" data-platform="android">Android</button>
-    </div>
-
-    <div class="filter-group stars" role="group" aria-label="Stars">
-      <button type="button" class="chip active" data-stars="all">All ★</button>
-      <button type="button" class="chip" data-stars="1">1★</button>
-      <button type="button" class="chip" data-stars="2">2★</button>
-      <button type="button" class="chip" data-stars="3">3★</button>
-      <button type="button" class="chip" data-stars="4">4★</button>
-      <button type="button" class="chip" data-stars="5">5★</button>
-    </div>
-
-    <label class="toggle">
-      <input type="checkbox" id="needReplyOnly">
-      <span>Need reply</span>
-    </label>
-
-    <label class="search">
-      <span class="sr">Search</span>
-      <input type="search" id="search" placeholder="Search author, title, body…" autocomplete="off">
-    </label>
+<nav class="tabbar" id="tabbar">
+  <div class="tabbar-inner" role="tablist" aria-label="Board sections">
+    <button class="tab" role="tab" id="tab-overview"  aria-controls="panel-overview"  aria-selected="true"  data-panel="overview">Overview</button>
+    <button class="tab" role="tab" id="tab-all"       aria-controls="panel-all"       aria-selected="false" data-panel="all">All reviews <span class="n" id="nAll">–</span></button>
+    <button class="tab" role="tab" id="tab-fix"       aria-controls="panel-fix"       aria-selected="false" data-panel="fix">Fix queue <span class="n" id="nFix">–</span></button>
+    <button class="tab" role="tab" id="tab-needreply" aria-controls="panel-needreply" aria-selected="false" data-panel="needreply">Need-reply <span class="n" id="nNeed">–</span></button>
   </div>
-  <div class="countries" id="countryChips" aria-label="Countries"></div>
-</div>
+</nav>
+
+<section class="filters" id="filters" hidden aria-label="Filters">
+  <div class="filters-inner">
+    <div class="fhead">
+      <label class="search">
+        <span class="sr">Search reviews</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="2"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="fSearch" placeholder="Search author, title or review text…" autocomplete="off">
+      </label>
+      <button type="button" class="fbtn" id="filterToggle" aria-expanded="false" aria-controls="fGroups">Filters<span class="fcount" id="filterCount" hidden>0</span></button>
+    </div>
+    <div class="fgroups" id="fGroups">
+    <div class="frow" role="group" aria-label="Platform">
+      <span class="flabel">Platform</span>
+      <div class="frow" id="fPlatform"></div>
+    </div>
+    <div class="frow" role="group" aria-label="Country">
+      <span class="flabel">Country</span>
+      <div class="frow" id="fCountry"></div>
+    </div>
+    <div class="frow" role="group" aria-label="Stars">
+      <span class="flabel">Stars</span>
+      <div class="frow" id="fStars"></div>
+    </div>
+    <div class="frow" role="group" aria-label="Status">
+      <span class="flabel">Status</span>
+      <div class="frow" id="fStatus"></div>
+    </div>
+    </div>
+    <div class="fbar-foot">
+      <span class="resultcount" id="resultCount">—</span>
+      <button type="button" class="linkbtn" id="clearFilters" hidden>Clear filters</button>
+    </div>
+  </div>
+</section>
 
 <main class="page">
-  <section class="kpis" id="kpis" aria-label="Summary"></section>
 
-  <section class="fix-queue" aria-labelledby="fixHeading">
-    <div class="shead">
-      <h2 id="fixHeading">Fix queue</h2>
-      <span class="n">6 GitHub issues</span>
+  <!-- ============================ OVERVIEW -->
+  <section class="panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="shead"><h2>Store totals</h2><span class="n" id="prevLabel">—</span></div>
+    <div class="kpis" id="kpiStrip"></div>
+
+    <div class="shead"><h2>Platform split</h2></div>
+    <div class="kpi wide" style="grid-column:auto">
+      <div class="split">
+        <div>
+          <div class="k">iOS · App Store</div>
+          <div class="v" id="kIos">–</div>
+        </div>
+        <div class="splitline" aria-hidden="true"></div>
+        <div>
+          <div class="k">Android · Play</div>
+          <div class="v" id="kAndroid">–</div>
+        </div>
+      </div>
+      <div class="bar" id="platBar" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
+      <div class="legend"><span><i class="a"></i> iOS <b id="pctIos"></b></span><span><i class="b"></i> Android <b id="pctAndroid"></b></span></div>
     </div>
-    <div class="fix-grid">
-      <a class="fix-card" href="https://github.com/villa-market/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">
-        <span class="idx">1</span>
-        <span class="ft">Splash / first-screen hang</span>
-        <span class="plat both">Both</span>
-      </a>
-      <a class="fix-card" href="https://github.com/villa-market/villa-app-reviews-report/issues/2" target="_blank" rel="noopener">
-        <span class="idx">2</span>
-        <span class="ft">Developer Options / allow-list</span>
-        <span class="plat and">Android</span>
-      </a>
-      <a class="fix-card" href="https://github.com/villa-market/villa-app-reviews-report/issues/3" target="_blank" rel="noopener">
-        <span class="idx">3</span>
-        <span class="ft">OTP / login / password reset</span>
-        <span class="plat both">Both</span>
-      </a>
-      <a class="fix-card" href="https://github.com/villa-market/villa-app-reviews-report/issues/4" target="_blank" rel="noopener">
-        <span class="idx">4</span>
-        <span class="ft">Forced store / cart wipe / false OOS</span>
-        <span class="plat both">Both</span>
-      </a>
-      <a class="fix-card" href="https://github.com/villa-market/villa-app-reviews-report/issues/5" target="_blank" rel="noopener">
-        <span class="idx">5</span>
-        <span class="ft">Checkout stuck after pay / card save</span>
-        <span class="plat both">Both</span>
-      </a>
-      <a class="fix-card track" href="https://github.com/villa-market/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">
-        <span class="idx">6</span>
-        <span class="ft">Tracking / meta issue</span>
-        <span class="plat track">Track</span>
-      </a>
-    </div>
+
+    <div class="shead"><h2>Fix summary</h2><span class="n" id="fixSummaryN">—</span><a class="more" href="#" data-goto="fix">Open fix queue ›</a></div>
+    <div class="fixlist" id="fixSummary"></div>
+
+    <div class="shead"><h2>Top need-reply</h2><span class="n hot" id="needPreviewN">—</span><a class="more" href="#" data-goto="needreply">See all ›</a></div>
+    <div class="cards" id="needPreview"></div>
+
+    <p class="note" id="metaNote"></p>
   </section>
 
-  <section class="reviews-section" id="reviews" aria-labelledby="reviewsHeading">
-    <div class="shead">
-      <h2 id="reviewsHeading">Reviews</h2>
-      <span class="n" id="resultCount">0</span>
-    </div>
-    <div id="status" class="status" hidden></div>
-
-    <!-- Desktop table -->
-    <div class="table-wrap desktop-only">
-      <table>
-        <thead>
-          <tr>
-            <th>★</th>
-            <th>Author</th>
-            <th>Platform</th>
-            <th>Countries</th>
-            <th>Date</th>
-            <th>Title / body</th>
-            <th>Reply</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-      </table>
-    </div>
-
-    <!-- Mobile cards -->
-    <div class="card-list mobile-only" id="cardList"></div>
+  <!-- ============================ ALL REVIEWS -->
+  <section class="panel" id="panel-all" role="tabpanel" aria-labelledby="tab-all" hidden>
+    <div class="shead"><h2>All reviews in sample</h2><span class="n" id="allHeadN">—</span></div>
+    <div id="allList"></div>
   </section>
+
+  <!-- ============================ FIX QUEUE -->
+  <section class="panel" id="panel-fix" role="tabpanel" aria-labelledby="tab-fix" hidden>
+    <div class="shead"><h2>Fix queue</h2><span class="n" id="fixHeadN">—</span></div>
+    <div class="fixlist" id="fixList"></div>
+    <p class="note">Counts show how many reviews in this sample map to each issue, matched on review text and issue tag. Issue numbers link to <code>villa-market/villa-app-reviews-report</code> on GitHub.</p>
+  </section>
+
+  <!-- ============================ NEED REPLY -->
+  <section class="panel" id="panel-needreply" role="tabpanel" aria-labelledby="tab-needreply" hidden>
+    <div class="shead"><h2>Need reply</h2><span class="n hot" id="needHeadN">—</span></div>
+    <div id="needList"></div>
+  </section>
+
+  <p class="foot">
+    Data: <a href="../data/reviews.json">data/reviews.json</a> ·
+    <a href="../dashboard/">Engineering pulse</a> ·
+    <a href="../dashboard/bugs.html">Bug follow-up</a><br>
+    Counts are read straight from the JSON — nothing on this page is estimated.
+  </p>
 </main>
-
-<footer class="foot">
-  <p><b>Villa Market</b> shopper-app reviews · board loads <code>data/reviews.json</code> · GitHub fix queue <a href="https://github.com/villa-market/villa-app-reviews-report/issues/1" target="_blank" rel="noopener">#1</a>–<a href="https://github.com/villa-market/villa-app-reviews-report/issues/6" target="_blank" rel="noopener">#6</a></p>
-</footer>
 
 <script src="board.js"></script>
 </body>
