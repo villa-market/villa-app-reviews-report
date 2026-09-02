@@ -1,0 +1,4593 @@
+{
+  "meta": {
+    "generated_at": "2026-09-02T08:59:38+07:00",
+    "source_file": "villa-app-reviews-2026-09-02.json",
+    "need_reply_source": "villa-app-reviews-need-reply-2026-09-02.json",
+    "totals": {
+      "written": 243,
+      "ios": 85,
+      "android": 158,
+      "need_reply": 31,
+      "with_reply": 0
+    },
+    "delta_vs_prev": {
+      "written": 0,
+      "ios": 0,
+      "android": 0,
+      "baseline": "2026-09-01",
+      "new_count": 0,
+      "missing_count": 0
+    },
+    "countries": [
+      {
+        "code": "th",
+        "count": 170
+      },
+      {
+        "code": "us",
+        "count": 111
+      },
+      {
+        "code": "de",
+        "count": 13
+      },
+      {
+        "code": "fr",
+        "count": 7
+      },
+      {
+        "code": "gb",
+        "count": 6
+      },
+      {
+        "code": "ru",
+        "count": 6
+      },
+      {
+        "code": "jp",
+        "count": 5
+      },
+      {
+        "code": "ch",
+        "count": 3
+      },
+      {
+        "code": "nl",
+        "count": 3
+      },
+      {
+        "code": "se",
+        "count": 3
+      },
+      {
+        "code": "au",
+        "count": 2
+      },
+      {
+        "code": "ca",
+        "count": 2
+      },
+      {
+        "code": "hk",
+        "count": 2
+      },
+      {
+        "code": "no",
+        "count": 2
+      },
+      {
+        "code": "ae",
+        "count": 1
+      },
+      {
+        "code": "at",
+        "count": 1
+      },
+      {
+        "code": "il",
+        "count": 1
+      },
+      {
+        "code": "in",
+        "count": 1
+      },
+      {
+        "code": "it",
+        "count": 1
+      },
+      {
+        "code": "kr",
+        "count": 1
+      },
+      {
+        "code": "sg",
+        "count": 1
+      }
+    ],
+    "platforms": [
+      {
+        "platform": "ios",
+        "count": 85
+      },
+      {
+        "platform": "android",
+        "count": 158
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "id": "14113620616",
+      "author": "Ying Phuket Customer",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 3,
+      "date": "2026-05-27T23:37:27Z",
+      "title": "Always Smooth and Easy",
+      "body": "Used this app for 2 years already and order almost every week. The service has always been smooth and reliable. The staff are very polite and friendly, and the service quality has been consistently good 😊",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.964",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "11006667595",
+      "author": "Phasakan",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2024-03-04T09:41:05Z",
+      "title": "Late delivery and no one is answering the chat",
+      "body": "Been ordering and shopping at villa for years. I ordered express delivering today and it’s been 2 hours, and i haven't got my items. The manager called to tell me that the order is late due to there is another express order… ( is this supposed to be my problem? ) i asked for help on the chat section on the app and there are no respond. My family is waiting for the food. This is such a bad experience. Will consider shopping else where.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.627",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10785893955",
+      "author": "aey_jc",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2024-01-05T07:37:55Z",
+      "title": "Good experience",
+      "body": "This app revolutionizes online shopping! It's incredibly user-friendly, offering a wide range of products. What's impressive is its lightning-fast delivery, always ensuring items are in stock. For stress-free shopping, this app is a must-have!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.597",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10753591878",
+      "author": "fhu tree sv by i",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-12-28T06:15:03Z",
+      "title": "It’s just sad",
+      "body": "It’s so many bags and stupid things. I tried to order few times and never had patients to finish the order.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.597",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13891312626",
+      "author": "Nice Paul",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2026-03-27T04:08:17Z",
+      "title": "App really needs work",
+      "body": "After paying for the order, the goods still appear in the cart and the app shows ‘processing payment’ even after payment has gone through. I’ve brought this to the attention of their customer service maybe a dozen times but it never gets fixed. Extremely disappointing.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.927",
+      "source": "amp-api th",
+      "need_reply": true
+    },
+    {
+      "id": "14033418867",
+      "author": "U.lizgin1995",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-05-06T05:58:06Z",
+      "title": "Good",
+      "body": "I love this app, thank you",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.948",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13969508414",
+      "author": "doddi bladez",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-04-18T02:42:06Z",
+      "title": "App works great!",
+      "body": "I get my groceries delivered right to my front door.  Staff are friendly and reply quickly within the app. No complaints here.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.946",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13519723868",
+      "author": "Eliseo.B",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2025-12-16T11:13:19Z",
+      "title": "Great Store. Bad app",
+      "body": "Product stock at VM is usually excellent. Also the delivery service, so far, is really good. But the app is old. Bad UX (not easy to use, bad filters, slow). But the most negative thing is after check out: it was my bank message to inform me about the payment successful",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.881",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13866633341",
+      "author": "Farang working in Thailand",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-03-20T03:08:29Z",
+      "title": "Absolutely horrible",
+      "body": "Living in Bangkok and everyone told me to shop at Villa for western groceries. I thought, ok cool. Let’s try ordering delivery. Download the app. Doesn’t load. Open close open close. Finally opens. Select the location closest to me. Fill my cart. Asks to verify phone number. Put it in. Get messaged code. Doesn’t load. Try email. Doesn’t load. After multiple tries, finally works. Tries to check out, and then says wrong location even though this is the location closest to me. I switch the options available. Empties my cart! What a huge waste of time. I’ll try in person maybe in the future, but not any time soon.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.923",
+      "source": "amp-api th",
+      "need_reply": true
+    },
+    {
+      "id": "13836518270",
+      "author": "greendaisy1",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-03-11T11:29:52Z",
+      "title": "Can’t reset password",
+      "body": "It keeps saying that my password is incorrect, so I clicked on Forget Password and entered my phone number and Continue. But nothing showed up, except when I clicked Continue three times, it said that I have exceeded the attempt limit. Useless and non-functional app. There is no customer service on LINE. Phone support also hangs up as soon as I say Hello. Very bad service overall.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.919",
+      "source": "amp-api th",
+      "need_reply": true
+    },
+    {
+      "id": "12003530091",
+      "author": "kingq44",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2024-11-29T02:32:59Z",
+      "title": "Map",
+      "body": "Map function is still very poor for deliveries.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.735",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13239634455",
+      "author": "laellaeva",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-10-08T12:09:33Z",
+      "title": "Why show OUT OF STOCK items first?????",
+      "body": "What kind of logic is this?!?!!!?!!? What on earth?!?? OBVIOUSLY I CHOOSE TO SEE CHOCOLATE - I DONT WANT TO LOOK AT 29 OUT OF STOCK OPTIONS FIRST!??  Who designed this app??? Fire them and make sure they never get a job again anywhere else.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.840",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13229508221",
+      "author": "MooglyMoo",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-10-06T02:25:46Z",
+      "title": "Don’t waste your time",
+      "body": "App doesn’t work, has never worked, despite repeated attempts at deleting and reinstalling. Stuck on the home page and will not move past it. Clearly Villa Market cannot find a competent app developer (or website developer for that matter). Will stick with Paleo Robbie who have a great app (and website).",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.836",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "13163780903",
+      "author": "trueamperror",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-09-21T01:42:51Z",
+      "title": "Doesn’t work",
+      "body": "Fix the app! It won’t start. Just jams on the start page.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.829",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "11993782962",
+      "author": "Sarah Linx",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2024-11-26T12:37:39Z",
+      "title": "Useless.",
+      "body": "Keeps telling me I’m in Phuket (I ordered once from there) - and won’t let me select any of the other stores. Just says we have noticed you’re in Phuket, change your location. \n\nI am In Bangkok. \n\nEven redownloaded the app. Please sort it out Villa.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.735",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "11761461760",
+      "author": "voranart",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2024-09-25T02:55:44Z",
+      "title": "Some wrong I got kick out",
+      "body": "Been long time strong customer and used to order for delivery but got kick out of villa market app showing my wrong address so can you do something to have me as your customer online?\n\nVoranart sirisubsoontorn\n\nLine : vorasiri",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.704",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10655733320",
+      "author": "darkmasterxxx",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-12-04T08:32:36Z",
+      "title": "Useless App",
+      "body": "Completely useless\n- Apple Login go to another website not Villamarket\n- Already member got suggestions to sign up\n- When sign up got suggestions to sign in\n- All item All categories is out of stock\n- browse item by side slide with infinite scroll is useless \n\nYou should take taxi to branch and return home must be faster than find item on this app. \n\nJust a (bad)showcase app not shopping groceries app",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.580",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10651315791",
+      "author": "Petebc80m",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-12-03T02:34:28Z",
+      "title": "Not functioning",
+      "body": "It wont go past verifying mobile number even after being verified",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.580",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10637520393",
+      "author": "Sapnavikashw",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-11-29T08:42:44Z",
+      "title": "No option for cash on delivery",
+      "body": "I’m a foreigner and I have problem to pay online. I’m giving 1 star because their are no option for cash on delivery",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.580",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10573751914",
+      "author": "Anthonyyod",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-11-11T11:32:11Z",
+      "title": "ทำkyc ไม่ได้",
+      "body": "ระบบห่วย ทำ KYC ก็ไม่ได้",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.576",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9614678218",
+      "author": "Ensim",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 3,
+      "date": "2023-02-13T20:31:33Z",
+      "title": "Social login has issue",
+      "body": "If you have used  Facebook to login after that there is no way to use create regular login. I tried to reset password but never got OTP in email or via phone. This makes it very had to use in multiple device because not all devices have same Facebook logged in. This is a huge problem that needs to be fixed.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.437",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10112130228",
+      "author": "Maamelon",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-07-07T02:28:07Z",
+      "title": "Cannot log in",
+      "body": "Cannot log in. Tried to resend OTP many many times and the system does not work.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.540",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10028893019",
+      "author": "riverblue2702",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-06-13T10:22:53Z",
+      "title": "Forgot passworrd is not working",
+      "body": "It says the password sent and I even resent it. Nothing received. Useless app.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.532",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "10025644472",
+      "author": "Phil tge Sprout",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2023-06-12T11:29:23Z",
+      "title": "Great shop and staff but the app s…",
+      "body": "Great staff, wonderful products but the app needs extended testing before deploying as the OTP does not work and I can’t accept to loose the benefit of my previous purchases… a customer since 1995 ☺️",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.532",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9998484795",
+      "author": "BiancaYork",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-06-04T14:05:35Z",
+      "title": "Useless app that needs ton of work",
+      "body": "Redeemed my points just to find out you can only use them for ONLINE purchase!!!!! Where does it say that redeeming your points in app will only allow you to use them online????? Then saw in a teeny tiny font scan to redeem points in-store!!!!! Then why the hell would you put redemption values in the app????? Looks like they only did it so people will get confused and waste their points! And I NEVER shop online anyway….. so just wasted my points! Fantastic…… after the stupid update the app became ridiculous…..",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.528",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9880231735",
+      "author": "jann jabr",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-05-01T07:34:57Z",
+      "title": "Don't use this",
+      "body": "I tried using this app to order. They even have the option for 1 hour express delivery. An hour and a half later nothing was delivered. Then they notified that the items are available. Had to cancel in the end.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.518",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9730365357",
+      "author": "sparpacello666",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-03-19T15:42:45Z",
+      "title": "App OK - Service BAD",
+      "body": "The app is kind of OK. Slowly at times and not really up2date in usability. But whats worst is the service. If you order fresh products 70% of tine you will have issues.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.498",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9666485261",
+      "author": "En Rośe",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-03-01T03:36:42Z",
+      "title": "แอปแย่ควรปรับปรุง",
+      "body": "ลืมรหัส ให้ส่ง otp มาทางมือถือ ผ่านหปครึ่งชั่วโมง ยังไม่ได้รับ ทำซ้ำ2รอบ เลยให้ส่งทางอีเมล์ก็ไม่ได้รับ แย่มาก",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.471",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9640406389",
+      "author": "zhjznzjxkdks",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-02-21T14:05:01Z",
+      "title": "defect",
+      "body": "คะแนนไม่ลิ้ง OTP ไม่เข้า ควรจ้างเดฟใหม่นะครับ ฃ",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.454",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9531609591",
+      "author": "นศภ.",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 3,
+      "date": "2023-01-21T15:05:45Z",
+      "title": "ข้อมูลไม่ตรง",
+      "body": "บางข้อมูสินค้าบางรายการไม่ตรงปก ตรวจสอบข้อมูลก่อนำสนอด้วย",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.405",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9472852132",
+      "author": "TaranAndy",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-01-05T06:16:51Z",
+      "title": "Shop online and wallet",
+      "body": "Nice app. I have problem about scan abit.\nComfortable. Delivery nationwide is perfect.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.381",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9476342512",
+      "author": "thvdjhdfkncshhvj",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-01-06T04:35:51Z",
+      "title": "Not usable",
+      "body": "Can not login",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.381",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9461722930",
+      "author": "Terence F. Witt",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2023-01-02T09:41:44Z",
+      "title": "Does not open",
+      "body": "All I see is a blank screen.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.375",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "9446256761",
+      "author": "tommi9",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2022-12-29T04:38:55Z",
+      "title": "app crashes",
+      "body": "useless",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.368",
+      "source": "amp-api th",
+      "need_reply": false
+    },
+    {
+      "id": "14242701494",
+      "author": "dhdkdkskkskskslala",
+      "platform": "ios",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-06-29T22:38:11Z",
+      "title": "👎🏿",
+      "body": "สั่งไปหลายครั้งทำแบบเดิมทุกครั้งไม่คิดจะปรับปรับหน่อยหรอคะหน้าร้านบริการก้แย่เดลิเวอรี่ก้แย่ปรับปรุงแล้วคัดพนักงานหน่อยค่ะแล้วจัดส่งด่วนนี้มีไว้ทำไมคะด่วนกี่โมงบอกภายใน1ชมแต่คือกว่าจะได้2ชมกว่าถ้าแค่คิดว่าตัวเองมีของหลายอย่างที่ที่อื่นไม่ทีงั้นอยู่กับที่ไปเถอะค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.979",
+      "source": "amp-api th",
+      "need_reply": true
+    },
+    {
+      "id": "13616278897",
+      "author": "Paid member",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 3,
+      "date": "2026-01-10T08:50:52Z",
+      "title": "Wallet crashes",
+      "body": "Cannot complete wallet setup because app freezes and crashes",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.896",
+      "source": "amp-api us",
+      "need_reply": true
+    },
+    {
+      "id": "13412052138",
+      "author": "sdmiller57",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 5,
+      "date": "2025-11-18T09:03:29Z",
+      "title": "Groceries",
+      "body": "I’ve been using this app for going on 4 years. I don’t really have any issues with the app with one exception. The “search” feature needs work. A number of items I can find in the store are nowhere to be found in the app. This is almost 2026 and the app’s search feature should be way more affective.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.863",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "12952945492",
+      "author": "Rin G.",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-07-30T02:48:20Z",
+      "title": "No option for hour delivery",
+      "body": "I was so excited to use the app, but there is not an option for hour delivery on my app. Also, it looks like it may charge to deliver; I don’t think that’s right if you spend over a certain amount at the store because a lot of things there are expensive since they’re imported.. Also, my app says delivery between 2 to 5 days.. I don’t see set times. Only on pick up in the store.. App definitely needs some changes and updates to fix these bugs..",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.814",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "12396107910",
+      "author": "Bunsopha",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-03-08T11:56:29Z",
+      "title": "Refund process is bad -ended up no refund",
+      "body": "Some items were not available in the store, but they can be purchased through the app. Every time you need to check if all items received match the order, if not, or if some missing,  you have to contact the store for a refund “manually”. If you forget to do this, they don't care, they will take your money. \n\nI believe this is poor service and an incomplete process in advance.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.757",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "11172016153",
+      "author": "VM Customer",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-04-18T06:05:14Z",
+      "title": "Didn’t deliver and kept my money",
+      "body": "I placed an on line order and the app took my money.  Then one day later the store called and said they were out of stock and would refund my money.  But 9 days later I have not received my refund and they keep giving me the run around.   Also why would they take my money if they were out of stock?     Very bad app and stock management.   Never use again.  I hope one day to see my money.  It’s my money not the stores.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.646",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "14317804857",
+      "author": "Qotfu",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 2,
+      "date": "2026-07-18T10:34:02Z",
+      "title": "Horrible app",
+      "body": "They make you jump through hoops, and it’s as difficult as possible just to sign up. App is hard to navigate. The app has a three star rating and that is way too generous. \nThey may have good food but they make it harder to find than is actually worth it. \nJust go in person or go to a better store.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.993",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "11993932148",
+      "author": "User application 1",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-11-26T13:26:56Z",
+      "title": "Ok",
+      "body": "Compare to other shops apps from other retailers in Thailand this one is one of best. Support is working in chat. Have issues but all was resolved. Delivery with good packaging. Don’t have much complaints",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.735",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "14312636176",
+      "author": "llohbe",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 5,
+      "date": "2026-07-17T03:09:57Z",
+      "title": "To be here or not to be here",
+      "body": "Almost to be found",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.993",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "13035268631",
+      "author": "Pfsellers",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 2,
+      "date": "2025-08-19T13:07:53Z",
+      "title": "SMS verificaiton broken",
+      "body": "Unable to place orders as I am unable to verify with SMS. I contacted support about the issue and they stopped responding :/",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.818",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "13973084752",
+      "author": "Expat20266",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-04-19T01:53:27Z",
+      "title": "Trash",
+      "body": "The app constantly stops working. Don't have this problem with Gourmet Market!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.946",
+      "source": "amp-api us",
+      "need_reply": true
+    },
+    {
+      "id": "12346873397",
+      "author": "baldguy96",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 3,
+      "date": "2025-02-23T19:57:46Z",
+      "title": "The good and the bad",
+      "body": "I’ve been shopping at Villa for 4 years now. I’m an American and buy a lot of their American products. They don’t have enough American products.and when they do they don’t buy the original version. No actual American cheese just cheap plastic cheeses FOOD. No original Welch’s grape juice…watered down Welch’s Grape DRINK. They need to educate their American food buyers.  Then they haves things ie  Clausons pickles or Pilsbury biscuits and all of a sudden for no reason … they won’t have it anymore. Many other problems.I’ve suggested about 12 products to start carrying and they haven’t bought one.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.757",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "9530977259",
+      "author": "Jayandbee",
+      "platform": "ios",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-01-21T11:40:26Z",
+      "title": "Not working",
+      "body": "Not able to reset password even when I put new sms code, keep getting message verification code expired. Email the issue and no one ever care to respond.  What a crappy app.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.405",
+      "source": "amp-api us",
+      "need_reply": false
+    },
+    {
+      "id": "11968386319",
+      "author": "MuchDutch",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 4,
+      "date": "2024-11-19T17:23:44Z",
+      "title": "App now very good",
+      "body": "Since upgrades and improvements over the last year or 2 this app is now very good.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.732",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "11024366412",
+      "author": "elbowipod",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 5,
+      "date": "2024-03-09T07:16:20Z",
+      "title": "Refunds given",
+      "body": "If the item you ordered is not in stock they do give you an option to refund on your card or auto shop credit voucher, you need to answer your phone! Local Lassal branch are great, love the 1 hour delivery service! App easy to use!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.632",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "13541774317",
+      "author": "Up North in Thailand",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 1,
+      "date": "2025-12-22T10:06:04Z",
+      "title": "A continuing failure",
+      "body": "It just gets worse \nOut of stock now becoming more frequent \nApp crashes frequently and despite an update 8 hours ago will not work\nCourier service is either very good or like the last three day totally useless as new staff dont know where to go and give up with the quickest of excuses as to why yet again they fail to ring you. Failed to find you and give up and go home.\nIf I ran a business in such a poor way I would not last a week.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.884",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "9695049986",
+      "author": "Hvfhni",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 1,
+      "date": "2023-03-09T12:41:45Z",
+      "title": "No refund for missing items",
+      "body": "Placed an order but a few items were missing. Charged full amount when I purchased the order and no refund given. Receipt in the bag showed that items were missing and that the order total was different to actual total.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.477",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "13575059026",
+      "author": "Khlongtoei",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 1,
+      "date": "2025-12-31T01:36:32Z",
+      "title": "App Frozen",
+      "body": "Has failed to work for at least the last 2 weeks despite 2 apparent updates.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.896",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "10241421617",
+      "author": "PGSan",
+      "platform": "ios",
+      "countries": [
+        "gb"
+      ],
+      "stars": 1,
+      "date": "2023-08-10T13:10:09Z",
+      "title": "Does not work at all",
+      "body": "All I can get is the opening splash screen",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.552",
+      "source": "amp-api gb",
+      "need_reply": false
+    },
+    {
+      "id": "11342911072",
+      "author": "Jack66125",
+      "platform": "ios",
+      "countries": [
+        "jp"
+      ],
+      "stars": 1,
+      "date": "2024-06-04T16:06:08Z",
+      "title": "Can not use",
+      "body": "This app is unusable cause it doesn’t switch from the open page.  Improvements needed.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api jp",
+      "need_reply": false
+    },
+    {
+      "id": "11364713137",
+      "author": "Amazon plaza",
+      "platform": "ios",
+      "countries": [
+        "jp"
+      ],
+      "stars": 1,
+      "date": "2024-06-10T10:31:32Z",
+      "title": "Can’t move from top page",
+      "body": "Can’t move from top page.\nPlease update asap",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api jp",
+      "need_reply": false
+    },
+    {
+      "id": "11401399206",
+      "author": "Hek38",
+      "platform": "ios",
+      "countries": [
+        "jp"
+      ],
+      "stars": 1,
+      "date": "2024-06-20T04:19:52Z",
+      "title": "It doesn't work",
+      "body": "起動画面から動きません。",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.665",
+      "source": "amp-api jp",
+      "need_reply": false
+    },
+    {
+      "id": "13695240506",
+      "author": "さならたはdamj",
+      "platform": "ios",
+      "countries": [
+        "jp"
+      ],
+      "stars": 1,
+      "date": "2026-01-31T03:07:35Z",
+      "title": "can't use",
+      "body": "can't use",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.905",
+      "source": "amp-api jp",
+      "need_reply": false
+    },
+    {
+      "id": "11398220234",
+      "author": "Fgjhgh",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 1,
+      "date": "2024-06-19T09:05:29Z",
+      "title": "Your app",
+      "body": "Your app still don't work!! Don't you check your updates?? Unbelieveable.....",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.665",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "11334854026",
+      "author": "24453290",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 1,
+      "date": "2024-06-02T12:49:03Z",
+      "title": "Frustration",
+      "body": "Worst App I’ve ever had to use in my life. I have to delete the app and reinstall it daily because it shows me only a „Villa Market“ picture if I don’t do it . I like the shop and their products but the app is wasting my time and it’s not reflecting the quality of products and service they offer in their stores. Very sad and very frustrating…",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "11373502468",
+      "author": "KRA-S",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 1,
+      "date": "2024-06-12T16:48:57Z",
+      "title": "Totally agree to the text ‚Frustration’!!!!!! The app iONE bug😤😤😤 not good….",
+      "body": "It does not run fluently. Does not open Software is not professional, all complicated erc",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "13839177942",
+      "author": "TobiBKK",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 5,
+      "date": "2026-03-12T05:09:56Z",
+      "title": "I like this App",
+      "body": "very convenient to search and oder",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.921",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "10483633887",
+      "author": "Jens1309",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 1,
+      "date": "2023-10-17T04:41:04Z",
+      "title": "Rubbish app",
+      "body": "Villa app never works when I want to redeem my points",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.572",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "11317997829",
+      "author": "PeanutButterAddict2024",
+      "platform": "ios",
+      "countries": [
+        "de"
+      ],
+      "stars": 4,
+      "date": "2024-05-28T23:05:08Z",
+      "title": "Bugfix version 1.0.659",
+      "body": "Despite bugfixing and update the app doesn‘t work properly: it still stalls at the start screen. Only deinstalling and reinstalling will help. But dare you close the app completely, then you will have to repeat the deinstalling/reinstalling cycle again. Please fix that!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api de",
+      "need_reply": false
+    },
+    {
+      "id": "9472258106",
+      "author": "gilou",
+      "platform": "ios",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2023-01-05T02:16:02Z",
+      "title": "New but forgot to connect with previous records",
+      "body": "Impossible to collect previous point as the previous app is out of order Any solution didn’t work",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.381",
+      "source": "amp-api fr",
+      "need_reply": false
+    },
+    {
+      "id": "11416951359",
+      "author": "Nomad on the Go",
+      "platform": "ios",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2024-06-24T08:47:59Z",
+      "title": "Impossible to open the App",
+      "body": "I have to  erase and reinstall the App whenever I want to use it! I asked the online support and they answered that on their phone it works well…. Not very useful .",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.666",
+      "source": "amp-api fr",
+      "need_reply": false
+    },
+    {
+      "id": "11014371613",
+      "author": "tckyfdvklbv",
+      "platform": "ios",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2024-03-06T12:35:38Z",
+      "title": "Cannot even open the app",
+      "body": "It’s been 4 days that I deleted and reinstalled the app because I cannot open it",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.628",
+      "source": "amp-api fr",
+      "need_reply": false
+    },
+    {
+      "id": "13515879419",
+      "author": "Flowerlybmb",
+      "platform": "ios",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2025-12-15T10:00:35Z",
+      "title": "New update doesn’t work",
+      "body": "Everytime there is an update, the app does work. 15/12/25: I can’t manage to order.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.881",
+      "source": "amp-api fr",
+      "need_reply": false
+    },
+    {
+      "id": "11383004603",
+      "author": "by rüdi switzerland",
+      "platform": "ios",
+      "countries": [
+        "ch"
+      ],
+      "stars": 1,
+      "date": "2024-06-15T06:27:09Z",
+      "title": "will this app ever work again??? very annoying",
+      "body": "check that app PLEASE",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.659",
+      "source": "amp-api ch",
+      "need_reply": false
+    },
+    {
+      "id": "11017005454",
+      "author": "Rheintalervin HH",
+      "platform": "ios",
+      "countries": [
+        "ch"
+      ],
+      "stars": 1,
+      "date": "2024-03-07T05:50:11Z",
+      "title": "App lässt sich nicht öffnen",
+      "body": "Seit kurzem kann ich die App nicht mehr öffnen. Habe sie jetzt gelöscht. Was pasdiert mit meinen Points?",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.628",
+      "source": "amp-api ch",
+      "need_reply": false
+    },
+    {
+      "id": "10993866314",
+      "author": "Cindy.00",
+      "platform": "ios",
+      "countries": [
+        "ch"
+      ],
+      "stars": 1,
+      "date": "2024-02-29T22:48:48Z",
+      "title": "App lässt sich nicht mehr öffnen",
+      "body": "Problem, die App lässt sich seit 29.2.2024 nicht mehr öffnen. Was kann ich machen !!??Ich bin enttäuscht.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.627",
+      "source": "amp-api ch",
+      "need_reply": false
+    },
+    {
+      "id": "11315171370",
+      "author": "tourist#1",
+      "platform": "ios",
+      "countries": [
+        "ru"
+      ],
+      "stars": 5,
+      "date": "2024-05-28T04:42:10Z",
+      "title": "Спасибо",
+      "body": "!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.656",
+      "source": "amp-api ru",
+      "need_reply": false
+    },
+    {
+      "id": "11438959720",
+      "author": "Xem_Xolms",
+      "platform": "ios",
+      "countries": [
+        "ru"
+      ],
+      "stars": 1,
+      "date": "2024-06-30T03:10:20Z",
+      "title": "Нельзя сделать заказ",
+      "body": "Выдает ошибку без расшифровки.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.666",
+      "source": "amp-api ru",
+      "need_reply": false
+    },
+    {
+      "id": "12324552688",
+      "author": "Nairacram",
+      "platform": "ios",
+      "countries": [
+        "au"
+      ],
+      "stars": 5,
+      "date": "2025-02-18T06:07:50Z",
+      "title": "It’s a good app",
+      "body": "Works really well for me and the 1hr delivery has been very useful",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.757",
+      "source": "amp-api au",
+      "need_reply": false
+    },
+    {
+      "id": "13515219072",
+      "author": "3708BJ",
+      "platform": "ios",
+      "countries": [
+        "au"
+      ],
+      "stars": 5,
+      "date": "2025-12-15T04:37:41Z",
+      "title": "Great",
+      "body": "Great app. Villa Market delivers on time every time. Well structured business",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.881",
+      "source": "amp-api au",
+      "need_reply": false
+    },
+    {
+      "id": "12142310781",
+      "author": "Palli64",
+      "platform": "ios",
+      "countries": [
+        "ca"
+      ],
+      "stars": 5,
+      "date": "2025-01-04T03:53:12Z",
+      "title": "Works well",
+      "body": "I value using this app for groceries. Good communication, great delivery.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.743",
+      "source": "amp-api ca",
+      "need_reply": false
+    },
+    {
+      "id": "10777269659",
+      "author": "dchristinap",
+      "platform": "ios",
+      "countries": [
+        "ca"
+      ],
+      "stars": 1,
+      "date": "2024-01-03T03:50:38Z",
+      "title": "Doesn’t work",
+      "body": "App continually freezes, won’t go past the opening screen.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.597",
+      "source": "amp-api ca",
+      "need_reply": false
+    },
+    {
+      "id": "14065578902",
+      "author": "cacknise",
+      "platform": "ios",
+      "countries": [
+        "sg"
+      ],
+      "stars": 1,
+      "date": "2026-05-15T02:05:32Z",
+      "title": "Broken",
+      "body": "Latest update does not work at all!",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.948",
+      "source": "amp-api sg",
+      "need_reply": true
+    },
+    {
+      "id": "13639577312",
+      "author": "Orientix",
+      "platform": "ios",
+      "countries": [
+        "hk"
+      ],
+      "stars": 1,
+      "date": "2026-01-16T11:57:03Z",
+      "title": "Cannot log in",
+      "body": "Cannot log in. Apparently new app. They indicate to create new account using old tel number. Does not work. Cannot create. Also tried on website. Only many error messages. Sent email, they don’t reply.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.898",
+      "source": "amp-api hk",
+      "need_reply": true
+    },
+    {
+      "id": "13431404894",
+      "author": "JaneLam117",
+      "platform": "ios",
+      "countries": [
+        "hk"
+      ],
+      "stars": 1,
+      "date": "2025-11-23T12:01:52Z",
+      "title": "Update to lose the account and details",
+      "body": "After updating the app, I was logged out. Then I tried to login again, never succeeded. Then the points are all gone.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.863",
+      "source": "amp-api hk",
+      "need_reply": false
+    },
+    {
+      "id": "11003459747",
+      "author": "Robbiekhun",
+      "platform": "ios",
+      "countries": [
+        "it"
+      ],
+      "stars": 1,
+      "date": "2024-03-03T12:17:11Z",
+      "title": "Not anymore working",
+      "body": "Since last update I cannot use the app to set orders , please fix it",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.627",
+      "source": "amp-api it",
+      "need_reply": false
+    },
+    {
+      "id": "11824423518",
+      "author": "Vedant chawla",
+      "platform": "ios",
+      "countries": [
+        "in"
+      ],
+      "stars": 1,
+      "date": "2024-10-12T06:58:30Z",
+      "title": "Super expensive",
+      "body": "3 times more expensive than the regular market\n\nIt’s not available in chiang mai \nWhy you’re promoting your app in chiang mai \n\nYour marketing team needs to learn more \nIt’s waste of advertising cost\nZero sales",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.715",
+      "source": "amp-api in",
+      "need_reply": false
+    },
+    {
+      "id": "14402328144",
+      "author": "RifRifRif8",
+      "platform": "ios",
+      "countries": [
+        "ae"
+      ],
+      "stars": 1,
+      "date": "2026-08-08T10:35:01Z",
+      "title": "Worst application I ever experienced",
+      "body": "Despite the Villa market store and products are at top level, but their app is just pure disaster, i have never experienced anything worse as this app. It’s getting worse with every update, you can’t select properly, can’t search properly, you can’t press the buttons, it all does not work. Fire you dev team completely and get a new one, download some other apps to see how things should and can work. It’s 2026, it’s unacceptable to have app like this, it’s just kills all your user experience. I am super loyal to Villa Market but I am about to quit for ever.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.998",
+      "source": "amp-api ae",
+      "need_reply": true
+    },
+    {
+      "id": "13731431315",
+      "author": "lake 4",
+      "platform": "ios",
+      "countries": [
+        "at"
+      ],
+      "stars": 1,
+      "date": "2026-02-09T18:54:07Z",
+      "title": "Schlechter geht’s nicht",
+      "body": "Unfassbar wie schlecht und unzuverlässig diese App ist. Mehrere Versuche die Fehler zu melden waren erfolglos. Niemals ein Feedback bekommen.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.907",
+      "source": "amp-api at",
+      "need_reply": false
+    },
+    {
+      "id": "14272285896",
+      "author": "Sorsola",
+      "platform": "ios",
+      "countries": [
+        "nl"
+      ],
+      "stars": 3,
+      "date": "2026-07-07T02:13:35Z",
+      "title": "Needs improving",
+      "body": "Changed my card details months ago. I ask it to save my new card details every single time and it never does.\n\nThe search isn’t great.  Quick example: I want to buy Mainland Tasty Cheese. I type in “cheese” and it doesn’t appear in the results. I have to type in “Mainland” for it to show up.\n\nSloanes Cumberland sausage?\n\nWon’t find it in the search if you look for “sausages”… only if you type in “Cumberland”.\n\nThe software testing needs improvement.",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.987",
+      "source": "amp-api nl",
+      "need_reply": true
+    },
+    {
+      "id": "12357493523",
+      "author": "tenthumbs",
+      "platform": "ios",
+      "countries": [
+        "no"
+      ],
+      "stars": 1,
+      "date": "2025-02-26T15:15:35Z",
+      "title": "Amnesiac",
+      "body": "The app can’t keep my shopping cart between sessions.  What a clownshow",
+      "has_developer_reply": false,
+      "reply_status": "unknown",
+      "store": "iOS",
+      "app_version": "1.0.757",
+      "source": "amp-api no",
+      "need_reply": false
+    },
+    {
+      "id": "b5ddca46-080e-47a5-b9d7-45e99f062829",
+      "author": "Small Traveller",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-08-27T09:55:49Z",
+      "title": "",
+      "body": "Cannot use, this app is very particular what kind of people and phone can use it. Very special app for special people only.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.1006",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "25b59108-ecba-45fa-9662-56e43930b479",
+      "author": "Hans Rume",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-08-24T12:10:58Z",
+      "title": "",
+      "body": "Prices for the largest donkeys. All products are several times more expensive than in other stores. Avoid this scaaaaaam.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.1003",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "12517ab9-6fa1-4be2-8695-8edb063d5c4e",
+      "author": "Rickard Modig",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-08-11T10:08:33Z",
+      "title": "",
+      "body": "app won't start unless you disable developer mode. also ridiculous to charge 140 for delivery when most other shops deliver practically for free. i could even schedule grab pickup myself for half that price.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.1002",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "ea5a3153-5ebb-4576-a6d3-4ad5fb01ef22",
+      "author": "Alexey Efimov",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-08-09T14:34:22Z",
+      "title": "",
+      "body": "The app refuses to open when Developer Mode is enabled. This is an absurd restriction that provides no meaningful security benefit. As a developer, I need Developer Mode enabled, and I should not have to disable it just to use a grocery store app. Terrible design decision.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.994",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "e9c3f2f4-ed65-4991-bd54-7eeee313610a",
+      "author": "Thanva Tivawong",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-08-03T05:32:38Z",
+      "title": "",
+      "body": "โหลดค้างอยู่หน้าแรก ยังเข้าแอพไม่ได้เลยครับ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.998",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "da158192-3c33-4ed2-bb77-2f4e6592d801",
+      "author": "Hugh Musbekidding",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2026-07-31T03:39:12Z",
+      "title": "",
+      "body": "Latest release takes forever to open. Stopped using at shopping till - faster to just give my phone number.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.994",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "7eb6508b-4432-4f8a-a3a8-05c4d2f8a5c6",
+      "author": "S De Silva",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-07-19T04:11:30Z",
+      "title": "",
+      "body": "Not compatible with Android Developer Mode? There are no security issues tied to this mode, all Thai banks support it. If you're developer says otherwise, get another developer.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.991",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "454e2623-6629-4e02-bff7-e38adceb4c0d",
+      "author": "Ian Rose",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2026-07-14T18:11:56Z",
+      "title": "",
+      "body": "excellent seller of imported & local goods. Delivery time lets them down a little compared to some other merchants however",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.991",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "e46f7e3e-3cd6-474a-bc00-dc44bee5c37a",
+      "author": "Charlie b",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2026-07-08T09:43:27Z",
+      "title": "",
+      "body": "be nice to see detail of items in cart",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "46f91476-3517-4ef8-8781-de4ae0ae895b",
+      "author": "Stoh Nick",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2026-06-30T02:47:07Z",
+      "title": "",
+      "body": "A waste of my time. It tells me the entire store is out of stock on juice. Any and all kinds of juice are out of stock. that's not true.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.979",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "f217b018-0ca0-4a7c-9dd7-2732611fdabb",
+      "author": "Pimnara Y.",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-06-19T05:39:35Z",
+      "title": "",
+      "body": "สั่งได้แต่ของแห้ง ของสดสั่งไม่ได้ ควรปรับปรุง แอพอื่น เช่น 7-11, Lotus, Tops, Makro สั่งได้ทุกอย่าง ส่งทุกอย่าง แล้วใครจะใช้แอพ Villa",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.967",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "7c8989ad-3391-491a-8c83-87c8c311bf8c",
+      "author": "Prempavee Kitt",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2026-06-09T10:33:04Z",
+      "title": "",
+      "body": "Good service, professional and dedicated",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "bfdd841a-51b5-4412-9d46-e145547fa7c8",
+      "author": "John Mo",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2026-05-26T14:04:20Z",
+      "title": "",
+      "body": "I like this application why are you changing itI I like this version Don't change it please",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.948",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "5883a6ee-30a3-4e60-807f-adcff02d60ed",
+      "author": "Will Rodgers",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-05-22T03:59:08Z",
+      "title": "",
+      "body": "apps broken",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.948",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "fb10c4cb-a831-4b43-9026-9f1bb0e310d4",
+      "author": "Tom Roberts",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-05-17T04:53:11Z",
+      "title": "",
+      "body": "spent 30 mins shopping and signing up but the app couldn't send verification OTOP code to email.lr.phone number. Waste of time😔",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.948",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "111f417a-ef53-4d66-9e6c-3a6bcef7e8b3",
+      "author": "Dakota",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-04-09T21:50:45Z",
+      "title": "",
+      "body": "very low quality and performance app. everything else on my phone works perfectly fine but this app. don't download it!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.935",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "794d2d7b-669f-4491-af96-0d3dad3fcf1f",
+      "author": "John Foderaro",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 3,
+      "date": "2026-03-18T00:01:38Z",
+      "title": "",
+      "body": "otp working again. I still would like fingerprint authorization rather than pin authorization",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.923",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "35bbd617-b496-4a5d-b735-c3f14e5c434c",
+      "author": "Stephan Menzel",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-03-17T23:35:51Z",
+      "title": "",
+      "body": "Firstly, the app forced me to update to the latest version, only to show a message \"this application is incompatible with developer mode...\". My phone is my property and I decide whether or not I need the developer mode. Villa app uninstalled!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.919",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "66c7a00f-b83f-47c8-aea3-bedd4135bef6",
+      "author": "Kittipoj T.",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-03-15T09:18:58Z",
+      "title": "",
+      "body": "can't select the brach that want order and when select the brach that the app force, the item is out of stock. So the villa supermarket can't get the order",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.919",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "aa429c98-8c1d-4520-89b0-158f7fa4eaa6",
+      "author": "Adrian Lines",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-03-15T08:08:41Z",
+      "title": "",
+      "body": "Being told that I can't have Developer Mode activated, what has this got to do with Villa Market? Uninstalled",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "089f1f79-f992-4c2e-98ab-733c257c5d95",
+      "author": "Sunny",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-03-01T06:39:36Z",
+      "title": "",
+      "body": "poor app with poor chat service. dunt underdtand client issue, font waste time on this.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.917",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "1dbabfc5-6735-4261-9d83-f4a66b5c1784",
+      "author": "Henry Cordy",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-02-13T12:56:52Z",
+      "title": "",
+      "body": "You can't order from a store that is further away from you. If you select a store that has the items in stock, then it forces you to pick a different store at checkout, and you lose the items you wanted if they are out of stock. They also have order via Line option. But this doesn't show stock from the chosen Line Villa location. I've been chatting to an amazing staff member at K Village who is trying to help me order, but it took an hour. And then the main item I wanted was out of stock...",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.905",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "cd394ff9-e3d3-4865-a7f8-758a5799bb44",
+      "author": "JK Foster",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2026-01-22T03:46:24Z",
+      "title": "",
+      "body": "Functional and efficient 🙂👍",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.896",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "2aa77774-2285-40e0-afc4-739e3d0900a4",
+      "author": "Jim Don",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-01-04T09:41:32Z",
+      "title": "",
+      "body": "Doesn't send OTP - wasted my time",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "32554d77-acc9-4ba3-8829-ab0bf476fc29",
+      "author": "Dan The Man",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-12-06T09:13:32Z",
+      "title": "",
+      "body": "Not usable with developer options turned on, wants me to turn it off before use? No thanks, I'll just shop elsewhere",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.874",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ce84ecca-a598-4d65-a7ec-f6b72ad7f96e",
+      "author": "Jean Sanuk",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-12-03T16:42:01Z",
+      "title": "",
+      "body": "Error message when installing (on a new modern Android phone)",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "cb6e3bd3-1ba8-4162-a230-75644f8958f5",
+      "author": "cap (BIG C)",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-25T03:36:48Z",
+      "title": "",
+      "body": "Dreadful sets up doesn't allow confirm or password reset and no help feature. Absolutely rubbish experience",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.867",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "62f91258-c228-4c42-90be-ac7ec96e2256",
+      "author": "Julie Dupuis",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-20T14:39:16Z",
+      "title": "",
+      "body": "Doesnt work with developer options on. Impossible to use",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "5810988b-a8bb-4acb-bd69-aa5a4c259a22",
+      "author": "Egor Shustov",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-19T23:13:04Z",
+      "title": "",
+      "body": "Your app completely blocks devices with Developer Options enabled. I am an Android developer and this restriction is unnecessary and misconfigured — Developer Mode itself is not a security risk. Only ADB debugging should be checked. Please fix this — the app is unusable for many legitimate users.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.860",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "62784918-ed64-4924-beff-efba51e9f94e",
+      "author": "Maria Doldán",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-14T13:41:11Z",
+      "title": "",
+      "body": "Since the last update, I can't open it and use it.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.860",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "dd0c918a-fdcb-4033-8ae1-9bf477dd9a68",
+      "author": "Mr Emigrant",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-14T03:46:22Z",
+      "title": "",
+      "body": "Couldn't open! The first and only thing showed was \"Disable developer option\"! You gonna decide what I have in my phone, then I don't need your app!! At least they're not charing and collecting data with third parties. Anyhow, Not recommended!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "4000f2ad-fb15-4b12-be2e-e525946abfdf",
+      "author": "xl xl",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-06T09:13:11Z",
+      "title": "",
+      "body": "first application I see that complain about enabled developer mode. why?",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "39a4c755-bd42-4423-973c-4962554e1771",
+      "author": "Olga Vshivtseva",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-06T08:11:29Z",
+      "title": "",
+      "body": "\"This application is incompatible with Developer Mode- enabled devices. For security and optimal functionality, please disable Developer Mode before use.\" This is quite a disruptive for a developer life requirement. I'd better order my spinach somewhere else.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.860",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "70c9c303-948c-4539-b6a6-b64ea34730da",
+      "author": "dev0 bp",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-11-05T03:59:03Z",
+      "title": "",
+      "body": "Update: now the app tries to force me to turn off dev mode. The app is decent however certain items are only available in store. Why can't I order the pistachio butter, but I can order the peanut butter? Also items that are marked as out of stock that are actually in stock. Next I have multiple villa markets around but it only lets me order from the nearest one. So now I use the app for the close one and line for others. (I prefer the website actually but it has the same limitation as the app.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.860",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ba1c1101-2922-425d-a2b2-e1eed6001420",
+      "author": "Oscar Risueño",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-31T09:59:25Z",
+      "title": "",
+      "body": "Doesn't open",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "2fd6bf30-f70d-4f61-a720-eaca22b958b1",
+      "author": "Chenco29",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-31T04:41:11Z",
+      "title": "",
+      "body": "App freeze on startup",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "f141e83a-7b3b-49b4-b2bc-481a367331e0",
+      "author": "Daryl L",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-28T15:12:22Z",
+      "title": "",
+      "body": "The app never loads past the first screen, even after reinstall.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "e9f2cc2a-7194-42c4-acce-b6420ecfceb3",
+      "author": "Dave L",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-26T11:40:30Z",
+      "title": "",
+      "body": "updated and not working",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "16e4bf85-d904-495e-a605-459e3252e810",
+      "author": "Andy Weston",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-25T01:50:48Z",
+      "title": "",
+      "body": "The app hasn't opened for days now, I've uninstalled and reinstalled, restarted my phone but nothing works. Vplus wallet has a problem too. It doesn't open informing of \"Network error\" on different networks.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "d8cc6911-5d14-4b3b-b8db-7567893521b0",
+      "author": "Dean Dean",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-24T13:28:57Z",
+      "title": "",
+      "body": "does not work",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "d1a647ff-101a-42c1-92e7-17e228c00ed5",
+      "author": "Pim S.",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-23T12:19:59Z",
+      "title": "",
+      "body": "last update broke the app, it will not open, only stuck on the loading screen",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "dfdcf8ba-28dd-4c09-a809-27d6a440165d",
+      "author": "Jimmy Stacks",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-22T12:00:58Z",
+      "title": "",
+      "body": "The new update broke the app and now it won't progress past the first screen.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "cb4d9449-2d3f-4e4f-a3c4-194a39811492",
+      "author": "happyfalangme",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-10-22T08:24:30Z",
+      "title": "",
+      "body": "latest update 21 October 2025. it only loads the information splash screen. nothing else works!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "41bc3c65-f474-4981-b13b-f50396b2cb1f",
+      "author": "‫محمداحمد القحيم (القحيم)‬‎",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2025-10-20T23:39:16Z",
+      "title": "",
+      "body": "very good",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.836",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "87f41afc-f9c5-4fb3-88fe-d31c79d146c0",
+      "author": "Richard Chichakli",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-29T10:49:11Z",
+      "title": "",
+      "body": "terrible app, it causes the phone to freeze",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.836",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "b01c2184-5d61-4913-a44e-2acbfa3a8751",
+      "author": "123 456",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-28T13:49:24Z",
+      "title": "",
+      "body": "I paid, app never updates, support non existent. not scam, just really incompetent",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.836",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "4e6bbbed-26a1-4202-949c-bd4888e5d145",
+      "author": "Rachel Sabout",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-23T06:08:20Z",
+      "title": "",
+      "body": "App won't even open on my up to date android phone",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3ec3bef2-529a-4454-ae7a-73beb0484d60",
+      "author": "Peter Hocking",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2025-09-18T08:54:41Z",
+      "title": "",
+      "body": "Really liked the delivery service and the shop in Little Walk Pattaya. Have now moved to Isan and sadly no shops here.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.748",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "b87438c9-d284-4864-b8ff-05f8473ecc98",
+      "author": "animatrix",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-14T11:57:15Z",
+      "title": "",
+      "body": "very buggy, rarely works. fix the database first... for a company making millions this is unacceptable quality.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.829",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "fa3d0835-68bd-4c1c-8bee-bb115250373d",
+      "author": "Matt",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-14T05:39:01Z",
+      "title": "",
+      "body": "Seem like problems with new app update. No history, vouchers/refunds not visible. Cannot update user information and name/address etc will not allow to be edited.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.829",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "89d1a9f2-ec78-40cc-be10-cd455d71ecbd",
+      "author": "CatS75",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-09-10T04:35:30Z",
+      "title": "",
+      "body": "App crashes all the time, customer service never responds",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.829",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "6c1c3e63-a141-46fb-a80b-d9fc1dd28567",
+      "author": "Sirisuk Jintaviwatwong",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2025-08-17T07:42:02Z",
+      "title": "",
+      "body": "อยากให้ปรับ wording ของ promotion ให้ตรงกันหน่อย อย่างตรงเมนูบอกว่า 1 แถม 1 แต่ tag ที่ตัวสินค้าดันบอกว่า ซื้อ 2 จ่าย 1 มันทำให้สับสนว่าเป็นซื้อ 2 แถม 1",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.818",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "94221755-0259-4700-b8d6-dbccf5b48158",
+      "author": "alan simon",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 3,
+      "date": "2025-08-10T11:37:49Z",
+      "title": "",
+      "body": "Good and bad experience. The good is that the food (all frozen fish) arrived perfectly with ice packs and in less than an hour. The shopping was also easy. The bad was that they lure you in with promises of 50% off and free delivery - garbage! The 50% off is only on some items (none of mine) and free delivery is only for 1st-time shoppers. I’d bought from them a while ago, so I wasn’t entitled to that either. So 90THB for delivery, plus 50THB = 140THB delivery. But I'll use this again anyway",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "c95a7624-9776-4d56-a2ae-a475a5c3f54f",
+      "author": "a a",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2025-08-06T12:13:16Z",
+      "title": "",
+      "body": "villa market is great",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.817",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "44c8e5ad-71ab-4e7e-808f-6d1f00d8e99f",
+      "author": "Michael Claffy",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-08-05T11:12:41Z",
+      "title": "",
+      "body": "What a deception. Free first time shipping is not available Nationwide! Then why would I need shipping at all?",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.764",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "b7b96136-79e8-4662-abde-403129c4a3b5",
+      "author": "Noel Ranson",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-06-11T13:02:26Z",
+      "title": "",
+      "body": "the ordering side is fine, but the delivery side awful map is terrible and does not track the rider at all. the drivers do not refrigerate any of the items they turn up exposed to the heat and sun and anything frozen will be defrosted.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.764",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "b8022021-fde8-4a2c-87e7-c0bd4324b6d2",
+      "author": "James McHugh",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-05-09T14:02:09Z",
+      "title": "",
+      "body": "if I have anything coming to me just keep it it will be good karma for me nothing more to tell you you have it all figured out right to last Thai baht I wish you all the good karma just lose my account you are not worth my time and effort",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "c14c13d2-9791-4355-b02f-b0f410c33ee9",
+      "author": "Jeremy Perbet",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-03-29T13:06:44Z",
+      "title": "",
+      "body": "Foodland’s service quality is by far above. If you order vegetables, they’ll send you produce fit for a landfill. If you dare order anything frozen, it’ll show up half-defrosted and ruined. Their app is a total jokewhen there’s a “buy one, get one” deal, it randomly messes up quantities, so you have to babysit your cart like it’s on life support. Honestly, I’ve had more reliable service from vending machines. Save yourself the trouble and avoid it.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.659",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3542bbf5-f8ae-4d7a-9984-c16ac3d332cb",
+      "author": "Aleksei Podolinnyi",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 3,
+      "date": "2025-02-24T08:20:46Z",
+      "title": "",
+      "body": "This app not start on my Huawei​p40 pro",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.757",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "87ae0371-a8bc-4daf-91c9-73afeb360bcd",
+      "author": "Алексей Пеньков",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2025-01-28T06:21:35Z",
+      "title": "",
+      "body": "Quite useless since email/mobile phone verification is not working",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.748",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "304d30e9-9287-4893-872a-e5f9609403f5",
+      "author": "jou ni",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 3,
+      "date": "2025-01-23T10:52:21Z",
+      "title": "",
+      "body": "Shopping is fine. It's cumbersome to get to the delivery map for your active orders, and the map itself often doesn't update properly. I regularly have the delivery driver turn up while the map reports them as miles away. There is no way to turn off marketing notifications. Either you turn off all notifications, and also not be notified when your delivery is despatched or the customer service chat have responded, or you keep it on and have villa market send you frequent, irrelevant promotions.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "fc46f121-0141-4550-bf8d-f3db77ffa2b5",
+      "author": "Egidio",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-12-26T07:39:03Z",
+      "title": "",
+      "body": "Appalling experience, they allow you to order products that they do not have, you pay and the refund will be after 30 - 45 days... Avoid (still waiting my refund, hope I will get it) Update, they have 'refunded' with a voucher that I have not requested (will never use their website again).. I have asked a bank refund and still waiting",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.739",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "dfdc999a-7445-4730-bc6e-e17644771f59",
+      "author": "William",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 3,
+      "date": "2024-12-16T13:10:49Z",
+      "title": "",
+      "body": "US goods not available or to much.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "053c9233-0477-44a3-8cb0-32ff8656845a",
+      "author": "Martin Buchholz",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2024-11-28T11:30:20Z",
+      "title": "",
+      "body": "The shopping experience, ordering, to delivery is not up to today's standards. I only use because they have a few specific products I cannot get other places. And each order is hit or miss experience.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.725",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "19555030-e94c-46f0-ae6f-f8efd4905d93",
+      "author": "Ishat Bux",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-11-26T13:44:56Z",
+      "title": "",
+      "body": "It's real easy to use",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.732",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3edd3a2f-bdf0-46ba-8581-d1914968aefc",
+      "author": "Folasade Akinyeye",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-11-12T11:18:19Z",
+      "title": "",
+      "body": "Since the update there is nothing on the website",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.725",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "d8e7f13c-3384-46c0-a7a3-2c4b1f17d2f1",
+      "author": "David O",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-10-22T12:41:43Z",
+      "title": "",
+      "body": "Be careful ordering meats. They will substitute for other brands almost twice the price and just give you almost half the weight. It's happened to me 3 times now out of only 4 times total ordering meats. Twice they didn't even say anything. Once they called and asked if another brand was ok but did not say the price was different. It's a good app and service for other products.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.715",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "bf3600d4-54b3-4e42-9620-0974314afbc3",
+      "author": "Adam X",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2024-09-20T15:20:04Z",
+      "title": "",
+      "body": "App is ok, back end data retrieval is poor",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.675",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "0c0b2319-277c-4080-864f-01d4168eaa53",
+      "author": "Tarem Ratasov",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-09-20T13:53:53Z",
+      "title": "",
+      "body": "Smooth App,No Ads, Great Customer Service.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.702",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "6217debe-294d-4830-9f09-605523272a20",
+      "author": "Oran Brown",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-08-23T05:34:44Z",
+      "title": "",
+      "body": "Never work when I need it",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.675",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "224f0e93-4419-4b1d-b17e-a23298a61da7",
+      "author": "Mary Grace Enrile",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-08-17T13:01:24Z",
+      "title": "",
+      "body": "very convenient and trusted they delivered on time also...lucky to found this app.thank you",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.673",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "c135606e-6ace-4ab7-a306-498f95229f05",
+      "author": "Matilde Z",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-07-19T13:48:12Z",
+      "title": "",
+      "body": "Cannot sign in anymore. Even after password reset cannot sign it. Useless app",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.670",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "37bc36b0-3ff9-4bec-9cbe-57d152a6d204",
+      "author": "Richard Lovin",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-07-17T07:09:53Z",
+      "title": "",
+      "body": "They do not bother to verify your account. Good luck getting help!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.670",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "c0ea1012-4c1e-4a5b-a2e7-5b391a77102d",
+      "author": "Sevin Dee",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2024-07-11T21:24:04Z",
+      "title": "",
+      "body": "Good app and excellent service from Villa. Works well and easy to use. App is much improved since earlier versions, but navigation could be a bit better. Overall, very good.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.670",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "24a3cc6d-b1c5-42b9-96ac-098ceb2f2a31",
+      "author": "Markus Pauels",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-06-23T04:58:49Z",
+      "title": "",
+      "body": "got stucked because I don't share my personal data and scan my passport. it's a grocery shop trading with customer data, awful...",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.627",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7492f305-eebc-4cf4-b6b6-f16ecef9acf8",
+      "author": "Tijana Scholz",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-05-09T06:33:58Z",
+      "title": "",
+      "body": "I love the food options and fast delivery always friendly staff",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.646",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "4bb2fb26-7642-4b5c-bd49-ab29f0011f88",
+      "author": "Peter Tucker",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-04-15T05:04:02Z",
+      "title": "",
+      "body": "Villa boat lagoon ....outstanding service",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.646",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "e3162ee0-6b02-4563-9e59-e6f862b912ab",
+      "author": "Michael Fallow",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-04-10T04:40:30Z",
+      "title": "",
+      "body": "Nothing workd",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.646",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7a93a1a6-9249-4483-beb3-6076b447eaab",
+      "author": "Cornelius M Hattingh",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-02-24T13:28:55Z",
+      "title": "",
+      "body": "Excellent. I was so impressed. The app worked perfectly. It is easy to navigate and to easily find what you need or want. There are many different checkout choices. I live 30km away from the shop, and they still delivered to my doorstep. Out of stock items were made known to me and refunded. Well done Villa Market. Great app and great service.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.624",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "b5f8b35f-173b-4c21-99c2-b64d4305fe38",
+      "author": "โชษิตา ผลอำไพสถิตย์",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2024-02-06T06:45:11Z",
+      "title": "",
+      "body": "Cannot reset password.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.619",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "fc22f340-7145-4244-841d-200faaa63d2f",
+      "author": "HAMMERKILL1755 “HAMMERKILL1755” .NOT-ME",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2024-01-31T03:23:25Z",
+      "title": "",
+      "body": "Great",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.611",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "51d9fbae-e0ed-412a-985f-dea99e14e79a",
+      "author": "Vithawat Komolavanij",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2024-01-23T03:20:14Z",
+      "title": "",
+      "body": "app improved easy to use now",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.611",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "cf15c6bb-5fd7-450d-a1ec-794067cb490d",
+      "author": "Chanchow Limphoka",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-12-13T06:55:48Z",
+      "title": "",
+      "body": "Can not go to app. Stuck on openning screen",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.580",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "94a4f0d5-027d-4e4b-9ef8-250c9acb40e1",
+      "author": "Nils Bastedo",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2023-11-21T06:46:00Z",
+      "title": "",
+      "body": "Sometimes fails to open, being stuck on the opening screen. Other times items are marked as in stock even though they are not and instead of money back or the opportunity to cancel the order, one gets in shop credit. Also, since they changed credit card verification system, buying stuff is more of a hassle and for alcohol one has to use a different app.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.576",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "88f2f92f-d0fb-4110-afb4-9bae4747de7e",
+      "author": "Justin Su",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-10-29T14:53:07Z",
+      "title": "",
+      "body": "200off first order no where to be found after long registration",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.572",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "885c5bfb-47b6-4818-a4c1-029847770cb0",
+      "author": "Ervin J Carroll",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 4,
+      "date": "2023-10-28T10:03:47Z",
+      "title": "",
+      "body": "sometimes difficult to find an item even when you know they carry it.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.572",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "55ccc2dc-a90d-4dc3-97d4-510817d4e0d4",
+      "author": "Mohales Deis",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2023-10-17T12:37:46Z",
+      "title": "",
+      "body": "App seemed to work. Made all of the way to check out and confirmed. I paid extra for priority deliver. I've now been waiting close 2 hours where normal deliver is supposed to be 1. But what's really bad is that for over an hour and a half, the status of the order has been on \"Items Packed\". And then went I went to Messaging to ask about the order, an automated response said the order status is \"picked\". What??? So my delivery order that has been stuck on \"Items Packed\" has been picked up??",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.571",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "9e351616-814c-4689-85b2-737260468196",
+      "author": "JIMMIE AGCAOILI",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-09-12T06:33:41Z",
+      "title": "",
+      "body": "App doesn't work. Once you open the app it shows the main screen and it's stuck there. The app would not proceed.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.564",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3af4a9b8-e2e9-4ad4-af7a-11c6dd5d56f4",
+      "author": "Randy Oda",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2023-09-01T10:37:24Z",
+      "title": "",
+      "body": "Horrible website if you're switching locations. It's impossible!!!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.564",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "08bd551b-a0ee-4983-9cc4-0e92df44b0da",
+      "author": "Don Beers",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-08-19T01:24:51Z",
+      "title": "",
+      "body": "No matter what I use, I get a network error message. Useless so far.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.557",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "4ffcf8cd-55ac-490d-9fd9-94e88424de3d",
+      "author": "Carla Negreira Zeitune",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 2,
+      "date": "2023-06-20T10:57:39Z",
+      "title": "",
+      "body": "S SE SesseesrsssESsesess",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.505",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "abf74abf-9660-4fa0-bde0-8a5debc31b5a",
+      "author": "steve garner",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-05-27T12:17:19Z",
+      "title": "",
+      "body": "Takes too long to open. After standing for over a minute in store the cashier eventually just asked for my phone number. Why the hell would I give a supermarket a scan of my passport? Ludicrous request. I'd rather continue shopping without card benefits than provide this info. HUGE INVASION OF PRIVACY",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.528",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "87d8230e-ca02-449e-8929-5bf5c6b27018",
+      "author": "Kandy Vimonchandr",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-03-14T05:24:03Z",
+      "title": "",
+      "body": "I uninstalled the vplus old version. And installed this app, and sign up with my previous phone number already. But the OTP sms is never come.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.477",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7cbd78aa-ce10-46b9-9448-7fc49b16b433",
+      "author": "Paul Gallini",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-02-14T05:52:31Z",
+      "title": "",
+      "body": "It is truly hopeless. At the check out, the staff have given up and now use my mobile number, this app is so bad",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.437",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "157668be-c4cc-4d4c-bc7a-5ea07c20f28b",
+      "author": "Artur Frycze",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 1,
+      "date": "2023-02-13T12:31:00Z",
+      "title": "",
+      "body": "App requires RIDICULOUS amount of SENSITIVE PERSONAL DATA! To sign up and receive the free glass i was asked by app to provide phone number, email address, SCAN PICTURE OF MY ID CARD, take a PICTURE OF MY FACE, and fill many many other data... Like employment status, etc. Why won't you also ask for my medical history?",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.431",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "243fc4be-a229-415c-99ae-a5b0d5256be1",
+      "author": "Lalita Chaiwongsri",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2023-01-07T13:45:55Z",
+      "title": "",
+      "body": "Been long time coming. Thankfully my favorite 🛒 finally launched a proper shopping app.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.384",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3b1af896-ce7d-4ffa-a825-d4a6d7cd02ee",
+      "author": "Kurt Kasidate",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2022-12-30T13:42:30Z",
+      "title": "",
+      "body": "Good",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.372",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "790f6f5c-81fb-4dbe-8cb2-aa5cd47b99a8",
+      "author": "Geraint Gearon",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T02:52:56Z",
+      "title": "",
+      "body": "Shopping through this app is brilliant! Really fast and easy to use. I can also use my Vplus points online now! The wallet gives me more ways to top up now too.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "c4af4880-fdf3-45f4-b784-af183756ca53",
+      "author": "Nannapat Jatchavala",
+      "platform": "android",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T02:27:11Z",
+      "title": "",
+      "body": "Finally Villa Market shopping app! Very impressive product ranges and fast delivery! 😍",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=en gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "47ab14c6-4fb7-4373-a68b-0857279c59be",
+      "author": "Tassporn67",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-08-15T04:04:09Z",
+      "title": "",
+      "body": "เยี่ยมมาก",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.814",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "a84a1788-f3fe-447a-af88-ed683dc1a232",
+      "author": "สายใจ",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-08-01T08:56:14Z",
+      "title": "",
+      "body": "ประทับใจค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.994",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3f167d46-ecb7-4945-b093-abed32facc75",
+      "author": "เกษสุดา ยุตติยงค์",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-07-26T21:33:40Z",
+      "title": "",
+      "body": "ไม่ได้เรื่อง",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.994",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "2bb6adcb-cae0-4dba-9b56-b042fddec17f",
+      "author": "เอกชัย ภัยชํานาญ",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-04-07T06:40:32Z",
+      "title": "",
+      "body": "ดีมากๆๆๆๆครับ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "bdd64f4f-98b5-4894-840d-89bd66a19797",
+      "author": "Viritphol Churaisin",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-04-02T09:26:41Z",
+      "title": "",
+      "body": "ไว้ที่หลัง",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.881",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3ec02c1c-9680-4966-b98e-22518193fc31",
+      "author": "AzmieLife",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-01-17T02:34:15Z",
+      "title": "",
+      "body": "ติดต่อเจ้าหน้าที่ไม่ได้ ลงทะเบียนไม่ได้ สรุป ถอนการติดตั้ง",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "59e7a941-7ca7-4825-8851-419e29c0029b",
+      "author": "Dao Dee",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-09-06T19:38:55Z",
+      "title": "",
+      "body": "แอบเด้งบ่อยมาก",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "e4317eb5-33e1-45f0-af61-697c926f0ed1",
+      "author": "Nattanan",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2025-08-05T14:35:50Z",
+      "title": "",
+      "body": "ใช้งานง่าย พนักงานบริการดี และให้ความเอาใจใส่ลูกค้า ส่วนตัวชอบมากค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.813",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "3d73baf3-b6dd-4ba6-b270-0102885f48d4",
+      "author": "Ontida Prayoonpoakarach",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-04-26T06:55:53Z",
+      "title": "",
+      "body": "แอ้พใช้งานยากเทียบกับแอ้พสั่งสินค้าอื่นๆ ต้องล้อคอินใหม่หลายรอบ ล้อคอินแล้วยังต้องเลือกสาขาที่ต้องสั่งอีกแทนที่จะจับโลเคชั่นที่อยู่ที่กรอกไว้แล้ว พอกรอกทุกอย่างเสร็จจะกดสั่ง ก็error ไม่สามารถสั่งของได้ ลองกรอกสั่งสินค้าใหม่ ก็errorเหมือนเดิม",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.764",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "74691302-7fb0-4f03-ae4e-284fb2d08680",
+      "author": "Chef Moo",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2025-02-16T09:23:52Z",
+      "title": "",
+      "body": "บริการที่ สาขาบางนา ห่วยและช้ามาก",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.748",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "8333dab9-56a9-43f3-904f-959fa835c287",
+      "author": "Eiag Phanuphong",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2024-10-11T08:29:23Z",
+      "title": "",
+      "body": "เข้ามาดูรีวิว มีแต่เรื่องแย่ๆ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "f0d46fbc-3ea0-4715-b829-ca506c6f43a5",
+      "author": "พุทธา พรมบ้านเปือย",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2024-10-11T00:44:02Z",
+      "title": "",
+      "body": "ฃื้อขายออนไลน์นี่แหละมันทำให้ผมงงแล้วยังถุกว่าหาว่าเป็นพวกก่อกวนเสียอีกเป็นพวกมิตฉาชีพฃะงั้นไป เอ่อ.ดีจริงๆอยุ่ดีไม่ว่าดีโดนคนว่าฃะอย่างงั้น เสียไปหมดเลยเรา",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.710",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7ed560a9-9779-43be-bdbc-dce9ad12195a",
+      "author": "kumataew",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 3,
+      "date": "2024-09-13T06:47:03Z",
+      "title": "",
+      "body": "กดเพิ่มสินค้าไม่ได้",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.702",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "33213abd-7f1e-4681-a199-d665a51f2f67",
+      "author": "ประทีป เทพเสถียร",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2024-08-10T07:34:34Z",
+      "title": "",
+      "body": "มัสยา มัสยา",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "a93f6ea0-733e-42d5-b053-d1bc0b9e99b9",
+      "author": "keki7 oppo",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2024-07-10T14:35:16Z",
+      "title": "",
+      "body": "ไม่เห็นจะมีของขายเยอะเลยสร้างมาทำไมไม่รู้",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.670",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "6c3e297a-6265-411a-ac2d-5283804c9cbb",
+      "author": "Boonsiri Kanjina",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 4,
+      "date": "2024-05-10T01:13:43Z",
+      "title": "",
+      "body": "ชอบมาก เป็นทางเลือกที่ดี สินค้ามีคุณภาพ ราคามาตรฐาน เราเป็นลูกค้าของวิลล่ามานานกว่า30ปี ขอบคุณนะคะ.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.646",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "f176c86e-f7d1-45eb-9879-227af9f81030",
+      "author": "Sriarian Hillpark",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2024-03-23T04:36:25Z",
+      "title": "",
+      "body": "ชอบช๊อบ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.603",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "38bb0d2c-93bc-44d4-b8b9-c8a1c0161378",
+      "author": "Worawoot Eamcharoen",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2024-02-15T08:29:41Z",
+      "title": "",
+      "body": "ราคาสินค้าเมื่อเทียบกับที่อื่นแล้ว ถูกกว่าเล็กน้อย",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "05948606-e5e2-439e-9b04-587e11043b64",
+      "author": "Ded R",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 2,
+      "date": "2023-12-19T13:26:31Z",
+      "title": "",
+      "body": "าอิก. kcx หิ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.571",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7b9253d5-788b-49fe-a023-11139bf22a0b",
+      "author": "สุขจีทิพย์ ศิริวรรณ",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-06-20T15:11:37Z",
+      "title": "",
+      "body": "คุณภาพของสินค้าสดใหม่ตลอดทุกครั้งค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.532",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "0e2ce471-0338-4fa1-9e58-0846d522a85a",
+      "author": "Theerasak Musigawan",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-04-02T15:04:17Z",
+      "title": "",
+      "body": "Perfect - Perfect - Perfect ⛵⛵⛵",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.505",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "d8b6d2dc-2a00-458f-94e5-bd51a2604e57",
+      "author": "KHUNNOK ENG",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-03-04T04:44:51Z",
+      "title": "",
+      "body": "App สวยมาก ใช้งานง่าย ลื่นปื๊ดๆ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.471",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "df50a500-0a73-4a90-bb2a-ac54cc7ca4a7",
+      "author": "นันตวรรธน์ ศิลปเจริญ",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-02-14T07:53:26Z",
+      "title": "",
+      "body": "เยี่ยม",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.431",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "fd43526b-e4cc-4dfb-a2ae-f4534e9adbd9",
+      "author": "Untilboll boll",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2023-01-05T09:21:25Z",
+      "title": "",
+      "body": "Very good. Application",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.381",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "4df6d410-2e5d-47af-aad9-7c5e1a271447",
+      "author": "TooM toom",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T06:32:27Z",
+      "title": "",
+      "body": "Appใช้ง่ายไม่ยุ่งยาก",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.369",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ab8b6eee-ed96-42e9-9222-cdf898968b70",
+      "author": "วัทธิกร ลุนสินทร",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T06:07:18Z",
+      "title": "",
+      "body": "แอปนี้ดีจริงๆ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.369",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "6bfd122f-13b9-4f77-a465-332361645d49",
+      "author": "พงศ์สันต์ วิเชียรครุฑ",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:44:27Z",
+      "title": "",
+      "body": "สินค้าคบครันมากเลยครับ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "faecf3d4-0386-416f-8819-eae3aeaca6fe",
+      "author": "สุรศักดิ์ พรหมบุตร",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:32:32Z",
+      "title": "",
+      "body": "สินค้าเยอะน่าเลือกซื้อ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "9b65745e-09f9-440f-b84d-e42f7de21f23",
+      "author": "Anchittha Ka",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:13:14Z",
+      "title": "",
+      "body": "สินค้าครบ จบในที่เดียว",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.369",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ebc30e95-c303-4ef3-967f-7ea8c91b0136",
+      "author": "onanong buabuth",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:10:56Z",
+      "title": "",
+      "body": "สินค้านำเข้าแปลกใหม่",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "0f271aa2-9acf-4deb-afd5-a9afe79ac032",
+      "author": "Namfon Piradar",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:10:54Z",
+      "title": "",
+      "body": "👍",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "05555b0a-d782-4a26-959d-d82cdc06c2e7",
+      "author": "pinyo jansawang",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T05:07:28Z",
+      "title": "",
+      "body": "เป็นห้างสรรพสินค้าที่ครบขั้นของสินค้านำเข้า ที่ดีเยี่ยมครับ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.369",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "f839adad-f5c5-45fc-bb8c-3ca1787a7702",
+      "author": "Aiw 2541",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T04:52:21Z",
+      "title": "",
+      "body": "ใช้ดีช้อปง่ายค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "83ba6220-9565-4e4f-8b24-14ff9371eb24",
+      "author": "urassayakorn hin-on",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T04:30:49Z",
+      "title": "",
+      "body": "โหลดง่าย ใช้งานง่าย มีสินค้าหลากหลาย ครบจบที่แอปเดียวค่ะ",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "594548f3-1d40-4491-b71f-3a7497397544",
+      "author": "Krittapob Kiewkong",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T02:50:09Z",
+      "title": "",
+      "body": "ของนำเข้าเยอะดี",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "e8a58bb8-77be-4b4b-83c5-c27125893195",
+      "author": "Fon KP",
+      "platform": "android",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2022-12-29T02:45:57Z",
+      "title": "",
+      "body": "ดีอ่ะ เริดดด",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.368",
+      "source": "play-rpc gps hl=th gl=th sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "63c5495a-766a-4868-af58-17328209b600",
+      "author": "Smite",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 4,
+      "date": "2026-04-30T04:17:54Z",
+      "title": "",
+      "body": "Besondere Artikel, aber Import hat seinen Preis.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.947",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "78f4de0a-f6d0-48b1-9571-267f8c080d7d",
+      "author": "Mark M",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 1,
+      "date": "2025-10-29T00:28:30Z",
+      "title": "",
+      "body": "App didn't work any more since 1 week. please fix it that I can order again",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ed948452-e1c2-4e99-9cfd-7bf27637b03a",
+      "author": "H.R. KURATLE",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 2,
+      "date": "2024-06-06T14:28:14Z",
+      "title": "",
+      "body": "a very, very bad app",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.659",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "71e5272a-8897-4e9a-9ba8-7ab9a5b9ab45",
+      "author": "Rene Liebert",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 5,
+      "date": "2024-03-04T03:26:54Z",
+      "title": "",
+      "body": "After update 27.02.2024 the app dont work.See only the first picture. Now I delete data and cache and it works.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.627",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "66cadfe1-95a3-483d-9df1-9229d731eac5",
+      "author": "Harald Fellinger",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 5,
+      "date": "2024-01-29T06:54:50Z",
+      "title": "",
+      "body": "Noch keine",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.611",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "226ed55d-f037-4805-8063-c1224d038d17",
+      "author": "Bernhard Meyer",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 5,
+      "date": "2023-08-25T05:21:24Z",
+      "title": "",
+      "body": "Eine Filiale in Cha Am wäre wünschenswert",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7405cb4f-9f7b-448d-87a2-f620ca865ae0",
+      "author": "Hans Wurst",
+      "platform": "android",
+      "countries": [
+        "de"
+      ],
+      "stars": 5,
+      "date": "2022-12-30T04:05:10Z",
+      "title": "",
+      "body": "Very good, work perfect after get help from chat response people, many thanks!",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.372",
+      "source": "play-rpc gps hl=de gl=de sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "7cf26893-938c-4e36-8b8c-feae4c4543b0",
+      "author": "yves sebastien",
+      "platform": "android",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2024-06-19T09:08:21Z",
+      "title": "",
+      "body": "Sorry I put a one star ,i will correct it when bug is fixed,not able to pass the advertising,i was working super few weeks ago but now major bug,can t use the app anymore,i have samsung21,i already reinstall app,working good one time then crash like before,i was telling this at the shop in pattaya",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.659",
+      "source": "play-rpc gps hl=fr gl=fr sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "690aa0ad-e6db-4c88-a561-201b535e5e74",
+      "author": "Olivier Picard",
+      "platform": "android",
+      "countries": [
+        "fr"
+      ],
+      "stars": 3,
+      "date": "2024-03-20T03:35:22Z",
+      "title": "",
+      "body": "Cher, mais de bonnes affaires à faire.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=fr gl=fr sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "08e2eabd-d432-4e9c-a2d0-00e8282d08c7",
+      "author": "Maria Oszczeda",
+      "platform": "android",
+      "countries": [
+        "fr"
+      ],
+      "stars": 1,
+      "date": "2024-03-11T11:10:29Z",
+      "title": "",
+      "body": "Nulle no accès possible",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.627",
+      "source": "play-rpc gps hl=fr gl=fr sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "bb08d3b9-7e7d-44eb-bb88-32840668a7ce",
+      "author": "Elena Lo",
+      "platform": "android",
+      "countries": [
+        "ru"
+      ],
+      "stars": 3,
+      "date": "2026-03-02T07:02:46Z",
+      "title": "",
+      "body": "can not open",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.917",
+      "source": "play-rpc gps hl=ru gl=ru sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "10bcf8eb-1c0e-4bb5-a9f2-acd5d9ecc144",
+      "author": "Илья Автокожа",
+      "platform": "android",
+      "countries": [
+        "ru"
+      ],
+      "stars": 2,
+      "date": "2026-01-21T12:37:50Z",
+      "title": "",
+      "body": "no open ,don't work! only white scrine!!!! Huawei mate x6",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=ru gl=ru sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "f4448975-d9b9-47d9-9a4b-37e082229f2f",
+      "author": "Laum a",
+      "platform": "android",
+      "countries": [
+        "ru"
+      ],
+      "stars": 1,
+      "date": "2024-08-04T11:04:42Z",
+      "title": "",
+      "body": "Customer service is just horrible. I will never order again in this shop. I spend 1hr chatting with customer service manager with 0 result. The order was 800 bat. I can't belive such a horrible service",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.670",
+      "source": "play-rpc gps hl=ru gl=ru sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "088ee9cb-b9a0-423d-932b-0eba2f99bb94",
+      "author": "Miss Miss",
+      "platform": "android",
+      "countries": [
+        "ru"
+      ],
+      "stars": 2,
+      "date": "2023-05-31T07:28:09Z",
+      "title": "",
+      "body": "Guys! Why do i have to scan and upload my ID in order to collect points on sausages??? Are you serious???",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.528",
+      "source": "play-rpc gps hl=ru gl=ru sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "0dc3841b-82bc-456b-ab3f-5f41dc8182ed",
+      "author": "Risa Sasaki",
+      "platform": "android",
+      "countries": [
+        "jp"
+      ],
+      "stars": 2,
+      "date": "2024-06-12T01:03:07Z",
+      "title": "",
+      "body": "please fix this application. it is not working.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.659",
+      "source": "play-rpc gps hl=ja gl=jp sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "a9edce92-fadb-46eb-8721-cd0d4450aa92",
+      "author": "Eunhye Kim",
+      "platform": "android",
+      "countries": [
+        "kr"
+      ],
+      "stars": 1,
+      "date": "2024-06-15T05:36:07Z",
+      "title": "",
+      "body": "Wouldn't open the first page..",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=ko gl=kr sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "f9bf27e1-8baa-44c4-b9ff-7a6be97d8e64",
+      "author": "Herwin Louis Buyl",
+      "platform": "android",
+      "countries": [
+        "nl"
+      ],
+      "stars": 3,
+      "date": "2026-03-16T06:02:43Z",
+      "title": "",
+      "body": "TE DUUR.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.881",
+      "source": "play-rpc gps hl=nl gl=nl sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "8395c6ec-4797-49b2-bd15-1ec68dcfda28",
+      "author": "Jan Schoofs",
+      "platform": "android",
+      "countries": [
+        "nl"
+      ],
+      "stars": 1,
+      "date": "2024-03-07T10:05:19Z",
+      "title": "",
+      "body": "Not more working after update ?",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.627",
+      "source": "play-rpc gps hl=nl gl=nl sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "bd22555a-c38c-40d9-a93b-6faf5327b437",
+      "author": "Christina Jigström",
+      "platform": "android",
+      "countries": [
+        "se"
+      ],
+      "stars": 2,
+      "date": "2026-02-11T09:13:04Z",
+      "title": "",
+      "body": "går inte öppna",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.905",
+      "source": "play-rpc gps hl=sv gl=se sort=newest+relevant",
+      "need_reply": true
+    },
+    {
+      "id": "7e4a8c3f-fa8d-4d4e-ba97-d40c8abbb015",
+      "author": "Anders Dahl",
+      "platform": "android",
+      "countries": [
+        "se"
+      ],
+      "stars": 1,
+      "date": "2025-02-18T15:50:46Z",
+      "title": "",
+      "body": "Kände inte igen produkterna.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "",
+      "source": "play-rpc gps hl=sv gl=se sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "8e0417f2-2823-49f8-9d24-7278dd29091e",
+      "author": "Helen Wiklund",
+      "platform": "android",
+      "countries": [
+        "se"
+      ],
+      "stars": 1,
+      "date": "2024-03-02T06:23:56Z",
+      "title": "",
+      "body": "Since the last update, the app won't open",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.627",
+      "source": "play-rpc gps hl=sv gl=se sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "ff083b13-9eb4-4f7e-93ce-ffb60f92d8a6",
+      "author": "Thore Ditlefsen",
+      "platform": "android",
+      "countries": [
+        "no"
+      ],
+      "stars": 1,
+      "date": "2024-06-17T07:20:26Z",
+      "title": "",
+      "body": "Hopeless. Not possible to open it anymore most of the times i try to",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.659",
+      "source": "play-rpc gps hl=nb gl=no sort=newest+relevant",
+      "need_reply": false
+    },
+    {
+      "id": "17027e28-3a9b-49b9-830b-6aafd2ea05dc",
+      "author": "OMER",
+      "platform": "android",
+      "countries": [
+        "il"
+      ],
+      "stars": 1,
+      "date": "2025-10-20T10:40:24Z",
+      "title": "",
+      "body": "App stuck on opening screen",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "store": "Android",
+      "app_version": "1.0.854",
+      "source": "play-rpc gps hl=he gl=il sort=newest+relevant",
+      "need_reply": false
+    }
+  ]
+}
