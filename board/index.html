@@ -1,136 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Villa Market — Shopper-app review board</title>
-<meta name="description" content="Villa Market shopper-app store reviews for the dev team: KPIs, fix queue and need-reply triage.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Villa reviews — triage inbox</title>
+<meta name="description" content="Villa Market shopper-app store reviews: reply queue, fix queue and the full review inbox.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="board.css">
 </head>
 <body>
-<a class="skip" href="#panel-all">Skip to reviews</a>
+<a class="skip" href="#list">Skip to reviews</a>
 
-<header class="appbar">
-  <div class="appbar-inner">
-    <div class="brand">
-      <div class="mark" aria-hidden="true">VM</div>
-      <div class="titles">
-        <h1>Shopper-app review board</h1>
-        <p class="sub">Villa Market · DEV triage</p>
-      </div>
-    </div>
-    <div class="appbar-meta">
-      <span class="datechip" id="generatedChip">Loading</span>
-      <a class="btn ghost" href="../dashboard/">Pulse</a>
-      <a class="btn ghost" href="../dashboard/bugs.html">Bug follow-up</a>
-      <a class="btn" href="../data/reviews.json">reviews.json</a>
-    </div>
-  </div>
+<header class="hdr">
+  <span class="mark" aria-hidden="true">V</span>
+  <h1>Villa reviews</h1>
+  <p class="hdr-meta" id="hdrMeta">Loading…</p>
 </header>
 
-<nav class="tabbar" id="tabbar">
-  <div class="tabbar-inner" role="tablist" aria-label="Board sections">
-    <button class="tab" role="tab" id="tab-overview"  aria-controls="panel-overview"  aria-selected="true"  data-panel="overview">Overview</button>
-    <button class="tab" role="tab" id="tab-all"       aria-controls="panel-all"       aria-selected="false" data-panel="all">All reviews <span class="n" id="nAll">–</span></button>
-    <button class="tab" role="tab" id="tab-fix"       aria-controls="panel-fix"       aria-selected="false" data-panel="fix">Fix queue <span class="n" id="nFix">–</span></button>
-    <button class="tab" role="tab" id="tab-needreply" aria-controls="panel-needreply" aria-selected="false" data-panel="needreply">Need-reply <span class="n" id="nNeed">–</span></button>
-  </div>
-</nav>
+<main class="app" id="app" data-queue="need-reply">
 
-<section class="filters" id="filters" hidden aria-label="Filters">
-  <div class="filters-inner">
-    <div class="fhead">
-      <label class="search">
-        <span class="sr">Search reviews</span>
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="2"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="search" id="fSearch" placeholder="Search author, title or review text…" autocomplete="off">
-      </label>
-      <button type="button" class="fbtn" id="filterToggle" aria-expanded="false" aria-controls="fGroups">Filters<span class="fcount" id="filterCount" hidden>0</span></button>
-    </div>
-    <div class="fgroups" id="fGroups">
-    <div class="frow" role="group" aria-label="Platform">
-      <span class="flabel">Platform</span>
-      <div class="frow" id="fPlatform"></div>
-    </div>
-    <div class="frow" role="group" aria-label="Country">
-      <span class="flabel">Country</span>
-      <div class="frow" id="fCountry"></div>
-    </div>
-    <div class="frow" role="group" aria-label="Stars">
-      <span class="flabel">Stars</span>
-      <div class="frow" id="fStars"></div>
-    </div>
-    <div class="frow" role="group" aria-label="Status">
-      <span class="flabel">Status</span>
-      <div class="frow" id="fStatus"></div>
-    </div>
-    </div>
-    <div class="fbar-foot">
-      <span class="resultcount" id="resultCount">—</span>
-      <button type="button" class="linkbtn" id="clearFilters" hidden>Clear filters</button>
-    </div>
-  </div>
-</section>
+  <!-- LEFT: queues (horizontal segment scroller on mobile) -->
+  <nav class="rail" id="rail" aria-label="Queues">
+    <p class="rail-label">Queues</p>
+    <button type="button" class="q" data-queue="need-reply" aria-current="page">
+      <span>Need reply</span><span class="q-n" id="nNeed">–</span>
+    </button>
+    <button type="button" class="q" data-queue="fix">
+      <span>Fix</span><span class="q-n" id="nFix">–</span>
+    </button>
+    <button type="button" class="q" data-queue="all">
+      <span>All reviews</span><span class="q-n" id="nAll">–</span>
+    </button>
+    <button type="button" class="q" data-queue="overview">
+      <span>Overview</span><span class="q-n q-n-none" aria-hidden="true"></span>
+    </button>
+    <p class="rail-foot">Drafts live on this board only. Nothing is posted to the App&nbsp;Store or Play&nbsp;Store.</p>
+  </nav>
 
-<main class="page">
-
-  <!-- ============================ OVERVIEW -->
-  <section class="panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
-    <div class="shead"><h2>Store totals</h2><span class="n" id="prevLabel">—</span></div>
-    <div class="kpis" id="kpiStrip"></div>
-
-    <div class="shead"><h2>Platform split</h2></div>
-    <div class="kpi wide" style="grid-column:auto">
-      <div class="split">
-        <div>
-          <div class="k">iOS · App Store</div>
-          <div class="v" id="kIos">–</div>
-        </div>
-        <div class="splitline" aria-hidden="true"></div>
-        <div>
-          <div class="k">Android · Play</div>
-          <div class="v" id="kAndroid">–</div>
+  <!-- CENTER: title + compact filters + full-text cards -->
+  <section class="list-pane" aria-labelledby="listTitle">
+    <div class="list-head">
+      <h2 class="list-title" id="listTitle">Need reply</h2>
+      <p class="list-sub" id="listSub">Loading reviews…</p>
+      <div class="filters">
+        <label class="search">
+          <span class="sr">Search reviews</span>
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="search" id="fSearch" placeholder="Search review text or author" autocomplete="off" spellcheck="false">
+        </label>
+        <div class="selects">
+          <span class="sel"><label class="sr" for="fPlatform">Platform</label>
+            <select id="fPlatform">
+              <option value="all">Platform</option>
+              <option value="ios">iOS</option>
+              <option value="android">Android</option>
+            </select>
+          </span>
+          <span class="sel"><label class="sr" for="fCountry">Country</label>
+            <select id="fCountry"><option value="all">Country</option></select>
+          </span>
+          <span class="sel"><label class="sr" for="fStars">Rating</label>
+            <select id="fStars">
+              <option value="all">Rating</option>
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+              <option value="4">4 stars</option>
+              <option value="5">5 stars</option>
+            </select>
+          </span>
         </div>
       </div>
-      <div class="bar" id="platBar" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
-      <div class="legend"><span><i class="a"></i> iOS <b id="pctIos"></b></span><span><i class="b"></i> Android <b id="pctAndroid"></b></span></div>
+      <div class="list-status">
+        <p class="count" id="resultCount" aria-live="polite">—</p>
+        <button type="button" class="linkbtn" id="clearFilters" hidden>Clear filters</button>
+      </div>
     </div>
-
-    <div class="shead"><h2>Fix summary</h2><span class="n" id="fixSummaryN">—</span><a class="more" href="#" data-goto="fix">Open fix queue ›</a></div>
-    <div class="fixlist" id="fixSummary"></div>
-
-    <div class="shead"><h2>Top need-reply</h2><span class="n hot" id="needPreviewN">—</span><a class="more" href="#" data-goto="needreply">See all ›</a></div>
-    <div class="cards" id="needPreview"></div>
-
-    <p class="note" id="metaNote"></p>
+    <div class="list" id="list" tabindex="-1"></div>
   </section>
 
-  <!-- ============================ ALL REVIEWS -->
-  <section class="panel" id="panel-all" role="tabpanel" aria-labelledby="tab-all" hidden>
-    <div class="shead"><h2>All reviews in sample</h2><span class="n" id="allHeadN">—</span></div>
-    <div id="allList"></div>
+  <!-- RIGHT: detail (full-screen sheet on mobile) -->
+  <section class="detail" id="detail" aria-label="Review detail">
+    <div class="detail-bar">
+      <button type="button" class="backbtn" id="backBtn">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M9.5 3 5 8l4.5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+    </div>
+    <div class="detail-body" id="detailBody"></div>
   </section>
 
-  <!-- ============================ FIX QUEUE -->
-  <section class="panel" id="panel-fix" role="tabpanel" aria-labelledby="tab-fix" hidden>
-    <div class="shead"><h2>Fix queue</h2><span class="n" id="fixHeadN">—</span></div>
-    <div class="fixlist" id="fixList"></div>
-    <p class="note">Counts show how many reviews in this sample map to each issue, matched on review text and issue tag. Issue numbers link to <code>villa-market/villa-app-reviews-report</code> on GitHub.</p>
-  </section>
+  <!-- OVERVIEW -->
+  <section class="overview" id="overview" aria-label="Overview" hidden></section>
 
-  <!-- ============================ NEED REPLY -->
-  <section class="panel" id="panel-needreply" role="tabpanel" aria-labelledby="tab-needreply" hidden>
-    <div class="shead"><h2>Need reply</h2><span class="n hot" id="needHeadN">—</span></div>
-    <div id="needList"></div>
-  </section>
-
-  <p class="foot">
-    Data: <a href="../data/reviews.json">data/reviews.json</a> ·
-    <a href="../dashboard/">Engineering pulse</a> ·
-    <a href="../dashboard/bugs.html">Bug follow-up</a><br>
-    Counts are read straight from the JSON — nothing on this page is estimated.
-  </p>
 </main>
+
+<footer class="foot">
+  <span id="footNote">Suggested replies are drafts — nothing is sent from this board.</span>
+  <span class="foot-links">
+    <a href="../dashboard/">Pulse</a>
+    <a href="../dashboard/bugs.html">Bug follow-up</a>
+    <a href="../data/reviews.json">reviews.json</a>
+  </span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="board.js"></script>
 </body>

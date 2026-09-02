@@ -1,445 +1,475 @@
-/* Villa Market — shopper-app review board.
-   Everything on screen comes from ../data/reviews.json. No derived estimates. */
+/* Villa reviews — triage inbox.
+   Every number and every word on screen comes from ../data/reviews.json.
+   Nothing here posts to the App Store or Play Store: replies are drafts only. */
 (function () {
   'use strict';
 
   var DATA_URL = '../data/reviews.json';
-  var REPO_ISSUES = 'https://github.com/villa-market/villa-app-reviews-report/issues/';
-  var DESKTOP = window.matchMedia('(min-width: 1024px)');
+  var QUEUES = ['need-reply', 'fix', 'all', 'overview'];
+  var MOBILE = window.matchMedia('(max-width: 899px)');
 
-  /* ---------------------------------------------------------- fix mapping
-     Reviews carry an issue_tag, not an issue number. Map each review to at
-     most one fix issue: first by review text, then by tag. No match -> we show
-     the raw issue_tag and link nothing. */
+  /* -------------------------------------------------------- fix mapping
+     Reviews carry issue_tag, never a fix id (fix is null across the file),
+     so map text -> issue #1-#6. Only reviews that are fix-tagged or rated
+     3 stars and under are eligible, so praise never links to a bug. */
   var FIX_RULES = [
     { n: 2, re: /developer\s*(mode|option)|dev\s*mode|นักพัฒนา/i },
-    { n: 3, re: /\botp\b|otop|verification code|verify (my )?(phone|e-?mail)|log ?in|login|sign ?up|sign ?in|password|new account|ลงทะเบียน|เข้าสู่ระบบ|รหัสผ่าน/i },
-    { n: 5, re: /checkout|payment|paying|card details|save .{0,14}card|wallet|ชำระเงิน/i },
-    { n: 4, re: /out of stock|\bcart\b|\bbranch\b|\bbrach\b|different store|another store|force[sd]? .{0,18}store|ของสด|สาขา|สั่งไม่ได้/i },
-    { n: 1, re: /\b(won'?t|doesn'?t|does not|cannot|can'?t|not|never|no)\s+(start|open|work|load|launch)|white scr|freez|crash|hang|stops working|forever to open|broken|โหลดค้าง|หน้าแรก|går inte öppna/i }
+    { n: 3, re: /\botp\b|verification code|verify (my )?(phone|e-?mail|number)|log ?in|login|logged? in|sign ?in|sign ?up|password|เข้าสู่ระบบ|รหัสผ่าน|ลงทะเบียน/i },
+    { n: 5, re: /check ?out|payment|paying|paid|\bpay\b|card details|save .{0,14}card|credit card|wallet|ชำระเงิน|จ่ายเงิน/i },
+    { n: 4, re: /out of stock|\bstock\b|\bcart\b|\bbasket\b|\bbranch\b|different store|another store|change(d|s)? .{0,12}store|force[sd]? .{0,18}store|สาขา|ของหมด/i },
+    { n: 6, re: /track(ing|er)?\b|where is my order|order status|ติดตาม/i },
+    { n: 1, re: /splash|crash|freez|hang|white screen|black screen|stuck on|(won'?t|will not|doesn'?t|does not|cannot|can'?t|never) (open|start|load|launch|work)|keeps? closing|โหลดค้าง|เปิดไม่ได้/i }
   ];
-  var TAG_TO_FIX = { checkout: 5, stock: 4 };
+  var TAG_FIX = { checkout: 5, stock: 4, delivery: 6, bug: 1 };
 
   function fixFor(r) {
-    var hay = (r.body || '') + ' ' + (r.title || '');
+    if (r.issue_tag === 'other' && r.stars > 3) return null;
+    var hay = (r.title || '') + ' ' + (r.body || '');
     for (var i = 0; i < FIX_RULES.length; i++) {
       if (FIX_RULES[i].re.test(hay)) return FIX_RULES[i].n;
     }
-    return TAG_TO_FIX[r.issue_tag] || null;
+    return TAG_FIX[r.issue_tag] || null;
   }
 
-  /* ---------------------------------------------------------- state */
-  var DATA = null, REVIEWS = [], FIXES = [], FIXBY = {};
-  var state = {
-    tab: 'overview',
-    platform: 'all',
-    countries: [],          // OR-matched
-    stars: [],              // OR-matched, empty = all
-    status: 'all',          // all | need_reply | replied | fix_tagged
-    q: ''
-  };
+  /* --------------------------------------------------------------- state */
+  var META = {}, REVIEWS = [], FIXES = {}, GENERATED = '';
+  var state = { queue: 'need-reply', platform: 'all', country: 'all', stars: 'all', q: '' };
+  var selectedId = null;
+  var visible = [];
 
-  /* ---------------------------------------------------------- helpers */
+  /* ------------------------------------------------------------- helpers */
   function el(id) { return document.getElementById(id); }
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
-  function num(n) { return (n == null || isNaN(n)) ? '–' : Number(n).toLocaleString('en-US'); }
+  function num(n) {
+    return (n == null || isNaN(n)) ? '–' : Number(n).toLocaleString('en-US');
+  }
+  function plural(n, one, many) { return num(n) + ' ' + (Number(n) === 1 ? one : many); }
 
-  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  function fmtDate(iso, withYear) {
-    var p = String(iso || '').split('-');
-    if (p.length !== 3) return esc(iso);
-    return Number(p[2]) + ' ' + MONTHS[Number(p[1]) - 1] + (withYear ? ' ' + p[0] : '');
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function fmtDate(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return String(iso || '');
+    return d.getUTCDate() + ' ' + MONTHS[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
   }
-  function truncate(s, n) {
-    s = String(s || '').replace(/\s+/g, ' ').trim();
-    return s.length > n ? s.slice(0, n - 1).replace(/[\s,.;:—-]+$/, '') + '…' : s;
-  }
-  function starHtml(n) {
+  function starsHtml(n, big) {
     n = Number(n) || 0;
-    var on = '', off = '';
-    for (var i = 0; i < 5; i++) { (i < n ? (on += '★') : (off += '★')); }
-    return '<span class="stars">' + on + '<span class="off">' + off + '</span></span>' +
-           '<span class="starnum">' + n + '</span>';
+    var out = '<span class="stars' + (big ? ' big' : '') + '" role="img" aria-label="' + n + ' out of 5 stars">';
+    for (var i = 1; i <= 5; i++) out += i <= n ? '★' : '<i>★</i>';
+    return out + '</span>';
   }
-  function platClass(p) { return /ios/i.test(p) ? 'ios' : 'android'; }
+  function icon(path, size) {
+    return '<svg viewBox="0 0 24 24" width="' + (size || 22) + '" height="' + (size || 22) +
+      '" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" ' +
+      'stroke-linejoin="round" aria-hidden="true" focusable="false">' + path + '</svg>';
+  }
+  var I_INBOX = '<path d="M3 12h5l2 3h4l2-3h5"/><path d="M5.5 5h13l2.5 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/>';
+  var I_ARROW = '<path d="M9 6h9v9"/><path d="M18 6 6.5 17.5"/>';
+
+  var CNAMES = {
+    ae: 'UAE', at: 'Austria', au: 'Australia', ca: 'Canada', ch: 'Switzerland',
+    de: 'Germany', fr: 'France', gb: 'United Kingdom', hk: 'Hong Kong', il: 'Israel',
+    in: 'India', it: 'Italy', jp: 'Japan', kr: 'South Korea', nl: 'Netherlands',
+    no: 'Norway', ru: 'Russia', se: 'Sweden', sg: 'Singapore', th: 'Thailand', us: 'United States'
+  };
+  function cname(code) { return CNAMES[code] || String(code || '').toUpperCase(); }
+
   function countriesOf(r) {
     if (Array.isArray(r.countries) && r.countries.length) return r.countries;
-    return String(r.country || '').split(',').map(function (c) { return c.trim(); }).filter(Boolean);
+    return String(r.country || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+  function platKey(r) { return String(r.platform || '').toLowerCase(); }
+  function platLabel(r) { return platKey(r) === 'ios' ? 'iOS' : 'Android'; }
+  function storeLabel(r) { return platKey(r) === 'ios' ? 'iOS · App Store' : 'Android · Google Play'; }
+
+  /* Source line: platform + countries as calm text, never a wall of chips. */
+  function sourceLine(r, full) {
+    var cs = countriesOf(r).map(full ? cname : function (c) { return cname(c); });
+    return (full ? storeLabel(r) : platLabel(r)) + ' · ' + cs.join(' & ');
   }
 
-  /* ---------------------------------------------------------- filtering */
   function isNeedReply(r) { return r.reply_status === 'need_reply'; }
-  function isReplied(r) { return r.has_developer_reply === true || r.reply_status === 'replied' || r.reply_status === 'answered'; }
   function isFixTagged(r) { return r.issue_tag && r.issue_tag !== 'other'; }
 
-  function passes(r) {
-    if (state.platform !== 'all' && platClass(r.platform) !== state.platform) return false;
-
-    if (state.countries.length) {
-      var cs = countriesOf(r), hit = false;
-      for (var i = 0; i < cs.length; i++) { if (state.countries.indexOf(cs[i]) !== -1) { hit = true; break; } }
-      if (!hit) return false;
-    }
-
-    if (state.stars.length && state.stars.indexOf(Number(r.stars)) === -1) return false;
-
-    if (state.status === 'need_reply' && !isNeedReply(r)) return false;
-    if (state.status === 'replied' && !isReplied(r)) return false;
-    if (state.status === 'fix_tagged' && !isFixTagged(r)) return false;
-
+  /* ------------------------------------------------------------ filtering */
+  function inQueue(r, queue) {
+    if (queue === 'need-reply') return isNeedReply(r);
+    if (queue === 'fix') return isFixTagged(r);
+    return true;
+  }
+  function passesFilters(r) {
+    if (state.platform !== 'all' && platKey(r) !== state.platform) return false;
+    if (state.stars !== 'all' && Number(r.stars) !== Number(state.stars)) return false;
+    if (state.country !== 'all' && countriesOf(r).indexOf(state.country) === -1) return false;
     if (state.q) {
       var hay = ((r.author || '') + ' ' + (r.title || '') + ' ' + (r.body || '')).toLowerCase();
       if (hay.indexOf(state.q) === -1) return false;
     }
     return true;
   }
-
-  function filtered(extra) {
-    return REVIEWS.filter(function (r) { return passes(r) && (!extra || extra(r)); });
-  }
   function filtersActive() {
-    return state.platform !== 'all' || state.countries.length > 0 ||
-           state.stars.length > 0 || state.status !== 'all' || state.q !== '';
+    return state.platform !== 'all' || state.country !== 'all' || state.stars !== 'all' || !!state.q;
+  }
+  function compute() {
+    visible = REVIEWS.filter(function (r) {
+      return inQueue(r, state.queue) && passesFilters(r);
+    });
   }
 
-  /* ---------------------------------------------------------- chips */
-  function chipsFor(r) {
-    var out = [];
-    out.push('<span class="chip plat ' + platClass(r.platform) + '">' + esc(r.platform) + '</span>');
-    countriesOf(r).forEach(function (c) { out.push('<span class="chip cc">' + esc(c) + '</span>'); });
-    return out.join('');
-  }
-  function statusChip(r) {
-    if (isReplied(r)) return '<span class="chip replied">Public reply</span>';
-    if (isNeedReply(r)) return '<span class="chip need">Need reply</span>';
-    return '<span class="chip">' + esc(r.reply_status || '—') + '</span>';
-  }
-  function fixChip(r) {
-    var n = r._fix;
-    if (n && FIXBY[n]) {
-      return '<a class="chip fix" href="' + esc(FIXBY[n].url || (REPO_ISSUES + n)) + '" target="_blank" rel="noopener">' +
-             '<span class="hash">#' + n + '</span> ' + esc(FIXBY[n].title) + '</a>';
+  /* ------------------------------------------------------------ list head */
+  function queueCopy() {
+    var need = REVIEWS.filter(isNeedReply).length;
+    var fix = REVIEWS.filter(isFixTagged).length;
+    if (state.queue === 'fix') {
+      return ['Fix queue', plural(fix, 'review', 'reviews') + ' tagged to a shipped fix issue, #1 to #6. ' +
+        'Open the issue from the review to follow the engineering thread.'];
     }
-    if (r.issue_tag) return '<span class="chip tag">' + esc(r.issue_tag) + '</span>';
-    return '';
-  }
-
-  /* ---------------------------------------------------------- card view */
-  function cardHtml(r) {
-    var draft = r.suggested_reply
-      ? '<details class="draft"><summary>Suggested reply</summary>' +
-        '<div class="draft-body"><span class="lab">Draft — not sent</span>' + esc(r.suggested_reply) + '</div></details>'
-      : '';
-    return '<article class="rev' + (isNeedReply(r) ? ' hi' : '') + '">' +
-      '<div class="rev-top">' + starHtml(r.stars) + chipsFor(r) +
-        '<time datetime="' + esc(r.date) + '">' + fmtDate(r.date, false) + '</time></div>' +
-      '<div class="rev-author">' + esc(r.author || 'Anonymous') + '</div>' +
-      (r.title ? '<div class="rev-author" style="font-weight:700;font-size:13.5px">' + esc(r.title) + '</div>' : '') +
-      '<p class="rev-body">' + esc(truncate(r.body, 190)) + '</p>' +
-      '<div class="rev-foot">' + statusChip(r) + fixChip(r) + '</div>' +
-      draft +
-      '</article>';
-  }
-  function cardsHtml(list) {
-    return '<div class="cards">' + list.map(cardHtml).join('') + '</div>';
-  }
-
-  /* ---------------------------------------------------------- table view */
-  function tableHtml(list) {
-    var rows = list.map(function (r, i) {
-      var detailId = 'd-' + r.id;
-      return '<tr class="r" data-row="' + esc(r.id) + '">' +
-        '<td class="c-date">' + fmtDate(r.date, true) + '</td>' +
-        '<td class="c-stars">' + starHtml(r.stars) + '</td>' +
-        '<td class="c-plat"><span class="chip plat ' + platClass(r.platform) + '">' + esc(r.platform) + '</span></td>' +
-        '<td class="c-cc">' + countriesOf(r).map(function (c) { return '<span class="chip cc">' + esc(c) + '</span>'; }).join(' ') + '</td>' +
-        '<td class="c-author">' + esc(r.author || 'Anonymous') + '</td>' +
-        '<td class="c-body">' + (r.title ? '<b>' + esc(r.title) + '</b> — ' : '') + esc(truncate(r.body, 150)) + '</td>' +
-        '<td class="c-status">' + statusChip(r) + '</td>' +
-        '<td class="c-fix">' + fixChip(r) + '</td>' +
-        '<td class="c-more"><button type="button" class="expand" aria-expanded="false" aria-controls="' + detailId +
-          '" data-toggle="' + esc(r.id) + '"><span aria-hidden="true">›</span><span class="sr">Details</span></button></td>' +
-      '</tr>' +
-      '<tr class="detail" id="' + detailId + '" hidden><td colspan="9"><div class="dwrap">' +
-        '<div class="dcol"><h4>Full review</h4><p>' + esc(r.body || '—') + '</p></div>' +
-        (r.suggested_reply ? '<div class="dcol"><h4>Suggested reply — draft, not sent</h4><p>' + esc(r.suggested_reply) + '</p></div>' : '') +
-      '</div></td></tr>';
-    }).join('');
-
-    return '<div class="tablewrap"><table class="revs">' +
-      '<thead><tr>' +
-        '<th class="c-date">Date</th><th class="c-stars">Stars</th><th class="c-plat">Platform</th>' +
-        '<th class="c-cc">Country</th><th class="c-author">Author</th><th class="c-body">Review</th>' +
-        '<th class="c-status">Status</th><th class="c-fix">Fix issue</th>' +
-        '<th class="c-more"><span class="sr">Details</span></th>' +
-      '</tr></thead><tbody>' + rows + '</tbody></table></div>';
-  }
-
-  function listHtml(list, emptyMsg) {
-    if (!list.length) {
-      return '<div class="empty"><b>Nothing matches</b>' + esc(emptyMsg || 'Try clearing a filter or widening the search.') + '</div>';
+    if (state.queue === 'all') {
+      return ['All reviews', plural(REVIEWS.length, 'review', 'reviews') + ' across every storefront in the scrape. ' +
+        esc(META.sample_note || '')];
     }
-    return DESKTOP.matches ? tableHtml(list) : cardsHtml(list);
+    return ['Need reply', plural(need, 'review', 'reviews') + ' waiting on a public answer — each one already has a ' +
+      'drafted reply ready to copy. Nothing has been sent yet.'];
   }
 
-  /* ---------------------------------------------------------- fix queue */
-  function fixRowHtml(f, count) {
-    var tracking = f.kind === 'tracking';
-    return '<a class="fixrow' + (tracking ? ' track' : '') + '" href="' + esc(f.url || (REPO_ISSUES + f.number)) + '" target="_blank" rel="noopener">' +
-      '<span class="num">#' + esc(f.number) + '</span>' +
-      '<span class="fx"><span class="t">' + esc(f.title) + '</span>' +
-        '<span class="m"><span class="chip">' + esc(f.platform || 'BOTH') + '</span>' +
-        (tracking ? '<span class="chip tag">tracking</span>' : '') + '</span></span>' +
-      (tracking ? '' : '<span class="cnt"><b>' + count + '</b><s>in sample</s></span>') +
-      '<span class="chev" aria-hidden="true">›</span></a>';
-  }
-  function fixCounts(list) {
-    var c = {};
-    list.forEach(function (r) { if (r._fix) c[r._fix] = (c[r._fix] || 0) + 1; });
-    return c;
-  }
+  /* ------------------------------------------------------------- list */
+  function renderList() {
+    var box = el('list');
+    var copy = queueCopy();
+    el('listTitle').textContent = copy[0];
+    el('listSub').innerHTML = copy[1];
 
-  /* ---------------------------------------------------------- KPIs */
-  function renderOverview() {
-    var m = DATA.meta || {};
-    var kpis = [
-      { k: 'Written reviews', v: num(m.written_total), d: (m.delta_vs_prev === 0 ? 'No change ' : (m.delta_vs_prev > 0 ? '+' + m.delta_vs_prev + ' ' : m.delta_vs_prev + ' ')) + (m.prev_label || ''), cls: '' },
-      { k: 'Need reply', v: num(m.need_reply), d: 'Open, no store answer', cls: 'alert' },
-      { k: 'Store replies', v: num(m.store_replies), d: num(m.answered_public) + ' answered publicly', cls: '' },
-      { k: 'Fix-tagged', v: num(m.fix_tagged), d: 'Reviews pointing at a known bug', cls: '' }
-    ];
-    el('kpiStrip').innerHTML = kpis.map(function (x) {
-      return '<div class="kpi ' + x.cls + '"><div class="k">' + esc(x.k) + '</div>' +
-             '<div class="v">' + x.v + '</div><div class="d">' + esc(x.d) + '</div></div>';
-    }).join('');
-    el('prevLabel').textContent = m.prev_label || '';
-
-    var ios = Number(m.written_ios) || 0, and = Number(m.written_android) || 0, tot = ios + and;
-    el('kIos').textContent = num(m.written_ios);
-    el('kAndroid').textContent = num(m.written_android);
-    var pi = tot ? Math.round(ios / tot * 100) : 0;
-    el('platBar').children[0].style.width = pi + '%';
-    el('platBar').children[1].style.width = (100 - pi) + '%';
-    el('pctIos').textContent = pi + '%';
-    el('pctAndroid').textContent = (100 - pi) + '%';
-
-    var counts = fixCounts(REVIEWS);
-    el('fixSummary').innerHTML = FIXES.map(function (f) { return fixRowHtml(f, counts[f.number] || 0); }).join('');
-    el('fixSummaryN').textContent = FIXES.length + ' issues';
-
-    var need = REVIEWS.filter(isNeedReply).slice()
-      .sort(function (a, b) { return (a.stars - b.stars) || (b.date < a.date ? -1 : 1); })
-      .slice(0, 4);
-    el('needPreview').innerHTML = need.map(cardHtml).join('');
-    el('needPreviewN').textContent = REVIEWS.filter(isNeedReply).length + ' open';
-
-    el('metaNote').textContent = m.note
-      ? 'Note from the data file: ' + m.note
-      : 'All figures read from data/reviews.json.';
-  }
-
-  /* ---------------------------------------------------------- render */
-  function render() {
-    var all = filtered();
-    var need = filtered(isNeedReply);
-
-    el('nAll').textContent = REVIEWS.length;
-    el('nFix').textContent = FIXES.length;
-    el('nNeed').textContent = REVIEWS.filter(isNeedReply).length;
-
-    el('allList').innerHTML = listHtml(all);
-    el('allHeadN').textContent = all.length + ' of ' + REVIEWS.length;
-
-    el('needList').innerHTML = listHtml(need, 'No need-reply review matches these filters.');
-    el('needHeadN').textContent = need.length + ' of ' + REVIEWS.filter(isNeedReply).length;
-
-    var counts = fixCounts(all);
-    el('fixList').innerHTML = FIXES.map(function (f) { return fixRowHtml(f, counts[f.number] || 0); }).join('');
-    el('fixHeadN').textContent = FIXES.length + ' issues';
-
-    var shown = state.tab === 'needreply' ? need.length : all.length;
-    var total = state.tab === 'needreply' ? REVIEWS.filter(isNeedReply).length : REVIEWS.length;
-    el('resultCount').innerHTML = '<b>' + shown + '</b> of ' + total + ' reviews';
+    var pool = REVIEWS.filter(function (r) { return inQueue(r, state.queue); }).length;
+    el('resultCount').textContent = visible.length === pool
+      ? plural(visible.length, 'review', 'reviews')
+      : num(visible.length) + ' of ' + num(pool) + ' reviews';
     el('clearFilters').hidden = !filtersActive();
 
-    var active = (state.platform !== 'all' ? 1 : 0) + state.countries.length +
-                 state.stars.length + (state.status !== 'all' ? 1 : 0) + (state.q ? 1 : 0);
-    var badge = el('filterCount');
-    badge.textContent = active;
-    badge.hidden = active === 0;
-
-    // Sync pressed state on every filter control.
-    document.querySelectorAll('#fPlatform .seg').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.platform === state.platform));
-    });
-    document.querySelectorAll('#fCountry .seg').forEach(function (b) {
-      var c = b.dataset.country;
-      b.setAttribute('aria-pressed', String(c === 'all' ? state.countries.length === 0 : state.countries.indexOf(c) !== -1));
-    });
-    document.querySelectorAll('#fStars .seg').forEach(function (b) {
-      var s = b.dataset.stars;
-      b.setAttribute('aria-pressed', String(s === 'all' ? state.stars.length === 0 : state.stars.indexOf(Number(s)) !== -1));
-    });
-    document.querySelectorAll('#fStatus .seg').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.status === state.status));
-    });
-  }
-
-  var TABS = ['overview', 'all', 'fix', 'needreply'];
-
-  function showTab(name, keepHash) {
-    if (TABS.indexOf(name) === -1) name = 'overview';
-    state.tab = name;
-    if (!keepHash) {
-      var h = name === 'overview' ? ' ' : '#' + name;
-      if (history.replaceState) history.replaceState(null, '', h === ' ' ? location.pathname : h);
+    if (!visible.length) {
+      box.innerHTML = emptyHtml('No reviews match these filters',
+        'Try another platform, country or rating — or clear the filters to see the whole queue again.');
+      return;
     }
-    TABS.forEach(function (n) {
-      el('panel-' + n).hidden = (n !== name);
-      el('tab-' + n).setAttribute('aria-selected', String(n === name));
-    });
-    el('filters').hidden = (name !== 'all' && name !== 'needreply');
-    render();
-    window.scrollTo({ top: 0, behavior: 'auto' });
+
+    var html = '';
+    for (var i = 0; i < visible.length; i++) {
+      var r = visible[i];
+      var f = fixFor(r);
+      var flags = '';
+      if (isNeedReply(r)) {
+        flags += '<span class="flag flag-need"><span class="dot" aria-hidden="true"></span>Draft ready</span>';
+      }
+      if (f && FIXES[f]) flags += '<span class="flag">Fix #' + f + '</span>';
+
+      html += '<button type="button" class="card" data-id="' + esc(r.id) + '"' +
+        ' aria-selected="' + (r.id === selectedId ? 'true' : 'false') + '">' +
+        '<span class="card-head">' +
+          '<span class="card-who">' + esc(r.author || 'Anonymous') + '</span>' +
+          '<span class="card-when">' + esc(fmtDate(r.date)) + '</span>' +
+        '</span>' +
+        '<span class="card-rate">' + starsHtml(r.stars) +
+          '<span class="card-src">' + esc(sourceLine(r, false)) + '</span>' +
+        '</span>' +
+        (r.title ? '<span class="card-title">' + esc(r.title) + '</span>' : '') +
+        (r.body ? '<span class="card-text">' + esc(r.body) + '</span>' : '') +
+        (flags ? '<span class="card-foot">' + flags + '</span>' : '') +
+      '</button>';
+    }
+    box.innerHTML = html;
   }
 
-  /* ---------------------------------------------------------- filter UI */
-  function buildFilters() {
-    el('fPlatform').innerHTML = [
-      { v: 'all', l: 'All' }, { v: 'ios', l: 'iOS' }, { v: 'android', l: 'Android' }
-    ].map(function (o) {
-      return '<button type="button" class="seg" data-platform="' + o.v + '" aria-pressed="false">' + o.l + '</button>';
+  function emptyHtml(head, sub) {
+    return '<div class="empty"><span class="empty-mark">' + icon(I_INBOX, 24) + '</span>' +
+      '<strong>' + esc(head) + '</strong><p>' + esc(sub) + '</p></div>';
+  }
+
+  /* ------------------------------------------------------------ detail */
+  function renderDetail() {
+    var body = el('detailBody');
+    var r = null;
+    for (var i = 0; i < REVIEWS.length; i++) if (REVIEWS[i].id === selectedId) { r = REVIEWS[i]; break; }
+
+    if (!r) {
+      body.innerHTML = emptyHtml('Pick a review',
+        'Choose a review on the left to read it in full, see its drafted reply and jump to the linked fix issue.');
+      return;
+    }
+
+    var draft = (r.suggested_reply || '').trim();
+    var who = r.author || 'Anonymous';
+    /* Play reviews carry no title, so the headline falls back to the author —
+       don't then repeat the author in the meta line underneath it. */
+    var head = (r.title || '').trim() || who;
+    var meta = [head === who ? '' : who, fmtDate(r.date), countriesOf(r).map(cname).join(' & ')]
+      .filter(Boolean).join(' · ');
+    var html = '<article class="dt">' +
+      '<p class="eyebrow">' + esc(storeLabel(r)) + '</p>' +
+      '<h2 class="dt-title">' + esc(head) + '</h2>' +
+      '<p class="dt-meta">' + esc(meta) + '</p>' +
+      '<p class="dt-rate">' + starsHtml(r.stars, true) +
+        (isNeedReply(r) ? '<span class="flag flag-need"><span class="dot" aria-hidden="true"></span>Needs a reply</span>' : '') +
+      '</p>' +
+      '<p class="dt-body">' + esc(r.body) + '</p>';
+
+    if (draft) {
+      html += '<section class="panel">' +
+        '<div class="panel-head">' +
+          '<p class="panel-label">Suggested reply</p>' +
+          '<span class="tag">Draft · not sent</span>' +
+        '</div>' +
+        '<p class="draft-text" id="draftText">' + esc(draft) + '</p>' +
+        '<div class="panel-foot">' +
+          '<button type="button" class="btn" id="copyBtn">' +
+            '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">' +
+            '<rect x="5.2" y="5.2" width="8" height="8" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.4"/>' +
+            '<path d="M10.8 3.2a1.8 1.8 0 0 0-1.8-1.8H4.4a3 3 0 0 0-3 3v4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>' +
+            '</svg>Copy draft</button>' +
+          '<span class="hint">Paste into App Store Connect or Play Console to publish it.</span>' +
+        '</div>' +
+      '</section>';
+    } else {
+      html += '<section class="panel">' +
+        '<div class="panel-head"><p class="panel-label">Suggested reply</p></div>' +
+        '<p class="panel-note">No draft written for this review. Drafts exist for the ' +
+        num(META.need_reply) + ' reviews in the Need reply queue.</p>' +
+      '</section>';
+    }
+
+    var f = fixFor(r);
+    if (f && FIXES[f]) {
+      html += '<a class="rowlink" href="' + esc(FIXES[f].url) + '" target="_blank" rel="noopener">' +
+        '<span class="issue-n">Issue #' + f + '</span>' +
+        '<span class="issue-t">' + esc(FIXES[f].title) + '</span>' +
+        '<span class="issue-go">' + icon(I_ARROW, 16) + '</span></a>';
+    }
+
+    body.innerHTML = html + '</article>';
+    body.scrollTop = 0;
+
+    var btn = el('copyBtn');
+    if (btn) btn.addEventListener('click', function () { copy(draft); });
+  }
+
+  function copy(text) {
+    function done() { toast('Draft copied — nothing sent'); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      toast(ok ? 'Draft copied — nothing sent' : 'Copy failed — select the text manually');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  var toastTimer = null;
+  function toast(msg) {
+    var t = el('toast');
+    t.textContent = msg;
+    t.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('on'); }, 1800);
+  }
+
+  /* ---------------------------------------------------------- overview */
+  function renderOverview() {
+    var ios = 0, android = 0;
+    (META.platforms || []).forEach(function (p) {
+      if (String(p.platform).toLowerCase() === 'ios') ios = p.count; else android = p.count;
+    });
+    var delta = Number(META.delta_vs_prev || 0);
+    var deltaTxt = delta > 0 ? '+' + num(delta) : delta < 0 ? num(delta) : 'No change';
+    var low = REVIEWS.filter(function (r) { return Number(r.stars) <= 2; }).length;
+
+    var kpi = [
+      ['Reviews written', num(META.written_total), (META.prev_label || '') + ' · ' + deltaTxt],
+      ['Need reply', num(META.need_reply), num(META.suggested_replies_filled) + ' drafts ready to copy'],
+      ['Store replies sent', num(META.store_replies), 'Nothing sent from this board'],
+      ['Fix-tagged', num(META.fix_tagged), 'Mapped to issues #1–#6'],
+      ['1–2 star reviews', num(low), 'of ' + num(META.written_total) + ' in the scrape'],
+      ['iOS · Android', num(ios) + ' · ' + num(android), 'App Store and Google Play']
+    ].map(function (k) {
+      return '<div class="kpi"><p class="kpi-k">' + esc(k[0]) + '</p>' +
+        '<p class="kpi-v">' + esc(k[1]) + '</p><p class="kpi-s">' + esc(k[2]) + '</p></div>';
     }).join('');
 
-    var cc = {};
-    REVIEWS.forEach(function (r) { countriesOf(r).forEach(function (c) { cc[c] = (cc[c] || 0) + 1; }); });
-    var order = Object.keys(cc).sort(function (a, b) { return cc[b] - cc[a] || (a < b ? -1 : 1); });
-    el('fCountry').innerHTML = '<button type="button" class="seg small" data-country="all" aria-pressed="true">All</button>' +
-      order.map(function (c) {
-        return '<button type="button" class="seg small" data-country="' + esc(c) + '" aria-pressed="false">' +
-               '<span class="cc">' + esc(c) + '</span><span class="cn">' + cc[c] + '</span></button>';
-      }).join('');
-
-    el('fStars').innerHTML = '<button type="button" class="seg small" data-stars="all" aria-pressed="true">All</button>' +
-      [1, 2, 3, 4, 5].map(function (s) {
-        return '<button type="button" class="seg small" data-stars="' + s + '" aria-pressed="false">' + s + '★</button>';
-      }).join('');
-
-    el('fStatus').innerHTML = [
-      { v: 'all', l: 'All' }, { v: 'need_reply', l: 'Need reply' },
-      { v: 'replied', l: 'Has public reply' }, { v: 'fix_tagged', l: 'Fix-tagged' }
-    ].map(function (o) {
-      return '<button type="button" class="seg small" data-status="' + o.v + '" aria-pressed="false">' + o.l + '</button>';
+    var rows = (META.fixList || []).map(function (f) {
+      return '<a class="rowlink" href="' + esc(f.url) + '" target="_blank" rel="noopener">' +
+        '<span class="issue-n">#' + f.number + '</span>' +
+        '<span class="issue-t">' + esc(f.title) + '</span>' +
+        '<span class="flag">' + esc(f.platform) + '</span>' +
+        '<span class="issue-go">' + icon(I_ARROW, 16) + '</span></a>';
     }).join('');
+
+    el('overview').innerHTML = '<div class="ov">' +
+      '<h2>Overview</h2>' +
+      '<p class="ov-sub">Everything below is counted straight from reviews.json, generated ' +
+        esc(fmtDate(GENERATED)) + '.</p>' +
+      '<p class="ov-label">Totals</p><div class="kpis">' + kpi + '</div>' +
+      '<p class="ov-label">Fix issues</p><div class="fixrows">' + rows + '</div>' +
+      '<p class="ov-note">' + esc(META.sample_note || '') +
+      ' Suggested replies are drafts held on this board; no reply has been posted to either store.</p>' +
+    '</div>';
+  }
+
+  /* ------------------------------------------------------------- routing */
+  function applyQueue(queue, replaceHash) {
+    state.queue = QUEUES.indexOf(queue) === -1 ? 'need-reply' : queue;
+    el('app').setAttribute('data-queue', state.queue);
+    el('overview').hidden = state.queue !== 'overview';
+
+    var btns = document.querySelectorAll('.q');
+    for (var i = 0; i < btns.length; i++) {
+      if (btns[i].getAttribute('data-queue') === state.queue) btns[i].setAttribute('aria-current', 'page');
+      else btns[i].removeAttribute('aria-current');
+    }
+    var hash = '#' + state.queue;
+    if (location.hash !== hash) {
+      if (replaceHash) history.replaceState(null, '', hash);
+      else location.hash = hash;
+    }
+    if (state.queue === 'overview') { closeSheet(); return; }
+    render();
+  }
+
+  function render() {
+    compute();
+    if (selectedId && !visible.some(function (r) { return r.id === selectedId; })) selectedId = null;
+    if (!selectedId && !MOBILE.matches && visible.length) selectedId = visible[0].id;
+    renderList();
+    renderDetail();
+  }
+
+  function select(id) {
+    selectedId = id;
+    var cards = document.querySelectorAll('.card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].setAttribute('aria-selected', cards[i].getAttribute('data-id') === id ? 'true' : 'false');
+    }
+    renderDetail();
+    if (MOBILE.matches) el('detail').classList.add('is-open');
+  }
+  function closeSheet() { el('detail').classList.remove('is-open'); }
+
+  /* ---------------------------------------------------------------- boot */
+  function counts() {
+    el('nNeed').textContent = num(REVIEWS.filter(isNeedReply).length);
+    el('nFix').textContent = num(REVIEWS.filter(isFixTagged).length);
+    el('nAll').textContent = num(REVIEWS.length);
+  }
+
+  function buildCountryOptions() {
+    var sel = el('fCountry');
+    (META.countries || []).forEach(function (c) {
+      var o = document.createElement('option');
+      o.value = c.code;
+      o.textContent = cname(c.code) + ' (' + c.count + ')';
+      sel.appendChild(o);
+    });
   }
 
   function wire() {
-    el('tabbar').addEventListener('click', function (e) {
-      var t = e.target.closest('.tab');
-      if (t) showTab(t.dataset.panel);
-    });
-    document.querySelectorAll('[data-goto]').forEach(function (a) {
-      a.addEventListener('click', function (e) { e.preventDefault(); showTab(a.dataset.goto); });
+    var qs = document.querySelectorAll('.q');
+    for (var i = 0; i < qs.length; i++) {
+      (function (b) {
+        b.addEventListener('click', function () {
+          selectedId = null;
+          closeSheet();
+          applyQueue(b.getAttribute('data-queue'), false);
+        });
+      })(qs[i]);
+    }
+
+    el('list').addEventListener('click', function (e) {
+      var card = e.target.closest ? e.target.closest('.card') : null;
+      if (card) select(card.getAttribute('data-id'));
     });
 
-    el('fPlatform').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-platform]'); if (!b) return;
-      state.platform = b.dataset.platform; render();
+    el('list').addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      var idx = -1;
+      for (var i = 0; i < visible.length; i++) if (visible[i].id === selectedId) { idx = i; break; }
+      var next = e.key === 'ArrowDown' ? idx + 1 : idx - 1;
+      if (next < 0 || next >= visible.length) return;
+      e.preventDefault();
+      select(visible[next].id);
+      var card = el('list').querySelector('.card[data-id="' + visible[next].id + '"]');
+      if (card) { card.focus(); card.scrollIntoView({ block: 'nearest' }); }
     });
-    el('fCountry').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-country]'); if (!b) return;
-      var c = b.dataset.country;
-      if (c === 'all') state.countries = [];
-      else {
-        var i = state.countries.indexOf(c);
-        if (i === -1) state.countries.push(c); else state.countries.splice(i, 1);
-      }
-      render();
+
+    el('backBtn').addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && MOBILE.matches) closeSheet();
     });
-    el('fStars').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-stars]'); if (!b) return;
-      var s = b.dataset.stars;
-      if (s === 'all') state.stars = [];
-      else {
-        var n = Number(s), i = state.stars.indexOf(n);
-        if (i === -1) state.stars.push(n); else state.stars.splice(i, 1);
-      }
-      render();
-    });
-    el('fStatus').addEventListener('click', function (e) {
-      var b = e.target.closest('[data-status]'); if (!b) return;
-      state.status = b.dataset.status; render();
-    });
+
+    var t = null;
     el('fSearch').addEventListener('input', function (e) {
-      state.q = e.target.value.trim().toLowerCase(); render();
+      var v = e.target.value.trim().toLowerCase();
+      clearTimeout(t);
+      t = setTimeout(function () { state.q = v; render(); }, 120);
     });
-    el('filterToggle').addEventListener('click', function () {
-      var open = el('fGroups').classList.toggle('open');
-      this.setAttribute('aria-expanded', String(open));
+    ['fPlatform', 'fCountry', 'fStars'].forEach(function (id) {
+      el(id).addEventListener('change', function (e) {
+        state[id === 'fPlatform' ? 'platform' : id === 'fCountry' ? 'country' : 'stars'] = e.target.value;
+        render();
+      });
     });
     el('clearFilters').addEventListener('click', function () {
-      state.platform = 'all'; state.countries = []; state.stars = []; state.status = 'all'; state.q = '';
-      el('fSearch').value = ''; render();
+      state.platform = state.country = state.stars = 'all';
+      state.q = '';
+      el('fSearch').value = '';
+      el('fPlatform').value = el('fCountry').value = el('fStars').value = 'all';
+      render();
     });
-
-    // Expand/collapse a table row's detail drawer.
-    document.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-toggle]'); if (!b) return;
-      var row = b.closest('tr'), detail = row.nextElementSibling;
-      var open = detail.hidden;
-      detail.hidden = !open;
-      row.classList.toggle('open', open);
-      b.setAttribute('aria-expanded', String(open));
-    });
-
-    // Cards <-> table swap when crossing the desktop breakpoint.
-    var wasDesktop = DESKTOP.matches;
-    window.addEventListener('resize', function () {
-      if (DESKTOP.matches !== wasDesktop) { wasDesktop = DESKTOP.matches; render(); }
-    });
-
-    // Keep the sticky filter bar docked under the sticky tab bar.
-    function measure() {
-      document.documentElement.style.setProperty('--bar-h', el('tabbar').offsetHeight + 'px');
-    }
-    measure();
-    window.addEventListener('resize', measure);
 
     window.addEventListener('hashchange', function () {
-      showTab((location.hash || '').replace('#', '') || 'overview', true);
+      applyQueue(location.hash.replace('#', ''), true);
     });
+    MOBILE.addEventListener('change', function () { render(); });
   }
 
-  /* ---------------------------------------------------------- boot */
   fetch(DATA_URL, { cache: 'no-store' })
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.json();
     })
-    .then(function (json) {
-      DATA = json;
-      REVIEWS = (json.reviews || []).slice();
-      REVIEWS.forEach(function (r) { r._fix = fixFor(r); });
-      REVIEWS.sort(function (a, b) { return a.date < b.date ? 1 : (a.date > b.date ? -1 : 0); });
-      FIXES = json.fix || [];
-      FIXES.forEach(function (f) { FIXBY[f.number] = f; });
+    .then(function (data) {
+      META = data.meta || {};
+      GENERATED = data.generated_at || '';
+      META.fixList = data.fix || [];
+      META.fixList.forEach(function (f) { FIXES[f.number] = f; });
 
-      var gen = String(json.generated_at || '').slice(0, 10);
-      el('generatedChip').textContent = gen ? fmtDate(gen, true) : '—';
+      REVIEWS = (data.reviews || []).slice().sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
 
-      buildFilters();
+      el('hdrMeta').textContent = 'Updated ' + fmtDate(GENERATED) + ' · ' +
+        num(META.written_total) + ' reviews · ' + num(META.need_reply) + ' need a reply';
+
+      counts();
+      buildCountryOptions();
       wire();
       renderOverview();
-      showTab((location.hash || '').replace('#', '') || 'overview', true);
+
+      var start = location.hash.replace('#', '');
+      applyQueue(QUEUES.indexOf(start) === -1 ? 'need-reply' : start, true);
     })
     .catch(function (err) {
-      document.querySelector('.page').innerHTML =
-        '<div class="empty"><b>Could not load data/reviews.json</b>' +
-        esc(String(err.message || err)) +
-        '<br>Serve the repo over http (e.g. <code>python3 -m http.server</code>) — file:// blocks the fetch.</div>';
+      el('hdrMeta').textContent = 'Could not load reviews';
+      el('listSub').textContent = '';
+      el('list').innerHTML = emptyHtml('Could not load reviews.json',
+        String(err.message || err) + '. Serve this folder over http rather than opening the file directly.');
     });
 })();
