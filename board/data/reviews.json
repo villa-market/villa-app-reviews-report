@@ -106,7 +106,9 @@
         "count": 158
       }
     ],
-    "fix_tagged": 30
+    "fix_tagged": 30,
+    "suggested_replies_filled": 31,
+    "suggested_replies_quality_pass": "2026-09-02"
   },
   "fix": [
     {
@@ -236,7 +238,7 @@
       "reply_status": "need_reply",
       "issue_tag": "checkout",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "We're sorry — a cart that still shows paid items and stays on 'processing payment' after you've paid (and after many CS reports) is unacceptable. Escalated to the payments/app team with your review attached."
     },
     {
       "id": "14033418867",
@@ -308,7 +310,7 @@
       "reply_status": "need_reply",
       "issue_tag": "checkout",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "We're truly sorry for that first try: app wouldn't load, phone verify stalled, wrong-location errors, then the cart emptied when you changed store. Those are known bugs — your review is with the app team. In-app chat can help if you want to retry a first order."
     },
     {
       "id": "13836518270",
@@ -326,7 +328,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry — wrong password loop, then Forget Password did nothing until you hit the attempt limit, plus no usable LINE/phone support. Password-reset and support gaps are both on us. Email ewallet@villamarket.com with your phone number if you need the account unlocked manually."
     },
     {
       "id": "12003530091",
@@ -776,7 +778,7 @@
       "reply_status": "need_reply",
       "issue_tag": "delivery",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "ขออภัยที่บริการหน้าร้านและการจัดส่งไม่ถึงมาตรฐาน และที่จัดส่งด่วนช้ากว่าที่แจ้ง (สัญญา ~1 ชม. แต่รอนานกว่า 2 ชม.) เราได้ส่งต่อให้ทีมปฏิบัติการจัดส่งแล้ว หากแจ้งเลขคำสั่งซื้อในแอป เราจะช่วยติดตามให้ค่ะ"
     },
     {
       "id": "13616278897",
@@ -794,7 +796,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry wallet setup freezes and crashes before you can finish — especially as a paid member. We've sent the wallet crash report to the iOS/payments team."
     },
     {
       "id": "13412052138",
@@ -956,7 +958,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app keeps stopping on you while Gourmet Market doesn't. Stability crashes like that are with the iOS team — if it still happens on the latest version, a device model note in-app helps us catch it."
     },
     {
       "id": "12346873397",
@@ -1532,7 +1534,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the latest update made the app unusable. A bad release is on us — please try the newest build when you can, and if it still fails, tell us your iPhone model in-app so we can reproduce."
     },
     {
       "id": "13639577312",
@@ -1550,7 +1552,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry — migrating with your old phone number failed on both app and website, with error spam and no reply to your email. Account migration should have worked. Please email ewallet@villamarket.com with the registered number; the team can link the account manually."
     },
     {
       "id": "13431404894",
@@ -1622,7 +1624,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app has been this broken — especially when the stores and products are good. Broken selection, search, and unresponsive buttons after updates are on us. Your review is with the iOS team."
     },
     {
       "id": "13731431315",
@@ -1658,7 +1660,7 @@
       "reply_status": "need_reply",
       "issue_tag": "checkout",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Thanks for the concrete examples. Cards that never save after you update them, and search that misses 'Mainland Tasty Cheese' unless you type the brand, are both real bugs — logged with your test cases for the iOS/payments and search teams."
     },
     {
       "id": "12357493523",
@@ -1695,7 +1697,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app wouldn't open on your phone. We currently refuse some Android setups (including Developer Options). That's our restriction, not your device — and we've flagged it for the Android team."
     },
     {
       "id": "25b59108-ecba-45fa-9662-56e43930b479",
@@ -1714,7 +1716,7 @@
       "reply_status": "need_reply",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the prices felt out of line. App prices should match the Villa store shelf — we don't add a hidden markup. If a specific item looked inflated, message us in-app with the product name and we'll check it."
     },
     {
       "id": "12517ab9-6fa1-4be2-8695-8edb063d5c4e",
@@ -1733,7 +1735,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry on both counts: the app shouldn't refuse phones with Developer Options on (Thai bank apps allow it — we're fixing that), and delivery fees should feel fair next to Grab/other options. Both notes are with the Android and ops teams."
     },
     {
       "id": "ea5a3153-5ebb-4576-a6d3-4ad5fb01ef22",
@@ -1752,7 +1754,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "You're right — blocking Developer Mode for a grocery app is a bad call and doesn't add real security. We've sent this to the Android team so shoppers (and developers) aren't forced to turn it off."
     },
     {
       "id": "e9c3f2f4-ed65-4991-bd54-7eeee313610a",
@@ -1771,7 +1773,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "ขออภัยที่แอปค้างหน้าแรกจนเข้าใช้งานไม่ได้ครับ เราได้รับเรื่องแล้วและส่งต่อให้ทีม Android เพื่อตรวจจับปัญหาโหลดค้างหลังอัปเดต"
     },
     {
       "id": "da158192-3c33-4ed2-bb77-2f4e6592d801",
@@ -1790,7 +1792,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the latest release takes forever to open — so long you gave up at the till. Slow/hung launch after update is a known issue we're chasing on Android. Thanks for spelling out the impact."
     },
     {
       "id": "7eb6508b-4432-4f8a-a3a8-05c4d2f8a5c6",
@@ -1809,7 +1811,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Agreed — Developer Mode isn't a security threat here, and Thai banks allow it. Blocking the app for that is on us. We've pushed the Android team to drop this restriction."
     },
     {
       "id": "454e2623-6629-4e02-bff7-e38adceb4c0d",
@@ -1866,7 +1868,7 @@
       "reply_status": "need_reply",
       "issue_tag": "stock",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app claimed every juice in the store was out of stock when it wasn't. False OOS is a real inventory/app bug — we've sent it to the app and stock teams."
     },
     {
       "id": "f217b018-0ca0-4a7c-9dd7-2732611fdabb",
@@ -1885,7 +1887,7 @@
       "reply_status": "need_reply",
       "issue_tag": "stock",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "ขออภัยที่สั่งได้แค่ของแห้ง ของสดสั่งไม่ได้ ทั้งที่ร้านอื่นส่งครบ เราทราบว่าแอปจำกัดบางหมวดและส่งต่อให้ทีมแอปกับทีมสต็อกแล้วค่ะ"
     },
     {
       "id": "7c8989ad-3391-491a-8c83-87c8c311bf8c",
@@ -1942,7 +1944,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app is broken for you. If you can still open it, a quick note in-app with what happens (won't launch / crash / stuck screen) helps us reproduce — we've flagged stability on Android either way."
     },
     {
       "id": "fb10c4cb-a831-4b43-9026-9f1bb0e310d4",
@@ -1961,7 +1963,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry you spent 30 minutes shopping and signup only for the verification code to never arrive on email or phone. OTP delivery failures are a known login bug — with the auth team now. No fake promise on timing."
     },
     {
       "id": "111f417a-ef53-4d66-9e6c-3a6bcef7e8b3",
@@ -1980,7 +1982,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app feels low quality and slow when everything else on your phone is fine. Performance on Android is a real complaint we're tracking — thanks for saying it plainly."
     },
     {
       "id": "794d2d7b-669f-4491-af96-0d3dad3fcf1f",
@@ -1999,7 +2001,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Glad OTP is working again. Noted on fingerprint instead of PIN — we've passed the biometric-login request to the Android team."
     },
     {
       "id": "35bbd617-b496-4a5d-b735-c3f14e5c434c",
@@ -2018,7 +2020,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry we forced an update only to block you for Developer Mode. Your phone, your settings — that restriction is ours to remove. Sent to the Android team; sorry you had to uninstall."
     },
     {
       "id": "66c7a00f-b83f-47c8-aea3-bedd4135bef6",
@@ -2037,7 +2039,7 @@
       "reply_status": "need_reply",
       "issue_tag": "stock",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry you couldn't pick the branch you wanted, then the forced branch showed everything out of stock so the order couldn't go through. Forced store + false OOS is a known bug — with the app/inventory team."
     },
     {
       "id": "aa429c98-8c1d-4520-89b0-158f7fa4eaa6",
@@ -2056,7 +2058,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Developer Mode has nothing to do with buying groceries — blocking the app for it was the wrong call. We've sent this to Android; sorry you uninstalled over it."
     },
     {
       "id": "089f1f79-f992-4c2e-98ab-733c257c5d95",
@@ -2094,7 +2096,7 @@
       "reply_status": "need_reply",
       "issue_tag": "stock",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "You've described the bug exactly: can't keep a farther store that has stock, checkout forces nearest, cart items vanish when that store is OOS. That's with the app team — including the weak LINE-order fallback you mentioned."
     },
     {
       "id": "cd394ff9-e3d3-4865-a7f8-758a5799bb44",
@@ -2132,7 +2134,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the OTP never arrived and wasted your time. Codes not delivering is a known login bug — with the auth team. No fake ETA."
     },
     {
       "id": "32554d77-acc9-4ba3-8829-ab0bf476fc29",
@@ -3665,7 +3667,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "ขออภัยที่ติดต่อเจ้าหน้าที่ไม่ได้และลงทะเบียนไม่ได้จนต้องถอนการติดตั้ง เราได้รับเรื่องแล้ว ส่งต่อให้ทีมแอป/บัญชีผู้ใช้ — หากต้องการให้ช่วยผูกเบอร์เดิม รบกวนอีเมล ewallet@villamarket.com ค่ะ"
     },
     {
       "id": "59e7a941-7ca7-4825-8851-419e29c0029b",
@@ -4421,7 +4423,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Sorry the app won't open — white screen only on your Huawei Mate X6. We've logged this Huawei launch bug for Android. If a later update still shows white, tell us in-app so we can confirm the fix."
     },
     {
       "id": "f4448975-d9b9-47d9-9a4b-37e082229f2f",
@@ -4547,7 +4549,7 @@
       "reply_status": "need_reply",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Förlåt att appen inte går att öppna. Vi har skickat vidare start/krasch-problemet till Android-teamet. Om du kan, skriv telefonmodell i appen så blir det lättare att återskapa."
     },
     {
       "id": "7e4a8c3f-fa8d-4d4e-ba97-d40c8abbb015",
