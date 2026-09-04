@@ -1,8 +1,8 @@
 Villa Market shopper app — engineering pulse
-3 Sep 2026
+4 Sep 2026
 
-• +0 new (still 243 written · iOS 85 / Android 158)
-• Reply backlog 31 still open · 0 answered publicly
+• +1 new (still 244 written · iOS 86 / Android 158)
+• Reply backlog 32 still open · 0 answered publicly
 • 5 open Fix issues · Play 391 · iOS TH 3.3/147
 
 Fix queue:
@@ -12,7 +12,7 @@ Fix queue:
 • Forced nearest store / cart wipe / false OOS
 • Checkout stuck after pay
 
-Reply backlog still 31 with 0 public answers — follow up who is answering (Mickey has store accounts).
+Reply backlog still 32 with 0 public answers — follow up who is answering (Mickey has store accounts).
 Do not post public store replies until Nic confirms.
 
 Board: https://villa-market.github.io/villa-app-reviews-report/board/

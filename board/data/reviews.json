@@ -1,23 +1,27 @@
 {
-  "generated_at": "2026-09-03T08:49:19+07:00",
+  "generated_at": "2026-09-04T08:44:14+07:00",
   "meta": {
-    "written_total": 243,
-    "written_ios": 85,
+    "written_total": 244,
+    "written_ios": 86,
     "written_android": 158,
-    "delta_vs_prev": 0,
-    "prev_label": "vs 2 Sep",
-    "need_reply": 31,
+    "delta_vs_prev": 1,
+    "prev_label": "vs 3 Sep",
+    "need_reply": 32,
     "answered_public": 0,
     "store_replies": 0,
     "sample_note": "Full public scrape — all countries/storefronts in sample.",
     "countries": [
       {
+        "code": "th,us",
+        "count": 99
+      },
+      {
         "code": "th",
-        "count": 170
+        "count": 71
       },
       {
         "code": "us",
-        "count": 111
+        "count": 13
       },
       {
         "code": "de",
@@ -68,6 +72,18 @@
         "count": 2
       },
       {
+        "code": "sg",
+        "count": 1
+      },
+      {
+        "code": "it",
+        "count": 1
+      },
+      {
+        "code": "in",
+        "count": 1
+      },
+      {
         "code": "ae",
         "count": 1
       },
@@ -76,30 +92,18 @@
         "count": 1
       },
       {
-        "code": "il",
-        "count": 1
-      },
-      {
-        "code": "in",
-        "count": 1
-      },
-      {
-        "code": "it",
-        "count": 1
-      },
-      {
         "code": "kr",
         "count": 1
       },
       {
-        "code": "sg",
+        "code": "il",
         "count": 1
       }
     ],
     "platforms": [
       {
         "platform": "ios",
-        "count": 85
+        "count": 86
       },
       {
         "platform": "android",
@@ -107,7 +111,7 @@
       }
     ],
     "fix_tagged": 30,
-    "suggested_replies_filled": 31,
+    "suggested_replies_filled": 32,
     "suggested_replies_quality_pass": "2026-09-02"
   },
   "fix": [
@@ -140,13 +144,6 @@
       "title": "Checkout stuck after pay / card save",
       "platform": "BOTH",
       "url": "https://github.com/villa-market/villa-app-reviews-report/issues/5"
-    },
-    {
-      "number": 6,
-      "title": "Tracking",
-      "platform": "BOTH",
-      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/6",
-      "kind": "tracking"
     }
   ],
   "reviews": [
@@ -4622,6 +4619,56 @@
       "issue_tag": "other",
       "fix": null,
       "suggested_reply": ""
+    },
+    {
+      "id": "14500871502",
+      "author": "Disappointed Long Loyal Client",
+      "platform": "iOS",
+      "country": "us",
+      "countries": [
+        "us"
+      ],
+      "stars": 1,
+      "date": "2026-09-02",
+      "title": "Cannot Pay",
+      "body": "Hard to buy if app does not allow payment",
+      "has_developer_reply": false,
+      "reply_status": "need_reply",
+      "issue_tag": "bug",
+      "fix": 5,
+      "suggested_reply": "Sorry the app wouldn't let you pay — hard to buy (and stay a loyal client) when checkout blocks the purchase. Payment failures like this are with the payments team. If you can, tell us in-app what happens at pay (card rejected / button stuck / method missing) so we can reproduce."
+    }
+  ],
+  "fixes": [
+    {
+      "number": 1,
+      "title": "Splash / first-screen hang",
+      "platform": "BOTH",
+      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/1"
+    },
+    {
+      "number": 2,
+      "title": "Developer Options / allow-list",
+      "platform": "ANDROID",
+      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/2"
+    },
+    {
+      "number": 3,
+      "title": "OTP / login / password reset",
+      "platform": "BOTH",
+      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/3"
+    },
+    {
+      "number": 4,
+      "title": "Forced store / cart wipe / false OOS",
+      "platform": "BOTH",
+      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/4"
+    },
+    {
+      "number": 5,
+      "title": "Checkout stuck after pay / card save",
+      "platform": "BOTH",
+      "url": "https://github.com/villa-market/villa-app-reviews-report/issues/5"
     }
   ]
 }
