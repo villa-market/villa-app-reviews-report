@@ -1,5 +1,5 @@
 Villa Market shopper app — engineering pulse
-5 Sep 2026
+6 Sep 2026
 
 • +0 new (still 244 written · iOS 86 / Android 158)
 • Reply backlog 32 still open · 0 answered publicly
