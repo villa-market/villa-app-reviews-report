@@ -68,6 +68,8 @@
   }
   var I_INBOX = '<path d="M3 12h5l2 3h4l2-3h5"/><path d="M5.5 5h13l2.5 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/>';
   var I_ARROW = '<path d="M9 6h9v9"/><path d="M18 6 6.5 17.5"/>';
+  var I_FIND = '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21"/>';
+  var I_READ = '<path d="M4 5.5h6a2.5 2.5 0 0 1 2 2.5v11a2 2 0 0 0-2-1.6H4z"/><path d="M20 5.5h-6a2.5 2.5 0 0 0-2 2.5v11a2 2 0 0 1 2-1.6h6z"/>';
 
   var CNAMES = {
     ae: 'UAE', at: 'Austria', au: 'Australia', ca: 'Canada', ch: 'Switzerland',
@@ -149,8 +151,10 @@
     el('clearFilters').hidden = !filtersActive();
 
     if (!visible.length) {
-      box.innerHTML = emptyHtml('No reviews match these filters',
-        'Try another platform, country or rating — or clear the filters to see the whole queue again.');
+      box.innerHTML = filtersActive()
+        ? emptyHtml('No reviews match', 'Nothing in this queue matches the current search and filters.',
+            { icon: I_FIND, action: 'Clear filters' })
+        : emptyHtml('Queue is clear', 'Every review in this queue has been worked through.', { icon: I_INBOX });
       return;
     }
 
@@ -181,9 +185,12 @@
     box.innerHTML = html;
   }
 
-  function emptyHtml(head, sub) {
-    return '<div class="empty"><span class="empty-mark">' + icon(I_INBOX, 24) + '</span>' +
-      '<strong>' + esc(head) + '</strong><p>' + esc(sub) + '</p></div>';
+  function emptyHtml(head, sub, opts) {
+    opts = opts || {};
+    return '<div class="empty"><span class="empty-mark">' + icon(opts.icon || I_INBOX, 22) + '</span>' +
+      '<strong>' + esc(head) + '</strong><p>' + esc(sub) + '</p>' +
+      (opts.action ? '<button type="button" class="empty-act">' + esc(opts.action) + '</button>' : '') +
+      '</div>';
   }
 
   /* ------------------------------------------------------------ detail */
@@ -193,8 +200,9 @@
     for (var i = 0; i < REVIEWS.length; i++) if (REVIEWS[i].id === selectedId) { r = REVIEWS[i]; break; }
 
     if (!r) {
-      body.innerHTML = emptyHtml('Pick a review',
-        'Choose a review on the left to read it in full, see its drafted reply and jump to the linked fix issue.');
+      body.innerHTML = emptyHtml('Nothing selected',
+        'Pick a review on the left to read it in full, copy its drafted reply and open the linked fix issue.',
+        { icon: I_READ });
       return;
     }
 
@@ -380,6 +388,15 @@
     });
   }
 
+  /* Shared by the head "Clear filters" link and the empty-state button. */
+  function clearFilters() {
+    state.platform = state.country = state.stars = 'all';
+    state.q = '';
+    el('fSearch').value = '';
+    el('fPlatform').value = el('fCountry').value = el('fStars').value = 'all';
+    render();
+  }
+
   function wire() {
     var qs = document.querySelectorAll('.q');
     for (var i = 0; i < qs.length; i++) {
@@ -393,7 +410,9 @@
     }
 
     el('list').addEventListener('click', function (e) {
-      var card = e.target.closest ? e.target.closest('.card') : null;
+      if (!e.target.closest) return;
+      if (e.target.closest('.empty-act')) { clearFilters(); return; }
+      var card = e.target.closest('.card');
       if (card) select(card.getAttribute('data-id'));
     });
 
@@ -426,13 +445,7 @@
         render();
       });
     });
-    el('clearFilters').addEventListener('click', function () {
-      state.platform = state.country = state.stars = 'all';
-      state.q = '';
-      el('fSearch').value = '';
-      el('fPlatform').value = el('fCountry').value = el('fStars').value = 'all';
-      render();
-    });
+    el('clearFilters').addEventListener('click', clearFilters);
 
     window.addEventListener('hashchange', function () {
       applyQueue(location.hash.replace('#', ''), true);
