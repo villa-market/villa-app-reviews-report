@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-05T15:50:33+07:00",
+  "generated_at": "2026-09-11T08:42:42+07:00",
   "meta": {
-    "written_total": 244,
+    "written_total": 245,
     "written_ios": 86,
-    "written_android": 158,
+    "written_android": 159,
     "delta_vs_prev": 0,
-    "prev_label": "vs 4 Sep",
+    "prev_label": "vs 10 Sep",
     "need_reply": 32,
     "answered_public": 0,
     "store_replies": 0,
@@ -13,7 +13,7 @@
     "countries": [
       {
         "code": "th,us",
-        "count": 99
+        "count": 100
       },
       {
         "code": "th",
@@ -107,7 +107,7 @@
       },
       {
         "platform": "android",
-        "count": 158
+        "count": 159
       }
     ],
     "fix_tagged": 30,
@@ -4637,6 +4637,24 @@
       "issue_tag": "bug",
       "fix": 5,
       "suggested_reply": "Sorry the app wouldn't let you pay — hard to buy (and stay a loyal client) when checkout blocks the purchase. Payment failures like this are with the payments team. If you can, tell us in-app what happens at pay (card rejected / button stuck / method missing) so we can reproduce."
+    },
+    {
+      "id": "5d09979b-2842-49cf-aba0-a83b7d180266",
+      "author": "Joseph",
+      "platform": "Android",
+      "country": "th,us",
+      "countries": [
+        "th,us"
+      ],
+      "stars": 5,
+      "date": "2026-09-05",
+      "title": "",
+      "body": "Works very well. I like using it. Easy navigation. Has never frozen or misbehaved. Way better than other grocery stores. With every update it has become better and better.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "issue_tag": "other",
+      "fix": null,
+      "suggested_reply": null
     }
   ],
   "fixes": [
