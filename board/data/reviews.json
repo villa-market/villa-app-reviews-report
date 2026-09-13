@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-12T08:44:07+07:00",
+  "generated_at": "2026-09-13T08:46:46+07:00",
   "meta": {
-    "written_total": 245,
+    "written_total": 246,
     "written_ios": 86,
-    "written_android": 159,
-    "delta_vs_prev": 0,
-    "prev_label": "vs 11 Sep",
+    "written_android": 160,
+    "delta_vs_prev": 1,
+    "prev_label": "vs 12 Sep",
     "need_reply": 32,
     "answered_public": 0,
     "store_replies": 0,
@@ -17,7 +17,7 @@
       },
       {
         "code": "th",
-        "count": 71
+        "count": 72
       },
       {
         "code": "us",
@@ -107,7 +107,7 @@
       },
       {
         "platform": "android",
-        "count": 159
+        "count": 160
       }
     ],
     "fix_tagged": 30,
@@ -4650,6 +4650,24 @@
       "date": "2026-09-05",
       "title": "",
       "body": "Works very well. I like using it. Easy navigation. Has never frozen or misbehaved. Way better than other grocery stores. With every update it has become better and better.",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "issue_tag": "other",
+      "fix": null,
+      "suggested_reply": null
+    },
+    {
+      "id": "236ef774-3695-451b-ac31-1fd336399ff1",
+      "author": "นามดี มีสุข",
+      "platform": "Android",
+      "country": "th",
+      "countries": [
+        "th"
+      ],
+      "stars": 5,
+      "date": "2026-09-11",
+      "title": "",
+      "body": "ดีมากค่ะของที่เราอยากจะชื่อก็มีเยอะไปหมดเลยสั่งง่ายส่งไว",
       "has_developer_reply": false,
       "reply_status": "unanswered",
       "issue_tag": "other",
