@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-14T08:58:33+07:00",
+  "generated_at": "2026-09-17T08:54:35+07:00",
   "meta": {
-    "written_total": 246,
+    "written_total": 247,
     "written_ios": 86,
-    "written_android": 160,
-    "delta_vs_prev": 0,
-    "prev_label": "vs 13 Sep",
-    "need_reply": 32,
-    "answered_public": 0,
-    "store_replies": 0,
+    "written_android": 161,
+    "delta_vs_prev": 1,
+    "prev_label": "vs 14 Sep",
+    "need_reply": 31,
+    "answered_public": 1,
+    "store_replies": 2,
     "sample_note": "Full public scrape — all countries/storefronts in sample.",
     "countries": [
       {
         "code": "th,us",
-        "count": 100
+        "count": 101
       },
       {
         "code": "th",
@@ -107,7 +107,7 @@
       },
       {
         "platform": "android",
-        "count": 160
+        "count": 161
       }
     ],
     "fix_tagged": 30,
@@ -879,8 +879,8 @@
       "date": "2026-07-18T10:34:02Z",
       "title": "Horrible app",
       "body": "They make you jump through hoops, and it’s as difficult as possible just to sign up. App is hard to navigate. The app has a three star rating and that is way too generous. \nThey may have good food but they make it harder to find than is actually worth it. \nJust go in person or go to a better store.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
       "suggested_reply": ""
@@ -4632,8 +4632,8 @@
       "date": "2026-09-02",
       "title": "Cannot Pay",
       "body": "Hard to buy if app does not allow payment",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "bug",
       "fix": 5,
       "suggested_reply": "Sorry the app wouldn't let you pay — hard to buy (and stay a loyal client) when checkout blocks the purchase. Payment failures like this are with the payments team. If you can, tell us in-app what happens at pay (card rejected / button stuck / method missing) so we can reproduce."
@@ -4668,6 +4668,24 @@
       "date": "2026-09-11",
       "title": "",
       "body": "ดีมากค่ะของที่เราอยากจะชื่อก็มีเยอะไปหมดเลยสั่งง่ายส่งไว",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "issue_tag": "other",
+      "fix": null,
+      "suggested_reply": null
+    },
+    {
+      "id": "33e25ad5-a84b-44f3-9968-751f01c44bc7",
+      "author": "Joseph Trezza",
+      "platform": "Android",
+      "country": "th,us",
+      "countries": [
+        "th,us"
+      ],
+      "stars": 5,
+      "date": "2026-09-13",
+      "title": "",
+      "body": "itàlianpoŕk sausage buy",
       "has_developer_reply": false,
       "reply_status": "unanswered",
       "issue_tag": "other",
