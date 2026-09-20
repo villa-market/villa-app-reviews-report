@@ -1,10 +1,12 @@
 App reviews — morning
 Reply this one today (Mickey):
 
-Small Traveller · Android · th/us · 1★
-Customer: "Cannot use, this app is very particular what kind of people and phone can use it. Very special app for special people only."
+Orientix · iOS · hk · 1★
+Customer: "Cannot log in. Apparently new app. They indicate to create new account using old tel number. Does not work. Cannot create. Also tried on website. Only many error messages. Sent email, they don’t reply."
 
 Draft:
-"Sorry the app wouldn't open on your phone. We currently refuse some Android setups (including Developer Options). That's our restriction, not your device — and we've flagged it for the Android team."
+"Sorry you hit errors signing in with your old number. Please email ewallet@villamarket.com with that registered phone number and a screenshot of the error — the team can link your account. Which number did you register with?"
+
+When pasted, reply here: done — Orientix
 
 Board: https://villa-market.github.io/villa-app-reviews-report/board/
