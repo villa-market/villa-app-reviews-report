@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-21T08:54:21+07:00",
+  "generated_at": "2026-09-24T08:52:53.784189+07:00",
   "meta": {
     "written_total": 243,
     "written_ios": 85,
     "written_android": 158,
-    "delta_vs_prev": 0,
-    "prev_label": "vs 20 Sep",
+    "delta_vs_prev": 1,
+    "prev_label": "2026-09-21",
     "need_reply": 11,
     "answered_public": 0,
     "store_replies": 51,
@@ -109,7 +109,9 @@
     "fix_tagged": 30,
     "suggested_replies_filled": 32,
     "suggested_replies_quality_pass": "2026-09-02",
-    "rifrifrif8_closed": "2026-09-19"
+    "rifrifrif8_closed": "2026-09-19",
+    "scrape_date": "2026-09-24",
+    "public_replies": 67
   },
   "fix": [
     {
@@ -228,11 +230,12 @@
       "date": "2026-03-27T04:08:17Z",
       "title": "App really needs work",
       "body": "After paying for the order, the goods still appear in the cart and the app shows ‘processing payment’ even after payment has gone through. I’ve brought this to the attention of their customer service maybe a dozen times but it never gets fixed. Extremely disappointing.",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "checkout",
       "fix": null,
-      "suggested_reply": "We're sorry — a cart that still shows paid items and stays on 'processing payment' after you've paid (and after many CS reports) is unacceptable. Escalated to the payments/app team with your review attached."
+      "suggested_reply": "We're sorry — a cart that still shows paid items and stays on 'processing payment' after you've paid (and after many CS reports) is unacceptable. Escalated to the payments/app team with your review attached.",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "14033418867",
@@ -282,11 +285,12 @@
       "date": "2025-12-16T11:13:19Z",
       "title": "Great Store. Bad app",
       "body": "Product stock at VM is usually excellent. Also the delivery service, so far, is really good. But the app is old. Bad UX (not easy to use, bad filters, slow). But the most negative thing is after check out: it was my bank message to inform me about the payment successful",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "We sincerely apologize for the inconvenience caused. You can contact us via Live Chat in the application or email the issue to online@villamarket.com. Our team is ready to assist you. Thank you for bringing this to our attention."
     },
     {
       "id": "13866633341",
@@ -300,11 +304,12 @@
       "date": "2026-03-20T03:08:29Z",
       "title": "Absolutely horrible",
       "body": "Living in Bangkok and everyone told me to shop at Villa for western groceries. I thought, ok cool. Let’s try ordering delivery. Download the app. Doesn’t load. Open close open close. Finally opens. Select the location closest to me. Fill my cart. Asks to verify phone number. Put it in. Get messaged code. Doesn’t load. Try email. Doesn’t load. After multiple tries, finally works. Tries to check out, and then says wrong location even though this is the location closest to me. I switch the options available. Empties my cart! What a huge waste of time. I’ll try in person maybe in the future, but not any time soon.",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "checkout",
       "fix": null,
-      "suggested_reply": "Sorry that first try was so rough — load stalls, verify delays, wrong-location errors, then an emptied cart. Please update the iOS app and retry with Live Chat open if anything blocks checkout. You can also email online@villamarket.com with your phone number and what failed last; our team can help you complete a first order."
+      "suggested_reply": "Sorry that first try was so rough — load stalls, verify delays, wrong-location errors, then an emptied cart. Please update the iOS app and retry with Live Chat open if anything blocks checkout. You can also email online@villamarket.com with your phone number and what failed last; our team can help you complete a first order.",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "13836518270",
@@ -318,11 +323,12 @@
       "date": "2026-03-11T11:29:52Z",
       "title": "Can’t reset password",
       "body": "It keeps saying that my password is incorrect, so I clicked on Forget Password and entered my phone number and Continue. But nothing showed up, except when I clicked Continue three times, it said that I have exceeded the attempt limit. Useless and non-functional app. There is no customer service on LINE. Phone support also hangs up as soon as I say Hello. Very bad service overall.",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": "Sorry the password loop and Forget Password flow blocked you — and that support wasn't reachable. Please email ewallet@villamarket.com with your registered phone number so we can unlock the account. You can also reach us via Live Chat in the app once you're signed in."
+      "suggested_reply": "Sorry the password loop and Forget Password flow blocked you — and that support wasn't reachable. Please email ewallet@villamarket.com with your registered phone number so we can unlock the account. You can also reach us via Live Chat in the app once you're signed in.",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "12003530091",
@@ -361,7 +367,7 @@
       "suggested_reply": ""
     },
     {
-      "id": "13229508221",
+      "id": "14575905338",
       "author": "MooglyMoo",
       "platform": "iOS",
       "country": "th",
@@ -372,11 +378,13 @@
       "date": "2025-10-06T02:25:46Z",
       "title": "Don’t waste your time",
       "body": "App doesn’t work, has never worked, despite repeated attempts at deleting and reinstalling. Stuck on the home page and will not move past it. Clearly Villa Market cannot find a competent app developer (or website developer for that matter). Will stick with Paleo Robbie who have a great app (and website).",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "We sincerely apologize for the inconvenience caused. You can contact us via Live Chat in the application or email the issue to online@villamarket.com. Our team is ready to assist you. Thank you for bringing this to our attention.",
+      "review_id": "14575905338"
     },
     {
       "id": "13163780903",
@@ -390,11 +398,12 @@
       "date": "2025-09-21T01:42:51Z",
       "title": "Doesn’t work",
       "body": "Fix the app! It won’t start. Just jams on the start page.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "We sincerely apologize for the inconvenience caused. You can contact us via Live Chat in the application or email the issue to online@villamarket.com. Our team is ready to assist you. Thank you for bringing this to our attention."
     },
     {
       "id": "11993782962",
@@ -786,11 +795,12 @@
       "date": "2026-01-10T08:50:52Z",
       "title": "Wallet crashes",
       "body": "Cannot complete wallet setup because app freezes and crashes",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": "Sorry wallet setup freezes and crashes before you can finish — especially as a paid member. We've sent the wallet crash report to the iOS/payments team."
+      "suggested_reply": "Sorry wallet setup freezes and crashes before you can finish — especially as a paid member. We've sent the wallet crash report to the iOS/payments team.",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "13412052138",
@@ -930,11 +940,12 @@
       "date": "2025-08-19T13:07:53Z",
       "title": "SMS verificaiton broken",
       "body": "Unable to place orders as I am unable to verify with SMS. I contacted support about the issue and they stopped responding :/",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "13973084752",
@@ -1039,7 +1050,7 @@
       "title": "A continuing failure",
       "body": "It just gets worse \nOut of stock now becoming more frequent \nApp crashes frequently and despite an update 8 hours ago will not work\nCourier service is either very good or like the last three day totally useless as new staff dont know where to go and give up with the quickest of excuses as to why yet again they fail to ring you. Failed to find you and give up and go home.\nIf I ran a business in such a poor way I would not last a week.",
       "has_developer_reply": false,
-      "reply_status": "unknown",
+      "reply_status": "unanswered",
       "issue_tag": "other",
       "fix": null,
       "suggested_reply": ""
@@ -1074,11 +1085,12 @@
       "date": "2025-12-31T01:36:32Z",
       "title": "App Frozen",
       "body": "Has failed to work for at least the last 2 weeks despite 2 apparent updates.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "10241421617",
@@ -1164,11 +1176,12 @@
       "date": "2026-01-31T03:07:35Z",
       "title": "can't use",
       "body": "can't use",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "11398220234",
@@ -1236,11 +1249,12 @@
       "date": "2026-03-12T05:09:56Z",
       "title": "I like this App",
       "body": "very convenient to search and oder",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you so much for your kind feedback! we truly appreciate your support! If you ever encounter any issues, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "10483633887",
@@ -1344,11 +1358,12 @@
       "date": "2025-12-15T10:00:35Z",
       "title": "New update doesn’t work",
       "body": "Everytime there is an update, the app does work. 15/12/25: I can’t manage to order.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "11383004603",
@@ -1470,11 +1485,12 @@
       "date": "2025-12-15T04:37:41Z",
       "title": "Great",
       "body": "Great app. Villa Market delivers on time every time. Well structured business",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Thank you so much for your kind feedback! we truly appreciate your support! If you ever encounter any issues, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "12142310781",
@@ -1542,11 +1558,12 @@
       "date": "2026-01-16T11:57:03Z",
       "title": "Cannot log in",
       "body": "Cannot log in. Apparently new app. They indicate to create new account using old tel number. Does not work. Cannot create. Also tried on website. Only many error messages. Sent email, they don’t reply.",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "bug",
       "fix": null,
-      "suggested_reply": "Sorry you hit errors signing in with your old number. Please email ewallet@villamarket.com with that registered phone number and a screenshot of the error — the team can link your account. Which number did you register with?"
+      "suggested_reply": "Sorry you hit errors signing in with your old number. Please email ewallet@villamarket.com with that registered phone number and a screenshot of the error — the team can link your account. Which number did you register with?",
+      "developer_reply": "Thank you for your feedback. We’ve resolved the issues you reported in our latest app update. If you encounter any further problems or have additional questions, please feel free to reach out via Live Chat in the app or email us at online@villamarket.com."
     },
     {
       "id": "13431404894",
@@ -1560,11 +1577,12 @@
       "date": "2025-11-23T12:01:52Z",
       "title": "Update to lose the account and details",
       "body": "After updating the app, I was logged out. Then I tried to login again, never succeeded. Then the points are all gone.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "We sincerely apologize for the inconvenience caused. You can contact us via Live Chat in the application or email the issue to online@villamarket.com. Our team is ready to assist you. Thank you for bringing this to our attention."
     },
     {
       "id": "11003459747",
@@ -1633,11 +1651,12 @@
       "date": "2026-02-09T18:54:07Z",
       "title": "Schlechter geht’s nicht",
       "body": "Unfassbar wie schlecht und unzuverlässig diese App ist. Mehrere Versuche die Fehler zu melden waren erfolglos. Niemals ein Feedback bekommen.",
-      "has_developer_reply": false,
-      "reply_status": "unknown",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "",
+      "developer_reply": "Vielen Dank für Ihr Feedback. Wir haben die von Ihnen gemeldeten Probleme in unserem neuesten App-Update behoben. Sollten Sie weitere Probleme feststellen oder zusätzliche Fragen haben, können Sie uns gerne über den Live-Chat in der App kontaktieren oder eine E-Mail an online@villamarket.com senden."
     },
     {
       "id": "14272285896",
