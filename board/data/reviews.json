@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-24T08:52:53.784189+07:00",
+  "generated_at": "2026-09-25T08:46:13.559385+07:00",
   "meta": {
-    "written_total": 243,
-    "written_ios": 85,
+    "written_total": 244,
+    "written_ios": 86,
     "written_android": 158,
     "delta_vs_prev": 1,
-    "prev_label": "2026-09-21",
-    "need_reply": 11,
+    "prev_label": "2026-09-24",
+    "need_reply": 8,
     "answered_public": 0,
     "store_replies": 51,
     "sample_note": "Full public scrape — all countries/storefronts in sample.",
@@ -17,7 +17,7 @@
       },
       {
         "code": "th",
-        "count": 72
+        "count": 73
       },
       {
         "code": "us",
@@ -99,7 +99,7 @@
     "platforms": [
       {
         "platform": "ios",
-        "count": 85
+        "count": 86
       },
       {
         "platform": "android",
@@ -107,10 +107,10 @@
       }
     ],
     "fix_tagged": 30,
-    "suggested_replies_filled": 32,
+    "suggested_replies_filled": 33,
     "suggested_replies_quality_pass": "2026-09-02",
     "rifrifrif8_closed": "2026-09-19",
-    "scrape_date": "2026-09-24",
+    "scrape_date": "2026-09-25",
     "public_replies": 67
   },
   "fix": [
@@ -1050,10 +1050,10 @@
       "title": "A continuing failure",
       "body": "It just gets worse \nOut of stock now becoming more frequent \nApp crashes frequently and despite an update 8 hours ago will not work\nCourier service is either very good or like the last three day totally useless as new staff dont know where to go and give up with the quickest of excuses as to why yet again they fail to ring you. Failed to find you and give up and go home.\nIf I ran a business in such a poor way I would not last a week.",
       "has_developer_reply": false,
-      "reply_status": "unanswered",
+      "reply_status": "need_reply",
       "issue_tag": "other",
       "fix": null,
-      "suggested_reply": ""
+      "suggested_reply": "Thanks for flagging the out-of-stock errors and crashes. Please update to the latest iOS build, then force-quit and reopen. If a screen still crashes or shows false OOS, reach us via Live Chat in the app or email online@villamarket.com with your iOS version and which screen fails so we can help you finish shopping."
     },
     {
       "id": "9695049986",
@@ -4708,6 +4708,22 @@
       "issue_tag": "other",
       "fix": null,
       "suggested_reply": null
+    },
+    {
+      "id": "14582438625",
+      "author": "โม่งปอ",
+      "platform": "iOS",
+      "country": "th",
+      "countries": [
+        "th"
+      ],
+      "stars": 1,
+      "date": "2026-09-23",
+      "title": "แอพไม่ค่อยสเถียร",
+      "body": "แอพไม่สเถียร คนทำแอพขาดCommon Sense",
+      "has_developer_reply": false,
+      "reply_status": "need_reply",
+      "issue_tag": "crash"
     }
   ],
   "fixes": [
