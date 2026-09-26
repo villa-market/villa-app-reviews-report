@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-25T08:46:13.559385+07:00",
+  "generated_at": "2026-09-26T08:49:24.292901+07:00",
   "meta": {
     "written_total": 244,
     "written_ios": 86,
     "written_android": 158,
-    "delta_vs_prev": 1,
-    "prev_label": "2026-09-24",
+    "delta_vs_prev": 0,
+    "prev_label": "2026-09-25",
     "need_reply": 8,
     "answered_public": 0,
     "store_replies": 51,
@@ -98,19 +98,19 @@
     ],
     "platforms": [
       {
-        "platform": "ios",
-        "count": 86
-      },
-      {
         "platform": "android",
         "count": 158
+      },
+      {
+        "platform": "ios",
+        "count": 86
       }
     ],
     "fix_tagged": 30,
     "suggested_replies_filled": 33,
     "suggested_replies_quality_pass": "2026-09-02",
     "rifrifrif8_closed": "2026-09-19",
-    "scrape_date": "2026-09-25",
+    "scrape_date": "2026-09-26",
     "public_replies": 67
   },
   "fix": [
