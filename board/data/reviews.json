@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-29T08:49:25.983470+07:00",
+  "generated_at": "2026-09-30T08:48:21.844345+07:00",
   "meta": {
-    "written_total": 244,
-    "written_ios": 86,
+    "written_total": 245,
+    "written_ios": 87,
     "written_android": 158,
-    "delta_vs_prev": 0,
-    "prev_label": "2026-09-28",
+    "delta_vs_prev": 1,
+    "prev_label": "2026-09-29",
     "need_reply": 8,
     "answered_public": 0,
     "store_replies": 51,
@@ -110,7 +110,7 @@
     "suggested_replies_filled": 33,
     "suggested_replies_quality_pass": "2026-09-02",
     "rifrifrif8_closed": "2026-09-19",
-    "scrape_date": "2026-09-29",
+    "scrape_date": "2026-09-30",
     "public_replies": 68
   },
   "fix": [
@@ -4724,6 +4724,24 @@
       "has_developer_reply": true,
       "reply_status": "answered",
       "issue_tag": "crash"
+    },
+    {
+      "id": "14602216285",
+      "author": "Elle7789",
+      "platform": "ios",
+      "country": "au",
+      "countries": [
+        "au"
+      ],
+      "stars": 1,
+      "date": "2026-09-28",
+      "title": "No response - no delivery",
+      "body": "I placed an order and paid but the app crashed after payment went through. The order shows up to be delivered but nothing has been delivered. I’ve message on Live Chat, email and Line with no response and nothing delivered. So I’ve lost my money and have no responses for days now from Villa Market. Very unhappy",
+      "has_developer_reply": false,
+      "reply_status": "need_reply",
+      "issue_tag": "delivery",
+      "severity": [],
+      "suggested_reply": null
     }
   ],
   "fixes": [
