@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-30T08:48:21.844345+07:00",
+  "generated_at": "2026-10-01T08:42:22+07:00",
   "meta": {
     "written_total": 245,
     "written_ios": 87,
     "written_android": 158,
-    "delta_vs_prev": 1,
-    "prev_label": "2026-09-29",
-    "need_reply": 8,
+    "delta_vs_prev": 0,
+    "prev_label": "2026-09-30",
+    "need_reply": 7,
     "answered_public": 0,
     "store_replies": 51,
     "sample_note": "Full public scrape — all countries/storefronts in sample.",
@@ -110,8 +110,8 @@
     "suggested_replies_filled": 33,
     "suggested_replies_quality_pass": "2026-09-02",
     "rifrifrif8_closed": "2026-09-19",
-    "scrape_date": "2026-09-30",
-    "public_replies": 68
+    "scrape_date": "2026-10-01",
+    "public_replies": 69
   },
   "fix": [
     {
@@ -4737,11 +4737,13 @@
       "date": "2026-09-28",
       "title": "No response - no delivery",
       "body": "I placed an order and paid but the app crashed after payment went through. The order shows up to be delivered but nothing has been delivered. I’ve message on Live Chat, email and Line with no response and nothing delivered. So I’ve lost my money and have no responses for days now from Villa Market. Very unhappy",
-      "has_developer_reply": false,
-      "reply_status": "need_reply",
+      "has_developer_reply": true,
+      "reply_status": "answered",
       "issue_tag": "delivery",
       "severity": [],
-      "suggested_reply": null
+      "suggested_reply": null,
+      "developer_reply": "We sincerely apologize for the inconvenience caused. You can contact us via Live Chat in the application or email the issue to online@villamarket.com or call us at 02-779-1000 (9am - 10pm). Our team is ready to assist you. Thank you for bringing this to our attention.",
+      "developer_reply_date": "2026-09-30"
     }
   ],
   "fixes": [
