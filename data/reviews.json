@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-07T08:47:00+07:00",
+  "generated_at": "2026-10-08T08:52:00+07:00",
   "meta": {
-    "written_total": 245,
+    "written_total": 246,
     "written_ios": 87,
-    "written_android": 158,
-    "delta_vs_prev": 0,
-    "prev_label": "2026-10-06",
+    "written_android": 159,
+    "delta_vs_prev": 1,
+    "prev_label": "2026-10-07",
     "need_reply": 7,
     "answered_public": 0,
     "store_replies": 69,
@@ -13,7 +13,7 @@
     "countries": [
       {
         "code": "th,us",
-        "count": 98
+        "count": 99
       },
       {
         "code": "th",
@@ -99,7 +99,7 @@
     "platforms": [
       {
         "platform": "android",
-        "count": 158
+        "count": 159
       },
       {
         "platform": "ios",
@@ -110,7 +110,7 @@
     "suggested_replies_filled": 33,
     "suggested_replies_quality_pass": "2026-09-02",
     "rifrifrif8_closed": "2026-09-19",
-    "scrape_date": "2026-10-05",
+    "scrape_date": "2026-10-08",
     "public_replies": 69
   },
   "fix": [
@@ -146,6 +146,25 @@
     }
   ],
   "reviews": [
+    {
+      "id": "2094654c-12bc-4995-8b9f-0bcf4203d30a",
+      "author": "Rico Boy",
+      "platform": "Android",
+      "country": "th,us",
+      "countries": [
+        "th",
+        "us"
+      ],
+      "stars": 5,
+      "date": "2026-10-06T22:09:59Z",
+      "title": "",
+      "body": "right",
+      "has_developer_reply": false,
+      "reply_status": "unanswered",
+      "issue_tag": "other",
+      "fix": null,
+      "suggested_reply": ""
+    },
     {
       "id": "14113620616",
       "author": "Ying Phuket Customer",
